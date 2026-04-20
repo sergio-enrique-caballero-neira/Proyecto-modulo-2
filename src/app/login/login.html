@@ -1,0 +1,23 @@
+<main class="main">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="shape shape-3"></div>
+  <div class="shape shape-4"></div>
+  <div class="recuadro">
+    <h1> Inicio De Sesión</h1>
+    <form class="datos">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="usuario"><i class="fa-solid fa-circle-user"></i></span>
+        <input [(ngModel)]="usuario" [class.input-error]="errorNombre" (input)="errorNombre = false" name="usuario" type="text" class="form-control" placeholder="Usuario" aria-label="usuario" aria-describedby="usuario">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="contrasena"><i class="fa-solid fa-lock"></i></span>
+        <input [(ngModel)]="contrasena" [class.input-error]="errorContrasena" (input)="errorContrasena = false" name="contrasena" type="text" class="form-control" placeholder="Contraseña" aria-label="contrasena" aria-describedby="contrasena">
+      </div>
+    </form>
+    <div class="boton-login">
+      <button (click)="login()" type="button" class="btn btn-outline-info">Iniciar Sesion</button>
+    </div>
+    <p>¿No tiene una cuenta? <a routerLink="/register" class="mi-enlace"> Registrarse</a></p>
+  </div>
+</main>
