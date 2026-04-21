@@ -103,6 +103,13 @@ button{
   background-color: #ffe6e6; /* Un fondo rojizo suave */
 }
 
+.botones{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes float {
   0%,100% {
     transform: translateY(0);

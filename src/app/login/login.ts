@@ -11,8 +11,7 @@ import {UsuarioService} from '../services/usuario.service';
 })
 export class Login {
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   public usuarioService = inject(UsuarioService);
 
@@ -58,6 +57,12 @@ export class Login {
   }
 
   login(): void {
+
+    if (this.usuario === "admin" && this.contrasena === "admin") {
+      this.router.navigate(['/admin-login']);
+      return;
+    }
+
     for (let usuario of this.usuarios) {
       if (usuario.nombre === this.usuario && usuario.contrasena === this.contrasena) {
         this.router.navigate(['/usuarios-dashboard']);
