@@ -1,0 +1,15 @@
+
+  .titulo{
+    color: rgb(160, 18, 198);
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+  .container{
+    text-align: center;
+    justify-content: center;
+  }
+  .boton{
+  background-color: rgb(160, 18, 198);
+    color: white;
+  }
