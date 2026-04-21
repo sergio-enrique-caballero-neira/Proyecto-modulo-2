@@ -1,1 +1,51 @@
-<p>register works!</p>
+<div class="container vh-100 d-flex align-items-center justify-content-center">
+
+  <div class="col-12 col-md-8 col-lg-6 shadow-lg p-5 rounded-4 bg-white">
+
+    <h1 class="titulo mb-5 fw-bold ">Registro de Usuario</h1>
+
+    <form>
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <label for="cedula" class="form-label fw-semibold">Cédula</label>
+          <input type="text" class="form-control form-control-lg" id="cedula" placeholder="Número de documento">
+        </div>
+        <div class="col-md-6">
+          <label for="nombre" class="form-label fw-semibold">Nombre Completo</label>
+          <input type="text" class="form-control form-control-lg" id="nombre" placeholder="Nombre y apellidos">
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label for="email" class="form-label fw-semibold">Correo Electrónico</label>
+        <input type="email" class="form-control form-control-lg" id="email" placeholder="ejemplo@correo.com">
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-md-7">
+          <label for="telefono" class="form-label fw-semibold">Teléfono</label>
+          <input type="tel" class="form-control form-control-lg" id="telefono" placeholder="300 000 0000">
+        </div>
+        <div class="col-md-5">
+          <label for="edad" class="form-label fw-semibold">Edad</label>
+          <input type="number" class="form-control form-control-lg" id="edad" placeholder="18">
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label for="direccion" class="form-label fw-semibold">Dirección de Residencia</label>
+        <input type="text" class="form-control form-control-lg" id="direccion" placeholder="Calle, Carrera, Barrio...">
+      </div>
+
+      <div class="mb-5">
+        <label for="password" class="form-label fw-semibold">Contraseña</label>
+        <input type="password" class="form-control form-control-lg" id="password" placeholder="Mínimo 8 caracteres">
+      </div>
+
+      <div class="d-grid gap-2">
+        <button type="submit" class="boton btn-lg rounded-pill">Guardar Información</button>
+      </div>
+
+    </form>
+  </div>
+</div>
