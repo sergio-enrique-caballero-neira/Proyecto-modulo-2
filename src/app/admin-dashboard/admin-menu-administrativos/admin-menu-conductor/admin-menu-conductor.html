@@ -1,0 +1,251 @@
+<main *ngIf="menu === 'principal'">
+  <h1>Administrar Conductores</h1>
+  <div class="botones">
+    <h2>Seleccione una opcion</h2>
+    <div class="grupo-botones">
+      <span>
+        <button (click)="seleccionarMenu('crear')" type="button" class="btn btn-success">Crear</button>
+        <button (click)="seleccionarMenu('mostrar')" type="button" class="btn btn-info">Mostrar Todo</button>
+        <button (click)="seleccionarMenu('eliminar')" type="button" class="btn btn-danger">Eliminar</button>
+        <button (click)="seleccionarMenu('actualizar')" type="button" class="btn btn-warning">Actualizar</button>
+      </span>
+    </div>
+  </div>
+</main>
+
+<div class="menu-crear" *ngIf="menu === 'crear'">
+  <h1>Crear Conductor</h1>
+  <div class="contenedor-formulario">
+    <form class="formulario-crear">
+
+      <div class="fila-formulario">
+        <h3>Cedula</h3>
+        <input [(ngModel)]="cedula" name="cedula" type="number" min="1000000000" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Nombre</h3>
+        <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Email</h3>
+        <input [(ngModel)]="email" name="email" type="email" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Telefono</h3>
+        <input [(ngModel)]="telefono" name="telefono" type="number" min="1" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Edad</h3>
+        <input [(ngModel)]="edad" name="edad" type="number" min="1" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Inicio Turno</h3>
+        <input [(ngModel)]="inicioTurno" name="inicioTurno" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Final Turno</h3>
+        <input [(ngModel)]="finalTurno" name="finalTurno" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Salario</h3>
+        <input [(ngModel)]="salario" name="salario" type="number" min="0" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Licencia</h3>
+        <input [(ngModel)]="licencia" name="licencia" type="text" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Tipo Vehiculo</h3>
+        <input [(ngModel)]="tipoVehiculo" name="tipoVehiculo" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Experiencia En Años</h3>
+        <input [(ngModel)]="experienciaAnios" name="experienciaAnios" type="number" min="0" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Contraseña</h3>
+        <input [(ngModel)]="contrasena" name="contrasena" type="password" class="form-control"/>
+      </div>
+
+      <div class="acciones-formulario">
+        <button (click)="crearConductor()" type="button" class="btn btn-success" [disabled]="creandoConductor">
+          {{ creandoConductor ? 'Creando...' : 'Crear conductor' }}
+        </button>
+        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>
+        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>
+      </div>
+    </form>
+
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>
+
+<div class="menu-mostrar" *ngIf="menu === 'mostrar'">
+  <h1>Conductores</h1>
+
+  <div class="contenedor-tabla">
+    <div class="acciones-formulario">
+      <button (click)="cargarConductores()" type="button" class="btn btn-info" [disabled]="cargandoConductores"> {{ cargandoConductores ? 'Cargando...' : 'Recargar' }} </button>
+      <button (click)="volverAlMenuPrincipal()" type="button" class="btn btn-secondary" >Volver</button>
+    </div>
+
+    <p *ngIf="cargandoConductores" class="estado-tabla">Cargando conductores...</p>
+    <p *ngIf="!cargandoConductores && conductores.length === 0" class="estado-tabla">
+      No hay conductores registrados.
+    </p>
+
+    <div class="tabla-scroll" *ngIf="!cargandoConductores && conductores.length > 0">
+      <table class="tabla-usuarios">
+        <tr>
+          <th>ID</th>
+          <th>Cedula</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Telefono</th>
+          <th>Edad</th>
+          <th>Inicio Turno</th>
+          <th>Final Turno</th>
+          <th>Salario</th>
+          <th>Licencia</th>
+          <th>Tipo Vehiculo</th>
+          <th>Experiencia En Años</th>
+          <th>Contrasena</th>
+        </tr>
+
+        <tr *ngFor="let conductor of conductores">
+          <td>{{ conductor.id }}</td>
+          <td>{{ conductor.cedula }}</td>
+          <td>{{ conductor.nombre }}</td>
+          <td>{{ conductor.email }}</td>
+          <td>{{ conductor.telefono }}</td>
+          <td>{{ conductor.edad }}</td>
+          <td>{{ conductor.inicioTurno }}</td>
+          <td>{{ conductor.finalTurno }}</td>
+          <td>{{ conductor.salario }}</td>
+          <td>{{ conductor.licencia }}</td>
+          <td>{{ conductor.tipoVehiculo }}</td>
+          <td>{{ conductor.experienciaAnios }}</td>
+          <td>{{ conductor.contrasena }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>
+
+<div class="menu-actualizar" *ngIf="menu === 'actualizar'">
+  <h1>Actualizar Conductor</h1>
+  <div class="contenedor-formulario">
+    <form class="formulario-crear">
+
+      <div class="fila-formulario">
+        <h3>ID</h3>
+        <input [(ngModel)]="id" name="actualizarId" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Cedula</h3>
+        <input [(ngModel)]="cedula" name="actualizarCedula" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Nombre</h3>
+        <input [(ngModel)]="nombre" name="actualizarNombre" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Email</h3>
+        <input [(ngModel)]="email" name="actualizarEmail" type="email" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Telefono</h3>
+        <input [(ngModel)]="telefono" name="actualizarTelefono" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Edad</h3>
+        <input [(ngModel)]="edad" name="actualizarEdad" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Inicio Turno</h3>
+        <input [(ngModel)]="inicioTurno" name="actualizarInicioTurno" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Final Turno</h3>
+        <input [(ngModel)]="finalTurno" name="actualizarFinalTurno" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Salario</h3>
+        <input [(ngModel)]="salario" name="actualizarSalario" type="number" min="0" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Licencia</h3>
+        <input [(ngModel)]="licencia" name="actualizarLicencia" type="text" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Tipo Vehiculo</h3>
+        <input [(ngModel)]="tipoVehiculo" name="actualizarTipoVehiculo" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Experiencia En Años</h3>
+        <input [(ngModel)]="experienciaAnios" name="actualizarExperienciaAnios" type="number" min="0" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Contraseña</h3>
+        <input [(ngModel)]="contrasena" name="actualizarContrasena" type="password" class="form-control" />
+      </div>
+
+      <div class="acciones-formulario">
+        <button (click)="actualizarConductor()" type="button" class="btn btn-warning" [disabled]="actualizandoConductor">
+          {{ actualizandoConductor ? 'Actualizando...' : 'Actualizar conductor' }}
+        </button>
+        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>
+        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>
+      </div>
+    </form>
+
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>
+
+<div class="menu-eliminar" *ngIf="menu === 'eliminar'">
+  <h1>Eliminar Conductor</h1>
+  <div class="contenedor-formulario contenedor-eliminar">
+    <div class="fila-formulario">
+      <h3>ID del conductor</h3>
+      <input [(ngModel)]="id" name="eliminarId" type="number" min="0" class="form-control" />
+    </div>
+
+    <div class="acciones-formulario">
+      <button (click)="eliminarConductor()" type="button" class="btn btn-danger" [disabled]="eliminandoConductor">
+        {{ eliminandoConductor ? 'Eliminando...' : 'Eliminar conductor' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>
+    </div>
+
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>

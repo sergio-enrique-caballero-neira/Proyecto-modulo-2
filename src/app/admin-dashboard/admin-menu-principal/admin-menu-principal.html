@@ -1,0 +1,31 @@
+<h1>Administrar</h1>
+<div class="botones">
+
+  <div class="grupo-botones">
+    <h2>Usuarios</h2>
+    <span>
+        <button (click)="seleccionarMenu('administrador-usuarioNormal')" type="button" class="btn btn-primary">Normal</button>
+        <button (click)="seleccionarMenu('administrador-usuarioPremium')" type="button" class="btn btn-secondary">Premium</button>
+        <button (click)="seleccionarMenu('administrador-usuarioConcurrente')" type="button" class="btn btn-success">Concurrente</button>
+        </span>
+  </div>
+
+  <div class="grupo-botones">
+    <h2>Administrativos</h2>
+    <span>
+        <button (click)="seleccionarMenu('administrador-administrador')" type="button" class="btn btn-primary">Administrador</button>
+        <button (click)="seleccionarMenu('administrador-conductor')" type="button" class="btn btn-secondary">Conductor</button>
+        <button (click)="seleccionarMenu('administrador-manipulador')" type="button" class="btn btn-success">Manipulador</button>
+        </span>
+  </div>
+
+  <div class="grupo-botones">
+    <h2>Paquetes</h2>
+    <span>
+        <button (click)="seleccionarMenu('administrador-paqueteCarta')" type="button" class="btn btn-primary">Carta</button>
+        <button (click)="seleccionarMenu('administrador-paqueteAlimenticio')" type="button" class="btn btn-secondary">Paquete Alimenticio</button>
+        <button (click)="seleccionarMenu('administrador-paqueteNoAlimenticio')" type="button" class="btn btn-success">Paquete No Alimenticio</button>
+        </span>
+  </div>
+
+</div>

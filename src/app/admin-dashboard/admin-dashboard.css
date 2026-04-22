@@ -16,6 +16,8 @@ h1{
   width: 80%;
   display: flex;
   margin: 16px;
+  align-items: center;
+  justify-content: center;
 }
 
 p{
@@ -74,7 +76,7 @@ p{
   background: rgb(255, 255, 255, 0.8);
   backdrop-filter: blur(5px);
   box-shadow: 0 0 50px rgb(25, 29, 48, 0.3);
-  top: 50%;
+  margin-top: 2%;
 }
 
 .encabezado {
@@ -94,6 +96,14 @@ p{
 .boton-salir{
   min-width: 50px;
   min-height: 50px;
+}
+
+button{
+  margin: 3px;
+}
+
+.administrador-botones{
+  width: 100%;
 }
 
 @keyframes float {

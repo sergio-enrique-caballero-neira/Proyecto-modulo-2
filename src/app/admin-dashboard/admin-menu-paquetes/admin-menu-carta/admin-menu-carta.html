@@ -1,0 +1,170 @@
+<main *ngIf="menu === 'principal'">
+  <h1>Administrar Cartas</h1>
+  <div class="botones">
+    <h2>Seleccione una opcion</h2>
+    <div class="grupo-botones">
+      <span>
+        <button (click)="seleccionarMenu('crear')" type="button" class="btn btn-success">Crear</button>
+        <button (click)="seleccionarMenu('mostrar')" type="button" class="btn btn-info">Mostrar Todo</button>
+        <button (click)="seleccionarMenu('eliminar')" type="button" class="btn btn-danger">Eliminar</button>
+        <button (click)="seleccionarMenu('actualizar')" type="button" class="btn btn-warning">Actualizar</button>
+      </span>
+    </div>
+  </div>
+</main>
+
+<div class="menu-crear" *ngIf="menu === 'crear'">
+  <h1>Crear Carta</h1>
+  <div class="contenedor-formulario">
+    <form class="formulario-crear">
+
+      <div class="fila-formulario">
+        <h3>Descripcion</h3>
+        <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Peso</h3>
+        <input [(ngModel)]="peso" name="peso" type="number" min="0" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Origen</h3>
+        <input [(ngModel)]="origen" name="origen" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Destino</h3>
+        <input [(ngModel)]="destino" name="destino" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Fecha Envio</h3>
+        <input [(ngModel)]="fechaEnvio" name="fechaEnvio" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Tamano</h3>
+        <input [(ngModel)]="tamano" name="tamano" type="text" class="form-control" />
+      </div>
+
+      <div class="acciones-formulario">
+        <button (click)="crearCarta()" type="button" class="btn btn-success" [disabled]="creandoCarta">{{ creandoCarta ? 'Creando...' : 'Crear carta' }}</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>
+        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>
+      </div>
+    </form>
+
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>
+
+<div class="menu-mostrar" *ngIf="menu === 'mostrar'">
+  <h1>Cartas</h1>
+  <div class="contenedor-tabla">
+    <div class="acciones-formulario">
+      <button (click)="cargarCartas()" type="button" class="btn btn-info" [disabled]="cargandoCartas">{{ cargandoCartas ? 'Cargando...' : 'Recargar' }}</button>
+      <button (click)="volverAlMenuPrincipal()" type="button" class="btn btn-secondary">Volver</button>
+    </div>
+
+    <p *ngIf="cargandoCartas" class="estado-tabla">Cargando cartas...</p>
+    <p *ngIf="!cargandoCartas && cartas.length === 0" class="estado-tabla">No hay cartas registradas.</p>
+
+    <div class="tabla-scroll" *ngIf="!cargandoCartas && cartas.length > 0">
+      <table class="tabla-usuarios">
+        <tr>
+          <th>ID</th>
+          <th>Descripcion</th>
+          <th>Peso</th>
+          <th>Origen</th>
+          <th>Destino</th>
+          <th>Fecha Envio</th>
+          <th>Tamano</th>
+        </tr>
+
+        <tr *ngFor="let carta of cartas">
+          <td>{{ carta.id }}</td>
+          <td>{{ carta.descripcion }}</td>
+          <td>{{ carta.peso }}</td>
+          <td>{{ carta.origen }}</td>
+          <td>{{ carta.destino }}</td>
+          <td>{{ carta.fechaEnvio }}</td>
+          <td>{{ carta.tamano }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>
+
+<div class="menu-actualizar" *ngIf="menu === 'actualizar'">
+  <h1>Actualizar Carta</h1>
+  <div class="contenedor-formulario">
+    <form class="formulario-crear">
+
+      <div class="fila-formulario">
+        <h3>ID</h3>
+        <input [(ngModel)]="id" name="actualizarId" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Descripcion</h3>
+        <input [(ngModel)]="descripcion" name="actualizarDescripcion" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Peso</h3>
+        <input [(ngModel)]="peso" name="actualizarPeso" type="number" min="0" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Origen</h3>
+        <input [(ngModel)]="origen" name="actualizarOrigen" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Destino</h3>
+        <input [(ngModel)]="destino" name="actualizarDestino" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Fecha Envio</h3>
+        <input [(ngModel)]="fechaEnvio" name="actualizarFechaEnvio" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Tamano</h3>
+        <input [(ngModel)]="tamano" name="actualizarTamano" type="text" class="form-control" />
+      </div>
+
+      <div class="acciones-formulario">
+        <button (click)="actualizarCarta()" type="button" class="btn btn-warning" [disabled]="actualizandoCarta">{{ actualizandoCarta ? 'Actualizando...' : 'Actualizar carta' }}</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>
+        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>
+      </div>
+    </form>
+
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>
+
+<div class="menu-eliminar" *ngIf="menu === 'eliminar'">
+  <h1>Eliminar Carta</h1>
+  <div class="contenedor-formulario contenedor-eliminar">
+    <div class="fila-formulario">
+      <h3>ID de la carta</h3>
+      <input [(ngModel)]="id" name="eliminarId" type="number" min="1" class="form-control" />
+    </div>
+
+    <div class="acciones-formulario">
+      <button (click)="eliminarCarta()" type="button" class="btn btn-danger" [disabled]="eliminandoCarta">{{ eliminandoCarta ? 'Eliminando...' : 'Eliminar carta' }}</button>
+      <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>
+    </div>
+
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>

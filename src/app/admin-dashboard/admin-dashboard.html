@@ -6,8 +6,43 @@
   <div class="recuadro">
 
     <div class="encabezado">
-      <h1><i class="fa-regular fa-circle-user icono"></i> <p>{{nombre}}</p> <i class="fa-regular fa-id-card icono"></i> <p>id: {{id}}</p> <i class="fa-solid fa-at icono"></i> <p>{{tipoAdministrativo}}</p> </h1>
-      <button type="button" class="btn btn-danger boton-salir"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+      <h1><i class="fa-regular fa-circle-user icono"></i>
+        <p>{{ nombre }}</p> <i class="fa-regular fa-id-card icono"></i>
+        <p>id: {{ id }}</p> <i class="fa-solid fa-at icono"></i>
+        <p>{{ tipoAdministrativo }}</p></h1>
+      <button (click)="salir()" type="button" class="btn btn-danger boton-salir"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+      </button>
+    </div>
+
+    <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-principal'">
+      <app-admin-menu-principal (menu)="seleecionarMenu($event)" ></app-admin-menu-principal>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-usuarioNormal'">
+      <app-admin-menu-usuario-normal></app-admin-menu-usuario-normal>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-usuarioPremium'">
+      <app-admin-menu-usuario-premium></app-admin-menu-usuario-premium>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-usuarioConcurrente'">
+      <app-admin-menu-usuario-concurrente></app-admin-menu-usuario-concurrente>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-administrador'">
+      <app-admin-menu-administrador></app-admin-menu-administrador>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-conductor'">
+      <app-admin-menu-conductor></app-admin-menu-conductor>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-manipulador'">
+      <app-admin-menu-manipulador></app-admin-menu-manipulador>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-paqueteCarta'">
+      <app-admin-menu-carta></app-admin-menu-carta>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-paqueteAlimenticio'">
+      <app-admin-menu-paquete-alimenticio></app-admin-menu-paquete-alimenticio>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-paqueteNoAlimenticio'">
+      <app-admin-menu-paquete-no-alimenticio></app-admin-menu-paquete-no-alimenticio>
     </div>
   </div>
 </main>

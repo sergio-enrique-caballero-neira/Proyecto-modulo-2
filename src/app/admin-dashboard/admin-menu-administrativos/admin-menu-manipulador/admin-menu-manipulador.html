@@ -1,0 +1,215 @@
+<main *ngIf="menu === 'principal'">
+  <h1>Administrar Manipuladores</h1>
+  <div class="botones">
+    <h2>Seleccione una opcion</h2>
+    <div class="grupo-botones">
+      <span>
+        <button (click)="seleccionarMenu('crear')" type="button" class="btn btn-success">Crear</button>
+        <button (click)="seleccionarMenu('mostrar')" type="button" class="btn btn-info">Mostrar Todo</button>
+        <button (click)="seleccionarMenu('eliminar')" type="button" class="btn btn-danger">Eliminar</button>
+        <button (click)="seleccionarMenu('actualizar')" type="button" class="btn btn-warning">Actualizar</button>
+      </span>
+    </div>
+  </div>
+</main>
+
+<div class="menu-crear" *ngIf="menu === 'crear'">
+  <h1>Crear Manipulador</h1>
+  <div class="contenedor-formulario">
+    <form class="formulario-crear">
+
+      <div class="fila-formulario">
+        <h3>Cedula</h3>
+        <input [(ngModel)]="cedula" name="cedula" type="number" min="1000000000" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Nombre</h3>
+        <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Email</h3>
+        <input [(ngModel)]="email" name="email" type="email" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Telefono</h3>
+        <input [(ngModel)]="telefono" name="telefono" type="number" min="1" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Edad</h3>
+        <input [(ngModel)]="edad" name="edad" type="number" min="1" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Direccion</h3>
+        <input [(ngModel)]="direccion" name="direccion" type="text" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Tipo de usuario</h3>
+        <input [(ngModel)]="tipoUsuario" name="tipoUsuario" type="text" class="form-control" [disabled]="true"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Especializacion</h3>
+        <input [(ngModel)]="especializacion" name="especializacion" type="text" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Contraseña</h3>
+        <input [(ngModel)]="contrasena" name="contrasena" type="password" class="form-control"/>
+      </div>
+
+      <div class="acciones-formulario">
+        <button (click)="crearManipulador()" type="submit" class="btn btn-success" [disabled]="creandoManipulador">
+          {{ creandoManipulador ? 'Creando...' : 'Crear manipulador' }}
+        </button>
+        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>
+        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>
+      </div>
+    </form>
+
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>
+
+<div class="menu-mostrar" *ngIf="menu === 'mostrar'">
+  <h1>Manipuladores</h1>
+
+  <div class="contenedor-tabla">
+    <div class="acciones-formulario">
+      <button (click)="cargarManipuladores()" type="button" class="btn btn-info" [disabled]="cargandoManipuladores"> {{ cargandoManipuladores ? 'Cargando...' : 'Recargar' }} </button>
+      <button (click)="volverAlMenuPrincipal()" type="button" class="btn btn-secondary" >Volver</button>
+    </div>
+
+    <p *ngIf="cargandoManipuladores" class="estado-tabla">Cargando manipuladores...</p>
+    <p *ngIf="!cargandoManipuladores && manipuladores.length === 0" class="estado-tabla">
+      No hay manipuladores registrados.
+    </p>
+
+    <div class="tabla-scroll" *ngIf="!cargandoManipuladores && manipuladores.length > 0">
+      <table class="tabla-usuarios">
+        <tr>
+          <th>ID</th>
+          <th>Cedula</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Telefono</th>
+          <th>Edad</th>
+          <th>Direccion</th>
+          <th>Tipo Usuario</th>
+          <th>Especializacion</th>
+          <th>Contrasena</th>
+        </tr>
+
+        <tr *ngFor="let manipulador of manipuladores">
+          <td>{{ manipulador.id }}</td>
+          <td>{{ manipulador.cedula }}</td>
+          <td>{{ manipulador.nombre }}</td>
+          <td>{{ manipulador.email }}</td>
+          <td>{{ manipulador.telefono }}</td>
+          <td>{{ manipulador.edad }}</td>
+          <td>{{ manipulador.direccion }}</td>
+          <td>{{ manipulador.tipoUsuario }}</td>
+          <td>{{ manipulador.especializacion }}</td>
+          <td>{{ manipulador.contrasena }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>
+
+<div class="menu-actualizar" *ngIf="menu === 'actualizar'">
+  <h1>Actualizar Manipulador</h1>
+  <div class="contenedor-formulario">
+    <form class="formulario-crear">
+
+      <div class="fila-formulario">
+        <h3>ID</h3>
+        <input [(ngModel)]="id" name="actualizarId" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Cedula</h3>
+        <input [(ngModel)]="cedula" name="actualizarCedula" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Nombre</h3>
+        <input [(ngModel)]="nombre" name="actualizarNombre" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Email</h3>
+        <input [(ngModel)]="email" name="actualizarEmail" type="email" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Telefono</h3>
+        <input [(ngModel)]="telefono" name="actualizarTelefono" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Edad</h3>
+        <input [(ngModel)]="edad" name="actualizarEdad" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Direccion</h3>
+        <input [(ngModel)]="direccion" name="actualizarDireccion" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Tipo de usuario</h3>
+        <input [(ngModel)]="tipoUsuario" name="actualizarTipoUsuario" type="text" class="form-control" [disabled]="true"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Especializacion</h3>
+        <input [(ngModel)]="especializacion" name="actualizarEspecializacion" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Contraseña</h3>
+        <input [(ngModel)]="contrasena" name="actualizarContrasena" type="password" class="form-control" />
+      </div>
+
+      <div class="acciones-formulario">
+        <button (click)="actualizarManipulador()" type="button" class="btn btn-warning" [disabled]="actualizandoManipulador">
+          {{ actualizandoManipulador ? 'Actualizando...' : 'Actualizar manipulador' }}
+        </button>
+        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>
+        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>
+      </div>
+    </form>
+
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>
+
+<div class="menu-eliminar" *ngIf="menu === 'eliminar'">
+  <h1>Eliminar Manipulador</h1>
+  <div class="contenedor-formulario contenedor-eliminar">
+    <div class="fila-formulario">
+      <h3>ID del manipulador</h3>
+      <input [(ngModel)]="id" name="eliminarId" type="number" min="1" class="form-control" />
+    </div>
+
+    <div class="acciones-formulario">
+      <button (click)="eliminarManipulador()" type="button" class="btn btn-danger" [disabled]="eliminandoManipulador">
+        {{ eliminandoManipulador ? 'Eliminando...' : 'Eliminar manipulador' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>
+    </div>
+
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>

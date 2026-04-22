@@ -17,6 +17,8 @@ import {ModeloTempModel} from '../models/modeloTemp.model';
 })
 export class AdminDashboard {
 
+  constructor(private router: Router) {}
+
   private cd = inject(ChangeDetectorRef);
 
   public administradorService = inject(AdministradorService);
@@ -30,6 +32,7 @@ export class AdminDashboard {
   id: number = 0;
   tipoAdministrativo: string = '';
   cargado: boolean = false;
+  menu: string = "";
 
   ngOnInit() {
 
@@ -40,7 +43,7 @@ export class AdminDashboard {
     if (this.tempModel.tipo === 'Administrador') {
       this.administradorService.getAdministradores().subscribe({
         next: (usu) => {
-          const encontrado  = usu.body?.find(u => u.id === this.tempModel.id)
+          const encontrado = usu.body?.find(u => u.id === this.tempModel.id)
 
           if (encontrado !== undefined) {
             this.id = encontrado.id;
@@ -48,6 +51,7 @@ export class AdminDashboard {
             this.nombre = encontrado.nombre;
             this.cargado = true;
             this.tipoAdministrativo = encontrado.rol;
+            this.menu = "administrador-principal";
             this.cd.detectChanges();
           }
         },
@@ -65,6 +69,7 @@ export class AdminDashboard {
             this.admin = encontrado;
             this.nombre = encontrado.nombre;
             this.cargado = true;
+            this.menu = "conductor-principal";
             this.cd.detectChanges();
           }
         },
@@ -82,6 +87,7 @@ export class AdminDashboard {
             this.admin = encontrado;
             this.nombre = encontrado.nombre;
             this.cargado = true;
+            this.menu = "manipulador-principal";
             this.cd.detectChanges();
           }
         },
@@ -91,6 +97,18 @@ export class AdminDashboard {
       });
     }
 
+  }
+
+  seleecionarMenu(menu: string) {
+    this.menu = menu;
+  }
+
+  salir() {
+    if (this.menu !== "administrador-principal") {
+      this.menu = "administrador-principal";
+    } else {
+      this.router.navigate(['/admin-login']);
+    }
   }
 
 }
