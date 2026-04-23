@@ -15,7 +15,7 @@
     </div>
 
     <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-principal'">
-      <app-admin-menu-principal (menu)="seleecionarMenu($event)" ></app-admin-menu-principal>
+      <app-admin-menu-principal (menu)="seleccionarMenu($event)" ></app-admin-menu-principal>
     </div>
     <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-usuarioNormal'">
       <app-admin-menu-usuario-normal></app-admin-menu-usuario-normal>
@@ -43,6 +43,24 @@
     </div>
     <div class="administrador-botones" *ngIf="tipoAdministrativo !== 'Conductor' && tipoAdministrativo !== 'Manipulador' && menu === 'administrador-paqueteNoAlimenticio'">
       <app-admin-menu-paquete-no-alimenticio></app-admin-menu-paquete-no-alimenticio>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo === 'Conductor' && menu === 'conductor-principal'">
+      <app-conductor-menu-principal (menu)="seleccionarMenu($event)" )></app-conductor-menu-principal>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo === 'Conductor' && menu === 'conductor-evidencia'">
+      <app-conductor-menu-evidencia></app-conductor-menu-evidencia>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo === 'Conductor' && menu === 'conductor-actualizar'">
+      <app-conductor-menu-actualizar [id]="id" ]></app-conductor-menu-actualizar>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo === 'Manipulador' && menu === 'manipulador-principal'">
+      <app-manipulador-menu-principal (menu)="seleccionarMenu($event)"></app-manipulador-menu-principal>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo === 'Manipulador' && menu === 'manipulador-evidencia'">
+      <app-manipulador-menu-evicencia [id]="id" ></app-manipulador-menu-evicencia>
+    </div>
+    <div class="administrador-botones" *ngIf="tipoAdministrativo === 'Manipulador' && menu === 'manipulador-actualizar'">
+      <app-manipulador-menu-actualizar [id]="id" ></app-manipulador-menu-actualizar>
     </div>
   </div>
 </main>

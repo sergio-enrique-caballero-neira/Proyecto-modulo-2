@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, EventEmitter, inject, Output} from '@angular/core';
 import {AdministradorModel} from '../models/administrador.model';
 import {ConductorModel} from '../models/conductor.model';
 import {ManipuladorModel} from '../models/manipulador.model';

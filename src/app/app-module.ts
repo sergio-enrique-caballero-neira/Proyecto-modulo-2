@@ -19,6 +19,16 @@ import { AdminMenuManipulador } from './admin-dashboard/admin-menu-administrativ
 import { AdminMenuPaqueteAlimenticio } from './admin-dashboard/admin-menu-paquetes/admin-menu-paquete-alimenticio/admin-menu-paquete-alimenticio';
 import { AdminMenuPaqueteNoAlimenticio } from './admin-dashboard/admin-menu-paquetes/admin-menu-paquete-no-alimenticio/admin-menu-paquete-no-alimenticio';
 import { AdminMenuCarta } from './admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta';
+import { ConductorMenuPrincipal } from './admin-dashboard/conductor-menu-principal/conductor-menu-principal';
+import { ConductorMenuEvidencia } from './admin-dashboard/conductor-menu-evidencia/conductor-menu-evidencia';
+import { ConductorMenuActualizar } from './admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar';
+import { ManipuladorMenuPrincipal } from './admin-dashboard/manipulador-menu-principal/manipulador-menu-principal';
+import { ManipuladorMenuActualizar } from './admin-dashboard/manipulador-menu-actualizar/manipulador-menu-actualizar';
+import { ManipuladorMenuEvicencia } from './admin-dashboard/manipulador-menu-evicencia/manipulador-menu-evicencia';
+import { UsuariosMenuPrincipal } from './usuarios-dashboard/usuarios-menu-principal/usuarios-menu-principal';
+import { UsuariosMenuPaquetesNoAlimenticios } from './usuarios-dashboard/usuarios-menu-paquetes-no-alimenticios/usuarios-menu-paquetes-no-alimenticios';
+import { UsuariosMenuPaquetesAlimenticios } from './usuarios-dashboard/usuarios-menu-paquetes-alimenticios/usuarios-menu-paquetes-alimenticios';
+import { UsuariosMenuCartas } from './usuarios-dashboard/usuarios-menu-cartas/usuarios-menu-cartas';
 
 @NgModule({
   declarations: [
@@ -38,6 +48,16 @@ import { AdminMenuCarta } from './admin-dashboard/admin-menu-paquetes/admin-menu
     AdminMenuPaqueteAlimenticio,
     AdminMenuPaqueteNoAlimenticio,
     AdminMenuCarta,
+    ConductorMenuPrincipal,
+    ConductorMenuEvidencia,
+    ConductorMenuActualizar,
+    ManipuladorMenuPrincipal,
+    ManipuladorMenuActualizar,
+    ManipuladorMenuEvicencia,
+    UsuariosMenuPrincipal,
+    UsuariosMenuPaquetesNoAlimenticios,
+    UsuariosMenuPaquetesAlimenticios,
+    UsuariosMenuCartas,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],

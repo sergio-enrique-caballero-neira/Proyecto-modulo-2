@@ -6,6 +6,8 @@ import {UsuarioPremiumModel} from '../models/usuarioPremium.model';
 import {UsuarioconcurrenteService} from '../services/usuarioconcurrente.service';
 import {UsuarionormalService} from '../services/usuarionormal.service';
 import {UsuariopremiumService} from '../services/usuariopremium.service';
+import {ModelosTempService} from '../services/modelosTemp.service';
+import {ModeloTempModel} from '../models/modeloTemp.model';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +22,7 @@ export class Login {
   public usuarioConcurrenteService = inject(UsuarioconcurrenteService);
   public usuarioNormalService = inject(UsuarionormalService);
   public usuarioPremiumService = inject(UsuariopremiumService);
+  public modelosTempService = inject(ModelosTempService);
 
   usuario: string = "";
   contrasena: string = "";
@@ -73,6 +76,7 @@ export class Login {
 
     for (let usuario of this.usuariosConcurrentes) {
       if (usuario.nombre === this.usuario && usuario.contrasena === this.contrasena) {
+        this.modelosTempService.setModelo({id: usuario.id, tipo: 'UsuarioConcurrente'} as ModeloTempModel);
         this.router.navigate(['/usuarios-dashboard']);
         return;
       }
@@ -92,6 +96,7 @@ export class Login {
 
     for (let usuario of this.usuariosNormales) {
       if (usuario.nombre === this.usuario && usuario.contrasena === this.contrasena) {
+        this.modelosTempService.setModelo({id: usuario.id, tipo: 'UsuarioNormal'} as ModeloTempModel);
         this.router.navigate(['/usuarios-dashboard']);
         return;
       }
@@ -111,6 +116,7 @@ export class Login {
 
     for (let usuario of this.usuariosPremium) {
       if (usuario.nombre === this.usuario && usuario.contrasena === this.contrasena) {
+        this.modelosTempService.setModelo({id: usuario.id, tipo: 'UsuarioPremium'} as ModeloTempModel);
         this.router.navigate(['/usuarios-dashboard']);
         return;
       }

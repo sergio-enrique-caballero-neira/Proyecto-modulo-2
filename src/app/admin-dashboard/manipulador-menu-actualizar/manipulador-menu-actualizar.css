@@ -1,0 +1,47 @@
+.menu-actualizar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px 24px;
+}
+
+.contenedor-formulario{
+  width: 100%;
+  max-width: 760px;
+  background: #f7f9fb;
+  border: 1px solid #dce3ea;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.formulario-actualizar{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 16px;
+}
+
+.fila-formulario{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.acciones-formulario{
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.mensaje-exito{
+  margin: 16px 0 0;
+  color: #1a7f37;
+  font-weight: 600;
+}
+
+.mensaje-error{
+  margin: 16px 0 0;
+  color: #c62828;
+  font-weight: 600;
+}

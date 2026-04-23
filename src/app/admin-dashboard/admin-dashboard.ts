@@ -1,4 +1,4 @@
-import {Component, inject, ChangeDetectorRef} from '@angular/core';
+import {Component, inject, ChangeDetectorRef, Output, EventEmitter} from '@angular/core';
 import {AdministradorModel} from '../models/administrador.model';
 import {ConductorModel} from '../models/conductor.model';
 import {ManipuladorModel} from '../models/manipulador.model';
@@ -17,7 +17,8 @@ import {ModeloTempModel} from '../models/modeloTemp.model';
 })
 export class AdminDashboard {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+  }
 
   private cd = inject(ChangeDetectorRef);
 
@@ -99,13 +100,17 @@ export class AdminDashboard {
 
   }
 
-  seleecionarMenu(menu: string) {
+  seleccionarMenu(menu: string) {
     this.menu = menu;
   }
 
   salir() {
-    if (this.menu !== "administrador-principal") {
+    if (this.tipoAdministrativo !== "Conductor" && this.tipoAdministrativo !== "Manipulador" && this.menu !== "administrador-principal") {
       this.menu = "administrador-principal";
+    } else if (this.tipoAdministrativo === "Conductor" && this.menu !== "conductor-principal") {
+      this.menu = "conductor-principal";
+    } else if (this.tipoAdministrativo === "Manipulador" && this.menu !== "manipulador-principal") {
+      this.menu = "manipulador-principal";
     } else {
       this.router.navigate(['/admin-login']);
     }

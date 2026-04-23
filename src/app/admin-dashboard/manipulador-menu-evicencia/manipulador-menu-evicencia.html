@@ -1,0 +1,26 @@
+<div class="imagen-contenedor">
+  <div class="imagen"
+       (dragover)="onDragOver($event)"
+       (dragleave)="onDragLeave($event)"
+       (drop)="onDrop($event)"
+       (click)="fileInput.click()"
+       [class.drag-over]="isDragging">
+
+    <p *ngIf="!imagePreview">Arrastra tu imagen aquí o haz clic</p>
+
+    <img *ngIf="imagePreview" [src]="imagePreview" class="preview-img">
+
+    <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" hidden>
+  </div>
+</div>
+
+<p> Cantidad De Paquetes Enviados</p>
+<div class="boton-enviar">
+  <input [(ngModel)]="paquenesNuevos" name="paquetes" type="number" min="1" class="form-control" />
+  <button (click)="subirEvicencia()" type="button" class="btn btn-outline-info" [disabled]="actualizandoManipulador">
+    {{ actualizandoManipulador ? 'Subiendo...' : 'Subir Evidencias' }}</button>
+</div>
+
+<p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+<p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+

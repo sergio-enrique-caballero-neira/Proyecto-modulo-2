@@ -1,0 +1,88 @@
+<div class="menu-actualizar" *ngIf="cargado">
+  <h1>Actualizar Conductor</h1>
+  <div class="contenedor-formulario">
+    <form class="formulario-actualizar">
+
+      <div class="fila-formulario">
+        <h3>ID</h3>
+        <input [disabled]="true" [(ngModel)]="id" name="actualizarId" type="number" min="0" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Cedula</h3>
+        <input [disabled]="true" [(ngModel)]="cedula" name="actualizarCedula" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Nombre</h3>
+        <input [disabled]="true" [(ngModel)]="nombre" name="actualizarNombre" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Email</h3>
+        <input [(ngModel)]="email" name="actualizarEmail" type="email" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Telefono</h3>
+        <input [(ngModel)]="telefono" name="actualizarTelefono" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Edad</h3>
+        <input [disabled]="true" [(ngModel)]="edad" name="actualizarEdad" type="number" min="1" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Inicio Turno</h3>
+        <input [disabled]="true" [(ngModel)]="inicioTurno" name="actualizarInicioTurno" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Final Turno</h3>
+        <input [disabled]="true" [(ngModel)]="finalTurno" name="actualizarFinalTurno" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Salario</h3>
+        <input [disabled]="true" [(ngModel)]="salario" name="actualizarSalario" type="number" min="0" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Licencia</h3>
+        <input [(ngModel)]="licencia" name="actualizarLicencia" type="text" class="form-control"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Tipo Vehiculo</h3>
+        <input [(ngModel)]="tipoVehiculo" name="actualizarTipoVehiculo" type="text" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Experiencia En Años</h3>
+        <input [disabled]="true" [(ngModel)]="experienciaAnios" name="actualizarExperienciaAnios" type="number" min="0" class="form-control" />
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Contraseña</h3>
+        <input [(ngModel)]="contrasena" name="actualizarContrasena" type="text" class="form-control" />
+      </div>
+
+      <div class="acciones-formulario">
+        <button (click)="actualizarConductor()" type="button" class="btn btn-warning" [disabled]="actualizandoConductor">
+          {{ actualizandoConductor ? 'Actualizando...' : 'Actualizar conductor' }}
+        </button>
+        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>
+      </div>
+    </form>
+
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>
+
+<div *ngIf="!cargado" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="spinner-border text-info" role="status">
+    <span class="visually-hidden">Cargando...</span>
+  </div>
+</div>

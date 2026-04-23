@@ -27,9 +27,11 @@ export class AdminMenuManipulador {
   email: string = '';
   telefono: number = 0;
   edad: number = 0;
-  direccion: string = '';
-  tipoUsuario: string = 'MANIPULADOR';
-  especializacion: string = '';
+  inicioTurno: string = '';
+  finalTurno: string = '';
+  salario: number = 0;
+  area: string = '';
+  paquetesProcesados: number = 0;
   contrasena: string = '';
 
   seleccionarMenu(menu: string): void {
@@ -44,7 +46,7 @@ export class AdminMenuManipulador {
     this.limpiarMensajes();
     this.creandoManipulador = true;
     this.manipuladorService.postManipulador(
-      this.cedula, this.nombre, this.email, this.telefono, this.edad, this.direccion, this.tipoUsuario, this.especializacion, this.contrasena
+      this.cedula, this.nombre, this.email, this.telefono, this.edad, this.inicioTurno, this.finalTurno, this.salario, this.area, this.paquetesProcesados, this.contrasena
     ).subscribe({
       next: (respuesta) => {
         this.mensajeExito = respuesta || 'Manipulador creado correctamente.';
@@ -64,7 +66,7 @@ export class AdminMenuManipulador {
     this.limpiarMensajes();
     this.actualizandoManipulador = true;
     this.manipuladorService.putManipulador(
-      this.id, this.cedula, this.nombre, this.email, this.telefono, this.edad, this.direccion, this.tipoUsuario, this.especializacion, this.contrasena
+      this.id, this.cedula, this.nombre, this.email, this.telefono, this.edad, this.inicioTurno, this.finalTurno, this.salario, this.area, this.paquetesProcesados, this.contrasena
     ).subscribe({
       next: (respuesta) => {
         this.mensajeExito = respuesta || 'Manipulador actualizado correctamente.';
@@ -123,9 +125,11 @@ export class AdminMenuManipulador {
     this.email = '';
     this.telefono = 0;
     this.edad = 0;
-    this.direccion = '';
-    this.tipoUsuario = 'MANIPULADOR';
-    this.especializacion = '';
+    this.inicioTurno = '';
+    this.finalTurno = '';
+    this.salario = 0;
+    this.area = '';
+    this.paquetesProcesados = 0;
     this.contrasena = '';
   }
 

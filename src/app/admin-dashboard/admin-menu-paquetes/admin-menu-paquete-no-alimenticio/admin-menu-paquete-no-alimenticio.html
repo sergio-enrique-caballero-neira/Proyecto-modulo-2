@@ -35,7 +35,7 @@
       </div>
       <div class="fila-formulario">
         <h3>Fecha Envio</h3>
-        <input [(ngModel)]="fechaEnvio" name="fechaEnvio" type="date" class="form-control" />
+        <input [(ngModel)]="fechaEnvio" name="fechaEnvio" type="datetime-local" class="form-control" />
       </div>
       <div class="fila-formulario">
         <h3>Fragil</h3>
@@ -93,7 +93,7 @@
     <form class="formulario-crear">
       <div class="fila-formulario">
         <h3>ID</h3>
-        <input [(ngModel)]="id" name="id" type="number" min="1" class="form-control" />
+        <input [(ngModel)]="id" name="id" type="number" min="0" class="form-control" />
       </div>
       <div class="fila-formulario">
         <h3>Descripcion</h3>
@@ -113,7 +113,7 @@
       </div>
       <div class="fila-formulario">
         <h3>Fecha Envio</h3>
-        <input [(ngModel)]="fechaEnvio" name="fechaEnvio" type="date" class="form-control" />
+        <input [(ngModel)]="fechaEnvio" name="fechaEnvio" type="datetime-local" class="form-control" />
       </div>
       <div class="fila-formulario">
         <h3>Fragil</h3>
@@ -135,7 +135,7 @@
   <div class="contenedor-formulario contenedor-eliminar">
     <div class="fila-formulario">
       <h3>ID del paquete</h3>
-      <input [(ngModel)]="id" name="id" type="number" min="1" class="form-control" />
+      <input [(ngModel)]="id" name="id" type="number" min="0" class="form-control" />
     </div>
     <div class="acciones-formulario">
       <button (click)="eliminarPaqueteNoAlimenticio()" type="button" class="btn btn-danger" [disabled]="eliminandoPaquete">{{ eliminandoPaquete ? 'Eliminando...' : 'Eliminar paquete' }}</button>

@@ -1,0 +1,37 @@
+<div class="menu-crear">
+  <h1>Enviar Paquete No Alimenticio</h1>
+  <div class="contenedor-formulario">
+    <form class="formulario-crear">
+      <div class="fila-formulario">
+        <h3>Descripcion</h3>
+        <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control" />
+      </div>
+      <div class="fila-formulario">
+        <h3>Peso</h3>
+        <input [(ngModel)]="peso" name="peso" type="number" min="0" class="form-control" />
+      </div>
+      <div class="fila-formulario">
+        <h3>Origen</h3>
+        <input [(ngModel)]="origen" name="origen" type="text" class="form-control" />
+      </div>
+      <div class="fila-formulario">
+        <h3>Destino</h3>
+        <input [(ngModel)]="destino" name="destino" type="text" class="form-control" />
+      </div>
+      <div class="fila-formulario">
+        <h3>Fecha Envio</h3>
+        <input [(ngModel)]="fechaEnvio" name="fechaEnvio" type="datetime-local" class="form-control" />
+      </div>
+      <div class="fila-formulario">
+        <h3>Fragil</h3>
+        <input [(ngModel)]="fragil" name="fragil" type="checkbox" class="form-check-input" />
+      </div>
+      <div class="acciones-formulario">
+        <button (click)="crearPaqueteNoAlimenticio()" type="button" class="btn btn-success" [disabled]="creandoPaquete">{{ creandoPaquete ? 'Enviando...' : 'Enviar paquete' }}</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>
+      </div>
+    </form>
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
+  </div>
+</div>
