@@ -1,51 +1,65 @@
-<div class="container vh-100 d-flex align-items-center justify-content-center">
+<main class="main">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="shape shape-3"></div>
+  <div class="shape shape-4"></div>
+  <div class="recuadro">
+    <h1> Registro de Usuario </h1>
 
-  <div class="col-12 col-md-8 col-lg-6 shadow-lg p-5 rounded-4 bg-white">
-
-    <h1 class="titulo mb-5 fw-bold ">Registro de Usuario</h1>
-
-    <form>
-      <div class="row mb-4">
-        <div class="col-md-6">
-          <label for="cedula" class="form-label fw-semibold">Cédula</label>
-          <input type="text" class="form-control form-control-lg" id="cedula" placeholder="Número de documento">
-        </div>
-        <div class="col-md-6">
-          <label for="nombre" class="form-label fw-semibold">Nombre Completo</label>
-          <input type="text" class="form-control form-control-lg" id="nombre" placeholder="Nombre y apellidos">
-        </div>
+    <form class="formulario-crear">
+      <div class="fila-formulario">
+        <h3>Cedula</h3>
+        <input [(ngModel)]="cedula" name="cedula" type="number" min="1000000000" class="form-control"/>
       </div>
 
-      <div class="mb-4">
-        <label for="email" class="form-label fw-semibold">Correo Electrónico</label>
-        <input type="email" class="form-control form-control-lg" id="email" placeholder="ejemplo@correo.com">
+      <div class="fila-formulario">
+        <h3>Nombre</h3>
+        <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control"/>
       </div>
 
-      <div class="row mb-4">
-        <div class="col-md-7">
-          <label for="telefono" class="form-label fw-semibold">Teléfono</label>
-          <input type="tel" class="form-control form-control-lg" id="telefono" placeholder="300 000 0000">
-        </div>
-        <div class="col-md-5">
-          <label for="edad" class="form-label fw-semibold">Edad</label>
-          <input type="number" class="form-control form-control-lg" id="edad" placeholder="18">
-        </div>
+      <div class="fila-formulario">
+        <h3>Email</h3>
+        <input [(ngModel)]="email" name="email" type="email" class="form-control"/>
       </div>
 
-      <div class="mb-4">
-        <label for="direccion" class="form-label fw-semibold">Dirección de Residencia</label>
-        <input type="text" class="form-control form-control-lg" id="direccion" placeholder="Calle, Carrera, Barrio...">
+      <div class="fila-formulario">
+        <h3>Telefono</h3>
+        <input [(ngModel)]="telefono" name="telefono" type="number" min="1" class="form-control"/>
       </div>
 
-      <div class="mb-5">
-        <label for="password" class="form-label fw-semibold">Contraseña</label>
-        <input type="password" class="form-control form-control-lg" id="password" placeholder="Mínimo 8 caracteres">
+      <div class="fila-formulario">
+        <h3>Edad</h3>
+        <input [(ngModel)]="edad" name="edad" type="number" min="1" class="form-control"/>
       </div>
 
-      <div class="d-grid gap-2">
-        <button type="submit" class="boton btn-lg rounded-pill">Guardar Información</button>
+      <div class="fila-formulario">
+        <h3>Direccion</h3>
+        <input [(ngModel)]="direccion" name="direccion" type="text" class="form-control"/>
       </div>
 
+      <div class="fila-formulario">
+        <h3>Tipo de usuario</h3>
+        <input [(ngModel)]="tipoUsuario" name="tipoUsuario" type="text" class="form-control" [disabled]="true"/>
+      </div>
+
+      <div class="fila-formulario">
+        <h3>Contraseña</h3>
+        <input [(ngModel)]="contrasena" name="contrasena" type="password" class="form-control"/>
+      </div>
+
+      <div class="acciones-formulario">
+        <button (click)="crearUsuarioNormal()" type="button" class="btn btn-success" [disabled]="creandoUsuario">
+          {{ creandoUsuario ? 'Registrando...' : 'Registrar usuario' }}
+        </button>
+        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>
+      </div>
+      <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+      <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>
     </form>
+
+    <div class="boton-registro">
+      <button (click)="crearUsuarioNormal()" type="button" class="btn btn-outline-info">Registrarse</button>
+    </div>
+    <p>¿Ya tiene una cuenta? <a routerLink="/login"> Iniciar Sesión</a></p>
   </div>
-</div>
+</main>

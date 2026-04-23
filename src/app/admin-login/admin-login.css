@@ -14,9 +14,11 @@ main {
 
 h1{
   color: rgb(13, 202, 240);
-  align-content: center;
-  justify-content: center;
+  width: 80%;
   display: flex;
+  margin: 16px;
+  align-items: center;
+  justify-content: center;
 }
 
 p{
@@ -87,6 +89,17 @@ p{
   padding: 20px;
 }
 
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-salir{
+  min-width: 50px;
+  min-height: 50px;
+}
+
 .boton-login{
   position: relative;
   width: 100%;
@@ -95,7 +108,7 @@ p{
 }
 
 button{
-  width: 30%;
+  margin: 3px;
 }
 
 .input-error {

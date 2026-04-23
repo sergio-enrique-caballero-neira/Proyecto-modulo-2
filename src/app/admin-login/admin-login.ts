@@ -144,4 +144,8 @@ export class AdminLogin {
 
   }
 
+  salir() {
+    this.router.navigate(['/login']);
+  }
+
 }

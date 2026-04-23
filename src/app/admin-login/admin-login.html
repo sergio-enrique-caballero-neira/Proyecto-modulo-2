@@ -4,22 +4,35 @@
   <div class="shape shape-3"></div>
   <div class="shape shape-4"></div>
   <div class="recuadro">
-    <h1> Inicio De Sesión Administradores</h1>
+
+    <div class="encabezado">
+      <h1> Inicio De Sesión Administradores </h1>
+
+      <button (click)="salir()" type="button" class="btn btn-danger boton-salir"><i
+        class="fa-solid fa-arrow-right-from-bracket"></i>
+      </button>
+    </div>
 
     <div class="botones" *ngIf="!seleccionado">
-      <button (click)="cambiarSeccion('administrativo')" type="button" class="btn btn-outline-info me-3">Administrativo</button>
+      <button (click)="cambiarSeccion('administrativo')" type="button" class="btn btn-outline-info me-3">
+        Administrativo
+      </button>
       <button (click)="cambiarSeccion('conductor')" type="button" class="btn btn-outline-info me-3 ">Conductor</button>
-      <button (click)="cambiarSeccion('manipulador')" type="button" class="btn btn-outline-info me-3">Manipulador</button>
+      <button (click)="cambiarSeccion('manipulador')" type="button" class="btn btn-outline-info me-3">Manipulador
+      </button>
     </div>
 
     <form class="datos " *ngIf="seleccionado">
       <div class="input-group mb-3">
         <span class="input-group-text" id="usuario"><i class="fa-solid fa-circle-user"></i></span>
-        <input [(ngModel)]="usuario" [class.input-error]="errorNombre" (input)="errorNombre = false" name="usuario" type="text" class="form-control" placeholder="Usuario" aria-label="usuario" aria-describedby="usuario">
+        <input [(ngModel)]="usuario" [class.input-error]="errorNombre" (input)="errorNombre = false" name="usuario"
+               type="text" class="form-control" placeholder="Usuario" aria-label="usuario" aria-describedby="usuario">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="contrasena"><i class="fa-solid fa-lock"></i></span>
-        <input [(ngModel)]="contrasena" [class.input-error]="errorContrasena" (input)="errorContrasena = false" name="contrasena" type="password" class="form-control" placeholder="Contraseña" aria-label="contrasena" aria-describedby="contrasena">
+        <input [(ngModel)]="contrasena" [class.input-error]="errorContrasena" (input)="errorContrasena = false"
+               name="contrasena" type="password" class="form-control" placeholder="Contraseña" aria-label="contrasena"
+               aria-describedby="contrasena">
       </div>
     </form>
     <div class="boton-login" *ngIf="seleccionado">
