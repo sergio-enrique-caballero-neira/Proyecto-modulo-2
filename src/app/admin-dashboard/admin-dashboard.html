@@ -1,9 +1,4 @@
 <main class="main" *ngIf="cargado">
-  <div class="shape shape-1"></div>
-  <div class="shape shape-2"></div>
-  <div class="shape shape-3"></div>
-  <div class="shape shape-4"></div>
-  <div class="recuadro">
 
     <div class="encabezado">
       <h1><i class="fa-regular fa-circle-user icono"></i>
@@ -62,7 +57,6 @@
     <div class="administrador-botones" *ngIf="tipoAdministrativo === 'Manipulador' && menu === 'manipulador-actualizar'">
       <app-manipulador-menu-actualizar [id]="id" ></app-manipulador-menu-actualizar>
     </div>
-  </div>
 </main>
 
 <div *ngIf="!cargado" class="d-flex justify-content-center align-items-center" style="height: 100vh;">

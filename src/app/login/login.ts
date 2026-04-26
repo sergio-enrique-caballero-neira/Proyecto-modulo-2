@@ -17,7 +17,8 @@ import {ModeloTempModel} from '../models/modeloTemp.model';
 })
 export class Login {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+  }
 
   public usuarioConcurrenteService = inject(UsuarioconcurrenteService);
   public usuarioNormalService = inject(UsuarionormalService);

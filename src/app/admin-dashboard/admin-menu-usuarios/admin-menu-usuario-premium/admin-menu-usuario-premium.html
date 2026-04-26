@@ -1,3 +1,6 @@
+<video autoplay muted loop playsinline class="video-background">
+  <source src="administrar2.mp4" type="video/mp4">
+</video>
 <main *ngIf="menu === 'principal'">
   <h1>Administrar Usuario Premium</h1>
   <div class="botones">
@@ -19,33 +22,33 @@
     <form class="formulario-crear">
 
       <div class="fila-formulario">
-        <h3>Cedula</h3>
-        <input [(ngModel)]="cedula" name="cedula" type="number" min="1" class="form-control" />
+        <h3>Cédula</h3>
+        <input [(ngModel)]="cedula" name="cedula" type="number" min="1" class="form-control" placeholder="5678901212" />
       </div>
 
       <div class="fila-formulario">
         <h3>Nombre</h3>
-        <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control" />
+        <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control" placeholder="pepito"/>
       </div>
 
       <div class="fila-formulario">
         <h3>Email</h3>
-        <input [(ngModel)]="email" name="email" type="email" class="form-control" />
+        <input [(ngModel)]="email" name="email" type="email" class="form-control" placeholder="papito@gmail.com"/>
       </div>
 
       <div class="fila-formulario">
-        <h3>Telefono</h3>
-        <input [(ngModel)]="telefono" name="telefono" type="number" min="1" class="form-control" />
+        <h3>Teléfono</h3>
+        <input [(ngModel)]="telefono" name="telefono" type="number" min="1" class="form-control" placeholder="3125679878"/>
       </div>
 
       <div class="fila-formulario">
         <h3>Edad</h3>
-        <input [(ngModel)]="edad" name="edad" type="number" min="1" class="form-control" />
+        <input [(ngModel)]="edad" name="edad" type="number" min="1" class="form-control" placeholder="33"/>
       </div>
 
       <div class="fila-formulario">
-        <h3>Direccion</h3>
-        <input [(ngModel)]="direccion" name="direccion" type="text" class="form-control" />
+        <h3>Dirección</h3>
+        <input [(ngModel)]="direccion" name="direccion" type="text" class="form-control" placeholder="diagonal5"/>
       </div>
 
       <div class="fila-formulario">
@@ -55,11 +58,11 @@
 
       <div class="fila-formulario">
         <h3>Descuento</h3>
-        <input [(ngModel)]="descuento" name="descuento" type="number" min="0" class="form-control" />
+        <input [(ngModel)]="descuento" name="descuento" type="number" min="0" class="form-control" placeholder="16"/>
       </div>
 
       <div class="fila-formulario">
-        <h3>Contrasena</h3>
+        <h3>Contraseña</h3>
         <input [(ngModel)]="contrasena" name="contrasena" type="password" class="form-control" />
       </div>
 

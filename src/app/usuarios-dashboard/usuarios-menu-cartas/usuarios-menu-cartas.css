@@ -4,6 +4,11 @@ h1{
   margin: 16px;
   align-items: center;
   justify-content: center;
+  background-color: #510088;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+
 }
 
 h2{
@@ -52,10 +57,11 @@ span{
 .contenedor-formulario{
   width: 100%;
   max-width: 760px;
-  background: #f7f9fb;
+  background: #751791;
   border: 1px solid #dce3ea;
   border-radius: 8px;
   padding: 20px;
+  color: white;
 }
 
 .formulario-crear{
@@ -128,6 +134,16 @@ span{
   font-weight: 700;
 }
 
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 105%;
+  height: 130%;
+  object-fit: cover; /* Esto hace que el video no se estire feo */
+  z-index: -1; /* Lo envía al fondo de todo */
+}
+
 .estado-tabla{
   margin: 8px 0 0;
   font-weight: 600;
@@ -136,4 +152,10 @@ span{
 
 .contenedor-eliminar{
   max-width: 500px;
+}
+
+.botonlimpiar{
+  background-color: #f48428;
+  color: white;
+  border-radius: 5px;
 }

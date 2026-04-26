@@ -1,7 +1,10 @@
+<video autoplay muted loop playsinline class="video-background">
+  <source src="administradores4.mp4" type="video/mp4">
+</video>
 <main *ngIf="menu === 'principal'">
   <h1>Administrar Cartas</h1>
   <div class="botones">
-    <h2>Seleccione una opcion</h2>
+    <h2>Seleccione una opción</h2>
     <div class="grupo-botones">
       <span>
         <button (click)="seleccionarMenu('crear')" type="button" class="btn btn-success">Crear</button>
@@ -19,33 +22,33 @@
     <form class="formulario-crear">
 
       <div class="fila-formulario">
-        <h3>Descripcion</h3>
-        <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control" />
+        <h3>Descripción</h3>
+        <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control" placeholder="Carta"/>
       </div>
 
       <div class="fila-formulario">
         <h3>Peso</h3>
-        <input [(ngModel)]="peso" name="peso" type="number" min="0" class="form-control" />
+        <input [(ngModel)]="peso" name="peso" type="number" min="0" class="form-control" placeholder="0.2"/>
       </div>
 
       <div class="fila-formulario">
         <h3>Origen</h3>
-        <input [(ngModel)]="origen" name="origen" type="text" class="form-control" />
+        <input [(ngModel)]="origen" name="origen" type="text" class="form-control" placeholder="Bogotá"/>
       </div>
 
       <div class="fila-formulario">
         <h3>Destino</h3>
-        <input [(ngModel)]="destino" name="destino" type="text" class="form-control" />
+        <input [(ngModel)]="destino" name="destino" type="text" class="form-control" placeholder="Cartagena"/>
       </div>
 
       <div class="fila-formulario">
-        <h3>Fecha Envio</h3>
-        <input [(ngModel)]="fechaEnvio" name="datetime-local" type="text" class="form-control" />
+        <h3>Fecha Envío</h3>
+        <input [(ngModel)]="fechaEnvio" name="datetime-local" type="text" class="form-control" placeholder="2007-12-03"/>
       </div>
 
       <div class="fila-formulario">
-        <h3>Tamano</h3>
-        <input [(ngModel)]="tamano" name="tamano" type="text" class="form-control" />
+        <h3>Tamaño</h3>
+        <input [(ngModel)]="tamano" name="tamano" type="text" class="form-control" placeholder="pequeño"/>
       </div>
 
       <div class="acciones-formulario">

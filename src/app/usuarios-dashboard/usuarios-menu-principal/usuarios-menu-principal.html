@@ -1,7 +1,28 @@
-<h1>Tipo De Paquete ha Enviar</h1>
-<div class="botones">
-  <button (click)="seleccionarMenu('usuario-paquetes-alimencicios')" type="button"class="btn btn-primary">Paquete Alimenticio</button>
-  <button (click)="seleccionarMenu('usuario-paquetes-no-alimencicios')" type="button" class="btn btn-primary">Paquete No Alimenticio</button>
-  <button (click)="seleccionarMenu('usuario-paquetes-carta')" type="button" class="btn btn-primary">Carta</button>
+<main class="main-container"  >
+  <video autoplay muted loop playsinline class="video-background">
+  <source src="paquetes.mp4" type="video/mp4">
+</video>
+<div class="title">
+  <h2>¿Qué tipo de paquete desea enviar hoy?</h2>
 </div>
+
+<div class="botones">
+
+  <button (click)="seleccionarMenu('usuario-paquetes-alimencicios')" type="button" class="boton">
+    Paquete Alimenticio
+    <br><i class="fa-solid fa-burger icono-boton"></i>
+  </button>
+
+  <button (click)="seleccionarMenu('usuario-paquetes-no-alimencicios')" type="button" class="boton">
+    Paquete No Alimenticio
+    <br><i class="fa-solid fa-box-open icono-boton"></i>
+  </button>
+
+  <button (click)="seleccionarMenu('usuario-paquetes-carta')" type="button" class="boton">
+    Carta
+    <br><i class="fa-solid fa-envelope icono-boton"></i>
+  </button>
+
+</div>
+  </main>
 

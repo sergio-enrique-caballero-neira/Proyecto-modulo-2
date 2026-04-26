@@ -1,28 +1,36 @@
 <main class="main">
-  <div class="shape shape-1"></div>
-  <div class="shape shape-2"></div>
-  <div class="shape shape-3"></div>
-  <div class="shape shape-4"></div>
-  <div class="recuadro">
+  <video autoplay muted loop playsinline class="video-background">
+    <source src="administrativoinicio.mp4" type="video/mp4">
+  </video>
 
+  <div>
+    <button (click)="salir()" type="button" class="btn btn-danger boton-salir">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </button>
+  </div>
+  <div class="recuadro">
     <div class="encabezado">
       <h1> Inicio De Sesión Administradores </h1>
-
-      <button (click)="salir()" type="button" class="btn btn-danger boton-salir"><i
-        class="fa-solid fa-arrow-right-from-bracket"></i>
-      </button>
     </div>
 
     <div class="botones" *ngIf="!seleccionado">
-      <button (click)="cambiarSeccion('administrativo')" type="button" class="btn btn-outline-info me-3">
+      <button (click)="cambiarSeccion('administrativo')" type="button" class="boton">
         Administrativo
+        <br><i class="fa-solid fa-user-tie"></i>
       </button>
-      <button (click)="cambiarSeccion('conductor')" type="button" class="btn btn-outline-info me-3 ">Conductor</button>
-      <button (click)="cambiarSeccion('manipulador')" type="button" class="btn btn-outline-info me-3">Manipulador
+
+      <button (click)="cambiarSeccion('conductor')" type="button" class="boton">
+        Conductor
+        <br><i class="fa-solid fa-car"></i>
+      </button>
+
+      <button (click)="cambiarSeccion('manipulador')" type="button" class="boton">
+        Manipulador
+        <br><i class="fa-solid fa-hands"></i>
       </button>
     </div>
 
-    <form class="datos " *ngIf="seleccionado">
+    <form class="datos" *ngIf="seleccionado">
       <div class="input-group mb-3">
         <span class="input-group-text" id="usuario"><i class="fa-solid fa-circle-user"></i></span>
         <input [(ngModel)]="usuario" [class.input-error]="errorNombre" (input)="errorNombre = false" name="usuario"
@@ -35,6 +43,7 @@
                aria-describedby="contrasena">
       </div>
     </form>
+
     <div class="boton-login" *ngIf="seleccionado">
       <button (click)="login()" type="button" class="btn btn-outline-info">Iniciar Sesion</button>
     </div>

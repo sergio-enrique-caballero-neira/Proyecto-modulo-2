@@ -11,4 +11,57 @@ h1{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 16px;
+
 }
+
+.boton{
+  background-color: #510088;
+  color: white;
+  border-radius: 10px;
+}
+
+.boton {
+  /* Tus estilos actuales del botón... */
+  display: flex;
+  flex-direction: column; /* Alinea el texto y el icono verticalmente */
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espacio entre el texto y el icono */
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.boton:hover {
+  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+.icono-boton {
+  font-size: 2.5rem; /* Tamaño grande para que resalte */
+  color: #FFB347;    /* Color naranja/dorado, puedes cambiarlo según tu diseño */
+  margin-top: 10px;
+}
+
+.title{
+  font-family: "Times New Roman", Times, serif;
+  background-color: #f48428;
+  border-radius: 15px;
+  text-align: center;
+  padding: 2px;
+  color: white;
+  margin: 20px;
+}
+
+.video-background {
+  position: fixed; /* Mejor que absolute para que no se mueva al hacer scroll */
+  top: 0;
+  left: 0;
+  width: 100vw;    /* 100% del ancho de la ventana */
+  height: 100vh;   /* 100% del alto de la ventana */
+  object-fit: cover; /* Mantiene la proporción sin estirar y llena todo el espacio */
+  z-index: -1;
+  padding: 0;
+  margin: 0;       /* Eliminamos el margin-right que lo corría */
+}
+
+

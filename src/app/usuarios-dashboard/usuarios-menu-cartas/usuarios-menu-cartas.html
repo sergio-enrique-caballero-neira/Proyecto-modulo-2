@@ -1,34 +1,37 @@
+<video autoplay muted loop playsinline class="video-background">
+  <source src="carta.mp4" type="video/mp4">
+</video>
 <div class="menu-crear">
   <h1>Enviar Carta</h1>
   <div class="contenedor-formulario">
     <form class="formulario-crear">
       <div class="fila-formulario">
-        <h3>Descripcion</h3>
-        <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control" />
+        <h3>Descripción</h3>
+        <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control" placeholder="Carta"/>
       </div>
       <div class="fila-formulario">
         <h3>Peso</h3>
-        <input [(ngModel)]="peso" name="peso" type="number" min="0" class="form-control" />
+        <input [(ngModel)]="peso" name="peso" type="number" min="0" class="form-control" placeholder="0.2"/>
       </div>
       <div class="fila-formulario">
         <h3>Origen</h3>
-        <input [(ngModel)]="origen" name="origen" type="text" class="form-control" />
+        <input [(ngModel)]="origen" name="origen" type="text" class="form-control" placeholder="Bogotá"/>
       </div>
       <div class="fila-formulario">
         <h3>Destino</h3>
-        <input [(ngModel)]="destino" name="destino" type="text" class="form-control" />
+        <input [(ngModel)]="destino" name="destino" type="text" class="form-control" placeholder="Cartagena" />
       </div>
       <div class="fila-formulario">
-        <h3>Fecha Envio</h3>
+        <h3>Fecha Envío</h3>
         <input [(ngModel)]="fechaEnvio" name="fechaEnvio" type="datetime-local" class="form-control" />
       </div>
       <div class="fila-formulario">
-        <h3>Tamano</h3>
-        <input [(ngModel)]="tamano" name="tamano" type="text" class="form-control" />
+        <h3>Tamaño</h3>
+        <input [(ngModel)]="tamano" name="tamano" type="text" class="form-control" placeholder="Pequeño"/>
       </div>
       <div class="acciones-formulario">
         <button (click)="crearCarta()" type="button" class="btn btn-success" [disabled]="creandoCarta">{{ creandoCarta ? 'Enviando...' : 'Enviar carta' }}</button>
-        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>
+        <button type="button" class="botonlimpiar" (click)="limpiarFormulario()">Limpiar</button>
       </div>
     </form>
     <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
