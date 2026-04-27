@@ -30,6 +30,17 @@ import { UsuariosMenuPaquetesNoAlimenticios } from './usuarios-dashboard/usuario
 import { UsuariosMenuPaquetesAlimenticios } from './usuarios-dashboard/usuarios-menu-paquetes-alimenticios/usuarios-menu-paquetes-alimenticios';
 import { UsuariosMenuCartas } from './usuarios-dashboard/usuarios-menu-cartas/usuarios-menu-cartas';
 
+/**
+ * @module AppModule
+ * @description Módulo raíz de la aplicación de paquetería.
+ * Declara todos los componentes de la aplicación y configura los módulos
+ * de infraestructura necesarios para su funcionamiento:
+ *
+ * Los componentes declarados cubren los roles del sistema: usuarios (Normal,
+ * Premium, Concurrente), administrativos (Administrador, Conductor, Manipulador),
+ * tipos de envío (Paquete Alimenticio, No Alimenticio, Carta) y los dashboards
+ * de cada actor (AdminDashboard, UsuariosDashboard).
+ */
 @NgModule({
   declarations: [
     App,

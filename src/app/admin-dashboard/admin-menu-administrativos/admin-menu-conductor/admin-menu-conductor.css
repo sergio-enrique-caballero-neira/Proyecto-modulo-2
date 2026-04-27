@@ -151,6 +151,6 @@ span{
   left: 0;
   width: 100%;
   height: 140%;
-  object-fit: cover; /* Esto hace que el video no se estire feo */
-  z-index: -1; /* Lo envía al fondo de todo */
+  object-fit: cover;
+  z-index: -1;
 }

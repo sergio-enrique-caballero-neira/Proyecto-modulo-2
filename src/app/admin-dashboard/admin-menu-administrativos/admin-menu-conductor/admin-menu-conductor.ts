@@ -2,6 +2,15 @@ import {ChangeDetectorRef, Component, inject} from '@angular/core';
 import {ConductorService} from '../../../services/conductor.service';
 import {ConductorModel} from '../../../models/conductor.model';
 
+/**
+ * @component AdminMenuConductor
+ * @description Componente de gestión CRUD completa sobre conductores del sistema,
+ * accesible desde el panel del Administrador.
+ * Incluye campos específicos del perfil de conductor: licencia, tipo de vehículo
+ * y años de experiencia, además de los datos laborales comunes.
+ *
+ * @selector app-admin-menu-conductor
+ */
 @Component({
   selector: 'app-admin-menu-conductor',
   standalone: false,
@@ -9,32 +18,82 @@ import {ConductorModel} from '../../../models/conductor.model';
   styleUrl: './admin-menu-conductor.css',
 })
 export class AdminMenuConductor {
+
+  /** Servicio para operaciones CRUD sobre conductores en el backend. */
   private readonly conductorService = inject(ConductorService);
+
+  /** Servicio para forzar la detección de cambios en la vista. */
   private cd = inject(ChangeDetectorRef);
 
+  /** Controla la subvista activa dentro del componente. Valor por defecto: 'principal'. */
   menu: string = 'principal';
+
+  /** Mensaje mostrado al usuario cuando la operación fue exitosa. */
   mensajeExito: string = '';
+
+  /** Mensaje mostrado al usuario cuando ocurre un error en la operación. */
   mensajeError: string = '';
+
+  /** Booleano activa mientras se procesa una solicitud de creación. */
   creandoConductor: boolean = false;
+
+  /** Booleano activa mientras se procesa una solicitud de actualización. */
   actualizandoConductor: boolean = false;
+
+  /** Booleano activa mientras se procesa una solicitud de eliminación. */
   eliminandoConductor: boolean = false;
+
+  /** Booleano activa mientras se carga la lista de conductores desde el backend. */
   cargandoConductores: boolean = false;
+
+  /** Lista de conductores cargada desde el backend para la vista de listado. */
   conductores: ConductorModel[] = [];
 
+
+  /** ID del conductor (se inicializa en -1 como valor nulo). */
   id: number = -1;
+
+  /** Número de cédula de identidad del conductor. */
   cedula: number = 0;
+
+  /** Nombre completo del conductor. */
   nombre: string = '';
+
+  /** Correo electrónico del conductor. */
   email: string = '';
+
+  /** Número de teléfono del conductor. */
   telefono: number = 0;
+
+  /** Edad del conductor. */
   edad: number = 0;
+
+  /** Hora de inicio de turno laboral. */
   inicioTurno: string = '';
+
+  /** Hora de fin de turno laboral. */
   finalTurno: string = '';
+
+  /** Salario del conductor. */
   salario: number = 0;
+
+  /** Número o categoría de licencia de conducción. */
   licencia: string = '';
+
+  /** Tipo de vehículo asignado al conductor. */
   tipoVehiculo: string = '';
+
+  /** Años de experiencia del conductor en el área de transporte. */
   experienciaAnios: number = 0;
+
+  /** Contraseña del conductor para acceso al sistema. */
   contrasena: string = '';
 
+  /**
+   * Cambia la subvista activa y limpia mensajes previos.
+   * Si se selecciona 'mostrar', dispara la carga automática del listado.
+   * @param menu - Identificador de la subvista a activar
+   */
   seleccionarMenu(menu: string): void {
     this.menu = menu;
     this.limpiarMensajes();
@@ -43,6 +102,11 @@ export class AdminMenuConductor {
     }
   }
 
+  /**
+   * Envía la solicitud de creación de un nuevo conductor al backend.
+   * Limpia mensajes, activa el estado de carga y, según la respuesta,
+   * muestra mensaje de éxito o error y limpia el formulario.
+   */
   crearConductor(): void {
     this.limpiarMensajes();
     this.creandoConductor = true;
@@ -63,6 +127,10 @@ export class AdminMenuConductor {
     });
   }
 
+  /**
+   * Envía la solicitud de actualización de un conductor existente.
+   * Requiere que `id` tenga un valor válido (distinto de -1).
+   */
   actualizarConductor(): void {
     this.limpiarMensajes();
     this.actualizandoConductor = true;
@@ -83,6 +151,10 @@ export class AdminMenuConductor {
     });
   }
 
+  /**
+   * Envía la solicitud de eliminación de un conductor por su ID.
+   * Tras el éxito, resetea el ID a -1.
+   */
   eliminarConductor(): void {
     this.limpiarMensajes();
     this.eliminandoConductor = true;
@@ -101,6 +173,10 @@ export class AdminMenuConductor {
     });
   }
 
+  /**
+   * Consulta el backend y carga la lista completa de conductores.
+   * Se invoca automáticamente al seleccionar la subvista 'mostrar'.
+   */
   cargarConductores(): void {
     this.cargandoConductores = true;
     this.conductorService.getConductores().subscribe({
@@ -119,6 +195,10 @@ export class AdminMenuConductor {
     });
   }
 
+  /**
+   * Restablece todos los campos del formulario a sus valores por defecto.
+   * Se invoca tras operaciones exitosas de creación o actualización.
+   */
   limpiarFormulario(): void {
     this.id = -1;
     this.cedula = 0;
@@ -135,12 +215,20 @@ export class AdminMenuConductor {
     this.contrasena = '';
   }
 
+  /**
+   * Regresa a la subvista principal, limpiando mensajes y el formulario.
+   * Equivalente a cancelar la operación en curso.
+   */
   volverAlMenuPrincipal(): void {
     this.menu = 'principal';
     this.limpiarMensajes();
     this.limpiarFormulario();
   }
 
+  /**
+   * Limpia los mensajes de éxito y error de la vista.
+   * Se invoca antes de cada operación CRUD.
+   */
   private limpiarMensajes(): void {
     this.mensajeExito = '';
     this.mensajeError = '';

@@ -1,0 +1,2131 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mi-primer-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">mi-primer-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AdminMenuAdministrador</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Exclusivo del rol Administrador con acceso total. Permite crear, actualizar,
+eliminar y listar administradores. Incluye campos propios del rol administrativo
+como <code>rol</code>, <code>accesoTotal</code> y datos de turno laboral.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-admin-menu-administrador</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./admin-menu-administrador.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./admin-menu-administrador.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#accesoTotal" >accesoTotal</a>
+                            </li>
+                            <li>
+                                <a href="#actualizandoAdministrador" >actualizandoAdministrador</a>
+                            </li>
+                            <li>
+                                <a href="#administradores" >administradores</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#administradorService" >administradorService</a>
+                            </li>
+                            <li>
+                                <a href="#cargandoAdministradores" >cargandoAdministradores</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cd" >cd</a>
+                            </li>
+                            <li>
+                                <a href="#cedula" >cedula</a>
+                            </li>
+                            <li>
+                                <a href="#contrasena" >contrasena</a>
+                            </li>
+                            <li>
+                                <a href="#creandoAdministrador" >creandoAdministrador</a>
+                            </li>
+                            <li>
+                                <a href="#edad" >edad</a>
+                            </li>
+                            <li>
+                                <a href="#eliminandoAdministrador" >eliminandoAdministrador</a>
+                            </li>
+                            <li>
+                                <a href="#email" >email</a>
+                            </li>
+                            <li>
+                                <a href="#finalTurno" >finalTurno</a>
+                            </li>
+                            <li>
+                                <a href="#id" >id</a>
+                            </li>
+                            <li>
+                                <a href="#inicioTurno" >inicioTurno</a>
+                            </li>
+                            <li>
+                                <a href="#mensajeError" >mensajeError</a>
+                            </li>
+                            <li>
+                                <a href="#mensajeExito" >mensajeExito</a>
+                            </li>
+                            <li>
+                                <a href="#menu" >menu</a>
+                            </li>
+                            <li>
+                                <a href="#nombre" >nombre</a>
+                            </li>
+                            <li>
+                                <a href="#rol" >rol</a>
+                            </li>
+                            <li>
+                                <a href="#salario" >salario</a>
+                            </li>
+                            <li>
+                                <a href="#telefono" >telefono</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizarAdministrador" >actualizarAdministrador</a>
+                            </li>
+                            <li>
+                                <a href="#cargarAdministradores" >cargarAdministradores</a>
+                            </li>
+                            <li>
+                                <a href="#crearAdministrador" >crearAdministrador</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarAdministrador" >eliminarAdministrador</a>
+                            </li>
+                            <li>
+                                <a href="#limpiarFormulario" >limpiarFormulario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#limpiarMensajes" >limpiarMensajes</a>
+                            </li>
+                            <li>
+                                <a href="#seleccionarMenu" >seleccionarMenu</a>
+                            </li>
+                            <li>
+                                <a href="#volverAlMenuPrincipal" >volverAlMenuPrincipal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarAdministrador"></a>
+                    <span class="name">
+                        <span ><b>actualizarAdministrador</b></span>
+                        <a href="#actualizarAdministrador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarAdministrador()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="137"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:137</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía la solicitud de actualización de un administrador existente.
+Requiere que <code>id</code> tenga un valor válido (distinto de -1).</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarAdministradores"></a>
+                    <span class="name">
+                        <span ><b>cargarAdministradores</b></span>
+                        <a href="#cargarAdministradores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarAdministradores()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="183"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:183</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Consulta el backend y carga la lista completa de administradores.
+Se invoca automáticamente al seleccionar la subvista &#39;mostrar&#39;.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="crearAdministrador"></a>
+                    <span class="name">
+                        <span ><b>crearAdministrador</b></span>
+                        <a href="#crearAdministrador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>crearAdministrador()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="113"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:113</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía la solicitud de creación de un nuevo administrador al backend.
+Limpia mensajes, activa el estado de carga y, según la respuesta,
+muestra mensaje de éxito o error y limpia el formulario.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarAdministrador"></a>
+                    <span class="name">
+                        <span ><b>eliminarAdministrador</b></span>
+                        <a href="#eliminarAdministrador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarAdministrador()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="161"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:161</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía la solicitud de eliminación de un administrador por su ID.
+Tras el éxito, resetea el ID a -1 para indicar que no hay selección activa.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiarFormulario"></a>
+                    <span class="name">
+                        <span ><b>limpiarFormulario</b></span>
+                        <a href="#limpiarFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>limpiarFormulario()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="205"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:205</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Restablece todos los campos del formulario a sus valores por defecto.
+Se invoca tras operaciones exitosas de creación o actualización.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiarMensajes"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>limpiarMensajes</b></span>
+                        <a href="#limpiarMensajes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>limpiarMensajes()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="234"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:234</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Limpia los mensajes de éxito y error de la vista.
+Se invoca antes de cada operación CRUD.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seleccionarMenu"></a>
+                    <span class="name">
+                        <span ><b>seleccionarMenu</b></span>
+                        <a href="#seleccionarMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>seleccionarMenu(menu: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cambia la subvista activa y limpia mensajes previos.
+Si se selecciona &#39;mostrar&#39;, dispara la carga automática del listado.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>menu</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Identificador de la subvista a activar</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="volverAlMenuPrincipal"></a>
+                    <span class="name">
+                        <span ><b>volverAlMenuPrincipal</b></span>
+                        <a href="#volverAlMenuPrincipal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>volverAlMenuPrincipal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="224"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:224</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Regresa a la subvista principal, limpiando mensajes y el formulario.
+Equivalente a cancelar la operación en curso.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="accesoTotal"></a>
+                    <span class="name">
+                        <span ><b>accesoTotal</b></span>
+                        <a href="#accesoTotal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:90</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indica si el administrador tiene acceso total al sistema.
+Si es true, puede gestionar todos los tipos de entidades sin restricciones.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizandoAdministrador"></a>
+                    <span class="name">
+                        <span ><b>actualizandoAdministrador</b></span>
+                        <a href="#actualizandoAdministrador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:41</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se procesa una solicitud de actualización.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="administradores"></a>
+                    <span class="name">
+                        <span ><b>administradores</b></span>
+                        <a href="#administradores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/AdministradorModel.html" target="_self" >AdministradorModel[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:50</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de administradores cargada desde el backend para la vista de listado.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="administradorService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>administradorService</b></span>
+                        <a href="#administradorService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(AdministradorService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:23</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para operaciones CRUD sobre administradores en el backend.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargandoAdministradores"></a>
+                    <span class="name">
+                        <span ><b>cargandoAdministradores</b></span>
+                        <a href="#cargandoAdministradores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:47</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se carga la lista de administradores desde el backend.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cd"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cd</b></span>
+                        <a href="#cd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ChangeDetectorRef)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:26</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para forzar la detección de cambios en la vista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cedula"></a>
+                    <span class="name">
+                        <span ><b>cedula</b></span>
+                        <a href="#cedula"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:57</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Número de cédula de identidad del administrador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contrasena"></a>
+                    <span class="name">
+                        <span ><b>contrasena</b></span>
+                        <a href="#contrasena"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:93</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Contraseña del administrador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="creandoAdministrador"></a>
+                    <span class="name">
+                        <span ><b>creandoAdministrador</b></span>
+                        <a href="#creandoAdministrador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:38</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se procesa una solicitud de creación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edad"></a>
+                    <span class="name">
+                        <span ><b>edad</b></span>
+                        <a href="#edad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:69</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Edad del administrador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminandoAdministrador"></a>
+                    <span class="name">
+                        <span ><b>eliminandoAdministrador</b></span>
+                        <a href="#eliminandoAdministrador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:44</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se procesa una solicitud de eliminación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="email"></a>
+                    <span class="name">
+                        <span ><b>email</b></span>
+                        <a href="#email"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:63</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Correo electrónico del administrador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="finalTurno"></a>
+                    <span class="name">
+                        <span ><b>finalTurno</b></span>
+                        <a href="#finalTurno"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:75</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Hora de fin de turno laboral.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="id"></a>
+                    <span class="name">
+                        <span ><b>id</b></span>
+                        <a href="#id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>-1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:54</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ID del administrador (se inicializa en -1 como valor nulo).</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inicioTurno"></a>
+                    <span class="name">
+                        <span ><b>inicioTurno</b></span>
+                        <a href="#inicioTurno"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:72</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Hora de inicio de turno laboral.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mensajeError"></a>
+                    <span class="name">
+                        <span ><b>mensajeError</b></span>
+                        <a href="#mensajeError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:35</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje mostrado al usuario cuando ocurre un error en la operación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mensajeExito"></a>
+                    <span class="name">
+                        <span ><b>mensajeExito</b></span>
+                        <a href="#mensajeExito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:32</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje mostrado al usuario cuando la operación fue exitosa.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menu"></a>
+                    <span class="name">
+                        <span ><b>menu</b></span>
+                        <a href="#menu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;principal&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:29</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Controla la subvista activa dentro del componente. Valor por defecto: &#39;principal&#39;.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nombre"></a>
+                    <span class="name">
+                        <span ><b>nombre</b></span>
+                        <a href="#nombre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:60</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre completo del administrador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rol"></a>
+                    <span class="name">
+                        <span ><b>rol</b></span>
+                        <a href="#rol"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:84</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Rol específico del administrador dentro del sistema
+Determina las acciones permitidas en el dashboard.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="salario"></a>
+                    <span class="name">
+                        <span ><b>salario</b></span>
+                        <a href="#salario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:78</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Salario del administrador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="telefono"></a>
+                    <span class="name">
+                        <span ><b>telefono</b></span>
+                        <a href="#telefono"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/admin-dashboard/admin-menu-administrativos/admin-menu-administrador/admin-menu-administrador.ts:66</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Número de teléfono del administrador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {ChangeDetectorRef, Component, inject} from &#x27;@angular/core&#x27;;
+import {AdministradorService} from &#x27;../../../services/administrador.service&#x27;;
+import {AdministradorModel} from &#x27;../../../models/administrador.model&#x27;;
+
+/**
+ * @component AdminMenuAdministrador
+ * @description Componente de gestión CRUD completa sobre administradores del sistema.
+ * Exclusivo del rol Administrador con acceso total. Permite crear, actualizar,
+ * eliminar y listar administradores. Incluye campos propios del rol administrativo
+ * como &#x60;rol&#x60;, &#x60;accesoTotal&#x60; y datos de turno laboral.
+ *
+ * @selector app-admin-menu-administrador
+ */
+@Component({
+  selector: &#x27;app-admin-menu-administrador&#x27;,
+  standalone: false,
+  templateUrl: &#x27;./admin-menu-administrador.html&#x27;,
+  styleUrl: &#x27;./admin-menu-administrador.css&#x27;,
+})
+export class AdminMenuAdministrador {
+
+  /** Servicio para operaciones CRUD sobre administradores en el backend. */
+  private readonly administradorService &#x3D; inject(AdministradorService);
+
+  /** Servicio para forzar la detección de cambios en la vista. */
+  private cd &#x3D; inject(ChangeDetectorRef);
+
+  /** Controla la subvista activa dentro del componente. Valor por defecto: &#x27;principal&#x27;. */
+  menu: string &#x3D; &#x27;principal&#x27;;
+
+  /** Mensaje mostrado al usuario cuando la operación fue exitosa. */
+  mensajeExito: string &#x3D; &#x27;&#x27;;
+
+  /** Mensaje mostrado al usuario cuando ocurre un error en la operación. */
+  mensajeError: string &#x3D; &#x27;&#x27;;
+
+  /** Booleano activo mientras se procesa una solicitud de creación. */
+  creandoAdministrador: boolean &#x3D; false;
+
+  /** Booleano activo mientras se procesa una solicitud de actualización. */
+  actualizandoAdministrador: boolean &#x3D; false;
+
+  /** Booleano activo mientras se procesa una solicitud de eliminación. */
+  eliminandoAdministrador: boolean &#x3D; false;
+
+  /** Booleano activo mientras se carga la lista de administradores desde el backend. */
+  cargandoAdministradores: boolean &#x3D; false;
+
+  /** Lista de administradores cargada desde el backend para la vista de listado. */
+  administradores: AdministradorModel[] &#x3D; [];
+
+
+  /** ID del administrador (se inicializa en -1 como valor nulo). */
+  id: number &#x3D; -1;
+
+  /** Número de cédula de identidad del administrador. */
+  cedula: number &#x3D; 0;
+
+  /** Nombre completo del administrador. */
+  nombre: string &#x3D; &#x27;&#x27;;
+
+  /** Correo electrónico del administrador. */
+  email: string &#x3D; &#x27;&#x27;;
+
+  /** Número de teléfono del administrador. */
+  telefono: number &#x3D; 0;
+
+  /** Edad del administrador. */
+  edad: number &#x3D; 0;
+
+  /** Hora de inicio de turno laboral. */
+  inicioTurno: string &#x3D; &#x27;&#x27;;
+
+  /** Hora de fin de turno laboral. */
+  finalTurno: string &#x3D; &#x27;&#x27;;
+
+  /** Salario del administrador. */
+  salario: number &#x3D; 0;
+
+  /**
+   * Rol específico del administrador dentro del sistema
+   * Determina las acciones permitidas en el dashboard.
+   */
+  rol: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Indica si el administrador tiene acceso total al sistema.
+   * Si es true, puede gestionar todos los tipos de entidades sin restricciones.
+   */
+  accesoTotal: boolean &#x3D; false;
+
+  /** Contraseña del administrador. */
+  contrasena: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Cambia la subvista activa y limpia mensajes previos.
+   * Si se selecciona &#x27;mostrar&#x27;, dispara la carga automática del listado.
+   * @param menu - Identificador de la subvista a activar
+   */
+  seleccionarMenu(menu: string): void {
+    this.menu &#x3D; menu;
+    this.limpiarMensajes();
+    if (menu &#x3D;&#x3D;&#x3D; &#x27;mostrar&#x27;) {
+      this.cargarAdministradores();
+    }
+  }
+
+  /**
+   * Envía la solicitud de creación de un nuevo administrador al backend.
+   * Limpia mensajes, activa el estado de carga y, según la respuesta,
+   * muestra mensaje de éxito o error y limpia el formulario.
+   */
+  crearAdministrador(): void {
+    this.limpiarMensajes();
+    this.creandoAdministrador &#x3D; true;
+    this.administradorService.postAdministrador(
+      this.cedula, this.nombre, this.email, this.telefono, this.edad, this.inicioTurno, this.finalTurno, this.salario, this.rol, this.accesoTotal, this.contrasena
+    ).subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        this.mensajeExito &#x3D; respuesta || &#x27;Administrador creado correctamente.&#x27;;
+        this.creandoAdministrador &#x3D; false;
+        this.limpiarFormulario();
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.creandoAdministrador &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27; ? error.error : &#x27;No se pudo crear el administrador.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Envía la solicitud de actualización de un administrador existente.
+   * Requiere que &#x60;id&#x60; tenga un valor válido (distinto de -1).
+   */
+  actualizarAdministrador(): void {
+    this.limpiarMensajes();
+    this.actualizandoAdministrador &#x3D; true;
+    this.administradorService.putAdministrador(
+      this.id, this.cedula, this.nombre, this.email, this.telefono, this.edad, this.inicioTurno, this.finalTurno, this.salario, this.rol, this.accesoTotal, this.contrasena
+    ).subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        this.mensajeExito &#x3D; respuesta || &#x27;Administrador actualizado correctamente.&#x27;;
+        this.actualizandoAdministrador &#x3D; false;
+        this.limpiarFormulario();
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.actualizandoAdministrador &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27; ? error.error : &#x27;No se pudo actualizar el administrador.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Envía la solicitud de eliminación de un administrador por su ID.
+   * Tras el éxito, resetea el ID a -1 para indicar que no hay selección activa.
+   */
+  eliminarAdministrador(): void {
+    this.limpiarMensajes();
+    this.eliminandoAdministrador &#x3D; true;
+    this.administradorService.deleteAdministrador(this.id).subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        this.mensajeExito &#x3D; respuesta || &#x27;Administrador eliminado correctamente.&#x27;;
+        this.eliminandoAdministrador &#x3D; false;
+        this.id &#x3D; -1;
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.eliminandoAdministrador &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27; ? error.error : &#x27;No se pudo eliminar el administrador.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Consulta el backend y carga la lista completa de administradores.
+   * Se invoca automáticamente al seleccionar la subvista &#x27;mostrar&#x27;.
+   */
+  cargarAdministradores(): void {
+    this.cargandoAdministradores &#x3D; true;
+    this.administradorService.getAdministradores().subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        if (respuesta.body) {
+          this.administradores &#x3D; respuesta.body;
+        }
+        this.cargandoAdministradores &#x3D; false;
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.cargandoAdministradores &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27; ? error.error : &#x27;No se pudo obtener la lista de administradores.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Restablece todos los campos del formulario a sus valores por defecto.
+   * Se invoca tras operaciones exitosas de creación o actualización.
+   */
+  limpiarFormulario(): void {
+    this.id &#x3D; -1;
+    this.cedula &#x3D; 0;
+    this.nombre &#x3D; &#x27;&#x27;;
+    this.email &#x3D; &#x27;&#x27;;
+    this.telefono &#x3D; 0;
+    this.edad &#x3D; 0;
+    this.inicioTurno &#x3D; &#x27;&#x27;;
+    this.finalTurno &#x3D; &#x27;&#x27;;
+    this.salario &#x3D; 0;
+    this.rol &#x3D; &#x27;&#x27;;
+    this.accesoTotal &#x3D; false;
+    this.contrasena &#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Regresa a la subvista principal, limpiando mensajes y el formulario.
+   * Equivalente a cancelar la operación en curso.
+   */
+  volverAlMenuPrincipal(): void {
+    this.menu &#x3D; &#x27;principal&#x27;;
+    this.limpiarMensajes();
+    this.limpiarFormulario();
+  }
+
+  /**
+   * Limpia los mensajes de éxito y error de la vista.
+   * Se invoca antes de cada operación CRUD.
+   */
+  private limpiarMensajes(): void {
+    this.mensajeExito &#x3D; &#x27;&#x27;;
+    this.mensajeError &#x3D; &#x27;&#x27;;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;principal&#x27;&quot;&gt;
+  &lt;h1&gt;Administrar Administradores&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;botones&quot;&gt;
+    &lt;h2&gt;Seleccione una opción&lt;/h2&gt;
+    &lt;div class&#x3D;&quot;grupo-botones&quot;&gt;
+      &lt;span&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;crear&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success&quot;&gt;Crear&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;mostrar&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info&quot;&gt;Mostrar Todo&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;eliminar&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger&quot;&gt;Eliminar&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;actualizar&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-warning&quot;&gt;Actualizar&lt;/button&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+
+&lt;div class&#x3D;&quot;menu-crear&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;crear&#x27;&quot;&gt;
+  &lt;h1&gt;Crear Administrador&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;contenedor-formulario&quot;&gt;
+    &lt;form class&#x3D;&quot;formulario-crear&quot;&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Cédula&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;cedula&quot; name&#x3D;&quot;cedula&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1000000000&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;1234567890&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Nombre&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;nombre&quot; name&#x3D;&quot;nombre&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Pepito&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Email&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;pepito@hgmail.com&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Teléfono&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;telefono&quot; name&#x3D;&quot;telefono&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;3124567890&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Edad&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;edad&quot; name&#x3D;&quot;edad&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;34&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Inicio Turno&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;inicioTurno&quot; name&#x3D;&quot;inicioTurno&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;09:09:00&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Final Turno&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;finalTurno&quot; name&#x3D;&quot;finalTurno&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;09:09:00&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Salario&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;salario&quot; name&#x3D;&quot;salario&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;6000000&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Rol&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;rol&quot; name&#x3D;&quot;rol&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Finanzas&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Acceso Total&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;accesoTotal&quot; name&#x3D;&quot;accesoTotal&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot;  /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Contraseña&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;contrasena&quot; name&#x3D;&quot;contrasena&quot; type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Aa*123&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+        &lt;button (click)&#x3D;&quot;crearAdministrador()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success&quot; [disabled]&#x3D;&quot;creandoAdministrador&quot;&gt;
+          {{ creandoAdministrador ? &#x27;Creando...&#x27; : &#x27;Crear administrador&#x27; }}
+        &lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;limpiarFormulario()&quot;&gt;Limpiar&lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;volverAlMenuPrincipal()&quot;&gt;Volver&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+
+    &lt;p class&#x3D;&quot;mensaje-exito&quot; *ngIf&#x3D;&quot;mensajeExito&quot;&gt;{{ mensajeExito }}&lt;/p&gt;
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;menu-mostrar&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;mostrar&#x27;&quot;&gt;
+  &lt;h1&gt;Administradores&lt;/h1&gt;
+
+  &lt;div class&#x3D;&quot;contenedor-tabla&quot;&gt;
+    &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+      &lt;button (click)&#x3D;&quot;cargarAdministradores()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info&quot; [disabled]&#x3D;&quot;cargandoAdministradores&quot;&gt; {{ cargandoAdministradores ? &#x27;Cargando...&#x27; : &#x27;Recargar&#x27; }} &lt;/button&gt;
+      &lt;button (click)&#x3D;&quot;volverAlMenuPrincipal()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; &gt;Volver&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;p *ngIf&#x3D;&quot;cargandoAdministradores&quot; class&#x3D;&quot;estado-tabla&quot;&gt;Cargando administradores...&lt;/p&gt;
+    &lt;p *ngIf&#x3D;&quot;!cargandoAdministradores &amp;&amp; administradores.length &#x3D;&#x3D;&#x3D; 0&quot; class&#x3D;&quot;estado-tabla&quot;&gt;
+      No hay administradores registrados.
+    &lt;/p&gt;
+
+    &lt;div class&#x3D;&quot;tabla-scroll&quot; *ngIf&#x3D;&quot;!cargandoAdministradores &amp;&amp; administradores.length &gt; 0&quot;&gt;
+      &lt;table class&#x3D;&quot;tabla-usuarios&quot;&gt;
+        &lt;tr&gt;
+          &lt;th&gt;ID&lt;/th&gt;
+          &lt;th&gt;Cedula&lt;/th&gt;
+          &lt;th&gt;Nombre&lt;/th&gt;
+          &lt;th&gt;Email&lt;/th&gt;
+          &lt;th&gt;Telefono&lt;/th&gt;
+          &lt;th&gt;Edad&lt;/th&gt;
+          &lt;th&gt;Direccion&lt;/th&gt;
+          &lt;th&gt;Tipo Usuario&lt;/th&gt;
+          &lt;th&gt;Contrasena&lt;/th&gt;
+        &lt;/tr&gt;
+
+        &lt;tr *ngFor&#x3D;&quot;let administrador of administradores&quot;&gt;
+          &lt;td&gt;{{ administrador.id }}&lt;/td&gt;
+          &lt;td&gt;{{ administrador.cedula }}&lt;/td&gt;
+          &lt;td&gt;{{ administrador.nombre }}&lt;/td&gt;
+          &lt;td&gt;{{ administrador.email }}&lt;/td&gt;
+          &lt;td&gt;{{ administrador.telefono }}&lt;/td&gt;
+          &lt;td&gt;{{ administrador.edad }}&lt;/td&gt;
+          &lt;td&gt;{{ administrador.inicioTurno }}&lt;/td&gt;
+          &lt;td&gt;{{ administrador.finalTurno }}&lt;/td&gt;
+          &lt;td&gt;{{ administrador.salario }}&lt;/td&gt;
+          &lt;td&gt;{{ administrador.rol }}&lt;/td&gt;
+          &lt;td&gt;{{ administrador.accesoTotal ? &#x27;Si&#x27; : &#x27;No&#x27;}}&lt;/td&gt;
+          &lt;td&gt;{{ administrador.contrasena }}&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;menu-actualizar&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;actualizar&#x27;&quot;&gt;
+  &lt;h1&gt;Actualizar Administrador&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;contenedor-formulario&quot;&gt;
+    &lt;form class&#x3D;&quot;formulario-crear&quot;&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;ID&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;id&quot; name&#x3D;&quot;actualizarId&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Cedula&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;cedula&quot; name&#x3D;&quot;actualizarCedula&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Nombre&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;nombre&quot; name&#x3D;&quot;actualizarNombre&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Email&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;email&quot; name&#x3D;&quot;actualizarEmail&quot; type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Telefono&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;telefono&quot; name&#x3D;&quot;actualizarTelefono&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Edad&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;edad&quot; name&#x3D;&quot;actualizarEdad&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Inicio Turno&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;inicioTurno&quot; name&#x3D;&quot;actualizarInicioTurno&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Final Turno&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;finalTurno&quot; name&#x3D;&quot;actualizarFinalTurno&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Salario&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;salario&quot; name&#x3D;&quot;actualizarSalario&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Rol&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;rol&quot; name&#x3D;&quot;actualizarRol&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Acceso Total&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;accesoTotal&quot; name&#x3D;&quot;actualizarAccesoTotal&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Contraseña&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;contrasena&quot; name&#x3D;&quot;actualizarContrasena&quot; type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+        &lt;button (click)&#x3D;&quot;actualizarAdministrador()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-warning&quot; [disabled]&#x3D;&quot;actualizandoAdministrador&quot;&gt;
+          {{ actualizandoAdministrador ? &#x27;Actualizando...&#x27; : &#x27;Actualizar administrador&#x27; }}
+        &lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;limpiarFormulario()&quot;&gt;Limpiar&lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;volverAlMenuPrincipal()&quot;&gt;Volver&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+
+    &lt;p class&#x3D;&quot;mensaje-exito&quot; *ngIf&#x3D;&quot;mensajeExito&quot;&gt;{{ mensajeExito }}&lt;/p&gt;
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;menu-eliminar&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;eliminar&#x27;&quot;&gt;
+  &lt;h1&gt;Eliminar Administrador&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;contenedor-formulario contenedor-eliminar&quot;&gt;
+    &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+      &lt;h3&gt;ID del administrador&lt;/h3&gt;
+      &lt;input [(ngModel)]&#x3D;&quot;id&quot; name&#x3D;&quot;eliminarId&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+      &lt;button (click)&#x3D;&quot;eliminarAdministrador()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger&quot; [disabled]&#x3D;&quot;eliminandoAdministrador&quot;&gt;
+        {{ eliminandoAdministrador ? &#x27;Eliminando...&#x27; : &#x27;Eliminar administrador&#x27; }}
+      &lt;/button&gt;
+      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;volverAlMenuPrincipal()&quot;&gt;Volver&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;p class&#x3D;&quot;mensaje-exito&quot; *ngIf&#x3D;&quot;mensajeExito&quot;&gt;{{ mensajeExito }}&lt;/p&gt;
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis-network.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main *ngIf="menu === \'principal\'">  <h1>Administrar Administradores</h1>  <div class="botones">    <h2>Seleccione una opción</h2>    <div class="grupo-botones">      <span>        <button (click)="seleccionarMenu(\'crear\')" type="button" class="btn btn-success">Crear</button>        <button (click)="seleccionarMenu(\'mostrar\')" type="button" class="btn btn-info">Mostrar Todo</button>        <button (click)="seleccionarMenu(\'eliminar\')" type="button" class="btn btn-danger">Eliminar</button>        <button (click)="seleccionarMenu(\'actualizar\')" type="button" class="btn btn-warning">Actualizar</button>      </span>    </div>  </div></main><div class="menu-crear" *ngIf="menu === \'crear\'">  <h1>Crear Administrador</h1>  <div class="contenedor-formulario">    <form class="formulario-crear">      <div class="fila-formulario">        <h3>Cédula</h3>        <input [(ngModel)]="cedula" name="cedula" type="number" min="1000000000" class="form-control" placeholder="1234567890"/>      </div>      <div class="fila-formulario">        <h3>Nombre</h3>        <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control" placeholder="Pepito"/>      </div>      <div class="fila-formulario">        <h3>Email</h3>        <input [(ngModel)]="email" name="email" type="email" class="form-control" placeholder="pepito@hgmail.com"/>      </div>      <div class="fila-formulario">        <h3>Teléfono</h3>        <input [(ngModel)]="telefono" name="telefono" type="number" min="1" class="form-control" placeholder="3124567890"/>      </div>      <div class="fila-formulario">        <h3>Edad</h3>        <input [(ngModel)]="edad" name="edad" type="number" min="1" class="form-control" placeholder="34"/>      </div>      <div class="fila-formulario">        <h3>Inicio Turno</h3>        <input [(ngModel)]="inicioTurno" name="inicioTurno" type="text" class="form-control" placeholder="09:09:00"/>      </div>      <div class="fila-formulario">        <h3>Final Turno</h3>        <input [(ngModel)]="finalTurno" name="finalTurno" type="text" class="form-control" placeholder="09:09:00"/>      </div>      <div class="fila-formulario">        <h3>Salario</h3>        <input [(ngModel)]="salario" name="salario" type="number" min="0" class="form-control" placeholder="6000000"/>      </div>      <div class="fila-formulario">        <h3>Rol</h3>        <input [(ngModel)]="rol" name="rol" type="text" class="form-control" placeholder="Finanzas"/>      </div>      <div class="fila-formulario">        <h3>Acceso Total</h3>        <input [(ngModel)]="accesoTotal" name="accesoTotal" type="checkbox" class="form-check-input"  />      </div>      <div class="fila-formulario">        <h3>Contraseña</h3>        <input [(ngModel)]="contrasena" name="contrasena" type="password" class="form-control" placeholder="Aa*123"/>      </div>      <div class="acciones-formulario">        <button (click)="crearAdministrador()" type="button" class="btn btn-success" [disabled]="creandoAdministrador">          {{ creandoAdministrador ? \'Creando...\' : \'Crear administrador\' }}        </button>        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>      </div>    </form>    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div><div class="menu-mostrar" *ngIf="menu === \'mostrar\'">  <h1>Administradores</h1>  <div class="contenedor-tabla">    <div class="acciones-formulario">      <button (click)="cargarAdministradores()" type="button" class="btn btn-info" [disabled]="cargandoAdministradores"> {{ cargandoAdministradores ? \'Cargando...\' : \'Recargar\' }} </button>      <button (click)="volverAlMenuPrincipal()" type="button" class="btn btn-secondary" >Volver</button>    </div>    <p *ngIf="cargandoAdministradores" class="estado-tabla">Cargando administradores...</p>    <p *ngIf="!cargandoAdministradores && administradores.length === 0" class="estado-tabla">      No hay administradores registrados.    </p>    <div class="tabla-scroll" *ngIf="!cargandoAdministradores && administradores.length > 0">      <table class="tabla-usuarios">        <tr>          <th>ID</th>          <th>Cedula</th>          <th>Nombre</th>          <th>Email</th>          <th>Telefono</th>          <th>Edad</th>          <th>Direccion</th>          <th>Tipo Usuario</th>          <th>Contrasena</th>        </tr>        <tr *ngFor="let administrador of administradores">          <td>{{ administrador.id }}</td>          <td>{{ administrador.cedula }}</td>          <td>{{ administrador.nombre }}</td>          <td>{{ administrador.email }}</td>          <td>{{ administrador.telefono }}</td>          <td>{{ administrador.edad }}</td>          <td>{{ administrador.inicioTurno }}</td>          <td>{{ administrador.finalTurno }}</td>          <td>{{ administrador.salario }}</td>          <td>{{ administrador.rol }}</td>          <td>{{ administrador.accesoTotal ? \'Si\' : \'No\'}}</td>          <td>{{ administrador.contrasena }}</td>        </tr>      </table>    </div>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div><div class="menu-actualizar" *ngIf="menu === \'actualizar\'">  <h1>Actualizar Administrador</h1>  <div class="contenedor-formulario">    <form class="formulario-crear">      <div class="fila-formulario">        <h3>ID</h3>        <input [(ngModel)]="id" name="actualizarId" type="number" min="0" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Cedula</h3>        <input [(ngModel)]="cedula" name="actualizarCedula" type="number" min="1" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Nombre</h3>        <input [(ngModel)]="nombre" name="actualizarNombre" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Email</h3>        <input [(ngModel)]="email" name="actualizarEmail" type="email" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Telefono</h3>        <input [(ngModel)]="telefono" name="actualizarTelefono" type="number" min="1" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Edad</h3>        <input [(ngModel)]="edad" name="actualizarEdad" type="number" min="1" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Inicio Turno</h3>        <input [(ngModel)]="inicioTurno" name="actualizarInicioTurno" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Final Turno</h3>        <input [(ngModel)]="finalTurno" name="actualizarFinalTurno" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Salario</h3>        <input [(ngModel)]="salario" name="actualizarSalario" type="number" min="0" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Rol</h3>        <input [(ngModel)]="rol" name="actualizarRol" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Acceso Total</h3>        <input [(ngModel)]="accesoTotal" name="actualizarAccesoTotal" type="checkbox" class="form-check-input" />      </div>      <div class="fila-formulario">        <h3>Contraseña</h3>        <input [(ngModel)]="contrasena" name="actualizarContrasena" type="password" class="form-control" />      </div>      <div class="acciones-formulario">        <button (click)="actualizarAdministrador()" type="button" class="btn btn-warning" [disabled]="actualizandoAdministrador">          {{ actualizandoAdministrador ? \'Actualizando...\' : \'Actualizar administrador\' }}        </button>        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>      </div>    </form>    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div><div class="menu-eliminar" *ngIf="menu === \'eliminar\'">  <h1>Eliminar Administrador</h1>  <div class="contenedor-formulario contenedor-eliminar">    <div class="fila-formulario">      <h3>ID del administrador</h3>      <input [(ngModel)]="id" name="eliminarId" type="number" min="0" class="form-control" />    </div>    <div class="acciones-formulario">      <button (click)="eliminarAdministrador()" type="button" class="btn btn-danger" [disabled]="eliminandoAdministrador">        {{ eliminandoAdministrador ? \'Eliminando...\' : \'Eliminar administrador\' }}      </button>      <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>    </div>    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminDashboard', 'selector': 'app-admin-dashboard'},{'name': 'AdminLogin', 'selector': 'app-admin-login'},{'name': 'AdminMenuAdministrador', 'selector': 'app-admin-menu-administrador'},{'name': 'AdminMenuCarta', 'selector': 'app-admin-menu-carta'},{'name': 'AdminMenuConductor', 'selector': 'app-admin-menu-conductor'},{'name': 'AdminMenuManipulador', 'selector': 'app-admin-menu-manipulador'},{'name': 'AdminMenuPaqueteAlimenticio', 'selector': 'app-admin-menu-paquete-alimenticio'},{'name': 'AdminMenuPaqueteNoAlimenticio', 'selector': 'app-admin-menu-paquete-no-alimenticio'},{'name': 'AdminMenuPrincipal', 'selector': 'app-admin-menu-principal'},{'name': 'AdminMenuUsuarioConcurrente', 'selector': 'app-admin-menu-usuario-concurrente'},{'name': 'AdminMenuUsuarioNormal', 'selector': 'app-admin-menu-usuario-normal'},{'name': 'AdminMenuUsuarioPremium', 'selector': 'app-admin-menu-usuario-premium'},{'name': 'App', 'selector': 'app-root'},{'name': 'ConductorMenuActualizar', 'selector': 'app-conductor-menu-actualizar'},{'name': 'ConductorMenuEvidencia', 'selector': 'app-conductor-menu-evidencia'},{'name': 'ConductorMenuPrincipal', 'selector': 'app-conductor-menu-principal'},{'name': 'Login', 'selector': 'app-login'},{'name': 'ManipuladorMenuActualizar', 'selector': 'app-manipulador-menu-actualizar'},{'name': 'ManipuladorMenuEvicencia', 'selector': 'app-manipulador-menu-evicencia'},{'name': 'ManipuladorMenuPrincipal', 'selector': 'app-manipulador-menu-principal'},{'name': 'Register', 'selector': 'app-register'},{'name': 'UsuariosDashboard', 'selector': 'app-usuarios-dashboard'},{'name': 'UsuariosMenuCartas', 'selector': 'app-usuarios-menu-cartas'},{'name': 'UsuariosMenuPaquetesAlimenticios', 'selector': 'app-usuarios-menu-paquetes-alimenticios'},{'name': 'UsuariosMenuPaquetesNoAlimenticios', 'selector': 'app-usuarios-menu-paquetes-no-alimenticios'},{'name': 'UsuariosMenuPrincipal', 'selector': 'app-usuarios-menu-principal'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AdminMenuAdministrador'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminMenuAdministrador.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

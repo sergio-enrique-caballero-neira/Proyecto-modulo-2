@@ -2,6 +2,17 @@ import {ChangeDetectorRef, Component, inject} from '@angular/core';
 import {UsuariopremiumService} from '../../../services/usuariopremium.service';
 import {UsuarioPremiumModel} from '../../../models/usuarioPremium.model';
 
+/**
+ * @component AdminMenuUsuarioPremium
+ * @description Componente de gestión CRUD completa sobre usuarios de tipo Premium,
+ * accesible desde el panel del Administrador.
+ * El usuario Premium es aquel con membresía de alto nivel que goza de un descuento
+ * fijo independiente del volumen mensual de pedidos. Su único campo exclusivo
+ * respecto al usuario Normal es `descuento`, que en este caso es estático
+ * y asignado manualmente por el administrador.
+ *
+ * @selector app-admin-menu-usuario-premium
+ */
 @Component({
   selector: 'app-admin-menu-usuario-premium',
   standalone: false,
@@ -10,30 +21,79 @@ import {UsuarioPremiumModel} from '../../../models/usuarioPremium.model';
 })
 export class AdminMenuUsuarioPremium {
 
+  /** Servicio para operaciones CRUD sobre usuarios premium en el backend. */
   private readonly usuarioPremiumService = inject(UsuariopremiumService);
 
+  /** Servicio para forzar la detección de cambios en la vista. */
   private cd = inject(ChangeDetectorRef);
 
+  /** Controla la subvista activa dentro del componente. Valor por defecto: 'principal'. */
   menu: string = 'principal';
+
+  /** Mensaje mostrado al usuario cuando la operación fue exitosa. */
   mensajeExito: string = '';
+
+  /** Mensaje mostrado al usuario cuando ocurre un error en la operación. */
   mensajeError: string = '';
+
+  /** Booleano activo mientras se procesa una solicitud de creación. */
   creandoUsuario: boolean = false;
+
+  /** Booleano activo mientras se procesa una solicitud de actualización. */
   actualizandoUsuario: boolean = false;
+
+  /** Booleano activo mientras se procesa una solicitud de eliminación. */
   eliminandoUsuario: boolean = false;
+
+  /** Booleano activo mientras se carga la lista de usuarios desde el backend. */
   cargandoUsuarios: boolean = false;
+
+  /** Lista de usuarios premium cargada desde el backend para la vista de listado. */
   usuariosPremium: UsuarioPremiumModel[] = [];
 
+
+  /** ID del usuario (se inicializa en -1 como valor nulo). */
   id: number = -1;
+
+  /** Número de cédula de identidad del usuario. */
   cedula: number = 0;
+
+  /** Nombre completo del usuario. */
   nombre: string = '';
+
+  /** Correo electrónico del usuario (usado también como identificador de login). */
   email: string = '';
+
+  /** Número de teléfono de contacto del usuario. */
   telefono: number = 0;
+
+  /** Edad del usuario. */
   edad: number = 0;
+
+  /** Dirección de residencia del usuario. */
   direccion: string = '';
+
+  /**
+   * Tipo de usuario. Se fija como 'PREMIUM' por defecto.
+   * El administrador puede modificarlo si se requiere cambiar la categoría.
+   */
   tipoUsuario: string = 'PREMIUM';
+
+  /**
+   * Porcentaje de descuento fijo asignado al usuario Premium.
+   * A diferencia del usuario Concurrente, este descuento no varía con el
+   * volumen mensual de pedidos sino que es definido directamente por el administrador.
+   */
   descuento: number = 0;
+
+  /** Contraseña del usuario para acceso al sistema. */
   contrasena: string = '';
 
+  /**
+   * Cambia la subvista activa y limpia mensajes previos.
+   * Si se selecciona 'mostrar', dispara la carga automática del listado.
+   * @param menu - Identificador de la subvista a activar
+   */
   seleccionarMenu(menu: string): void {
     this.menu = menu;
     this.limpiarMensajes();
@@ -43,6 +103,11 @@ export class AdminMenuUsuarioPremium {
     }
   }
 
+  /**
+   * Envía la solicitud de creación de un nuevo usuario premium al backend.
+   * Limpia mensajes, activa el estado de carga y, según la respuesta,
+   * muestra mensaje de éxito o error y limpia el formulario.
+   */
   crearUsuarioPremium(): void {
     this.limpiarMensajes();
     this.creandoUsuario = true;
@@ -73,6 +138,10 @@ export class AdminMenuUsuarioPremium {
     });
   }
 
+  /**
+   * Envía la solicitud de actualización de un usuario premium existente.
+   * Requiere que `id` tenga un valor válido (distinto de -1).
+   */
   actualizarUsuarioPremium(): void {
     this.limpiarMensajes();
     this.actualizandoUsuario = true;
@@ -105,6 +174,10 @@ export class AdminMenuUsuarioPremium {
     });
   }
 
+  /**
+   * Envía la solicitud de eliminación de un usuario premium por su ID.
+   * Tras el éxito, resetea el ID a -1.
+   */
   eliminarUsuarioPremium(): void {
     this.limpiarMensajes();
     this.eliminandoUsuario = true;
@@ -126,6 +199,10 @@ export class AdminMenuUsuarioPremium {
     });
   }
 
+  /**
+   * Consulta el backend y carga la lista completa de usuarios premium.
+   * Se invoca automáticamente al seleccionar la subvista 'mostrar'.
+   */
   cargarUsuariosPremium(): void {
     this.cargandoUsuarios = true;
 
@@ -145,6 +222,10 @@ export class AdminMenuUsuarioPremium {
     });
   }
 
+  /**
+   * Restablece todos los campos del formulario a sus valores por defecto.
+   * Se invoca tras operaciones exitosas de creación o actualización.
+   */
   limpiarFormulario(): void {
     this.id = -1;
     this.cedula = 0;
@@ -158,12 +239,20 @@ export class AdminMenuUsuarioPremium {
     this.contrasena = '';
   }
 
+  /**
+   * Regresa a la subvista principal, limpiando mensajes y el formulario.
+   * Equivalente a cancelar la operación en curso.
+   */
   volverAlMenuPrincipal(): void {
     this.menu = 'principal';
     this.limpiarMensajes();
     this.limpiarFormulario();
   }
 
+  /**
+   * Limpia los mensajes de éxito y error de la vista.
+   * Se invoca antes de cada operación CRUD.
+   */
   private limpiarMensajes(): void {
     this.mensajeExito = '';
     this.mensajeError = '';

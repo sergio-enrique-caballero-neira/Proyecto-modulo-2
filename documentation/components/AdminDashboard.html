@@ -1,0 +1,1339 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mi-primer-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">mi-primer-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AdminDashboard</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin-dashboard/admin-dashboard.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Determina el tipo de usuario autenticado (Administrador, Conductor o Manipulador)
+a partir del modelo temporal de sesión, carga sus datos desde el backend
+y configura el menú inicial correspondiente a su rol.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-admin-dashboard</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./admin-dashboard.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./admin-dashboard.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#admin" >admin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#administradorService" >administradorService</a>
+                            </li>
+                            <li>
+                                <a href="#cargado" >cargado</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cd" >cd</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#conductorService" >conductorService</a>
+                            </li>
+                            <li>
+                                <a href="#id" >id</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#manipuladorService" >manipuladorService</a>
+                            </li>
+                            <li>
+                                <a href="#menu" >menu</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#modelosTempService" >modelosTempService</a>
+                            </li>
+                            <li>
+                                <a href="#nombre" >nombre</a>
+                            </li>
+                            <li>
+                                <a href="#tempModel" >tempModel</a>
+                            </li>
+                            <li>
+                                <a href="#tipoAdministrativo" >tipoAdministrativo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#salir" >salir</a>
+                            </li>
+                            <li>
+                                <a href="#seleccionarMenu" >seleccionarMenu</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="88"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Según el tipo, consulta el servicio correspondiente, busca el registro por ID
+y configura el menú inicial del dashboard.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="salir"></a>
+                    <span class="name">
+                        <span ><b>salir</b></span>
+                        <a href="#salir"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>salir()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="167"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:167</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maneja la acción de retroceso o cierre de sesión según el estado actual del menú.</p>
+<p>Si el usuario que sea no esta en su menú acorde, vuelve al principal y si ya esta en su menú
+lo redirige al login administrativo.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seleccionarMenu"></a>
+                    <span class="name">
+                        <span ><b>seleccionarMenu</b></span>
+                        <a href="#seleccionarMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>seleccionarMenu(menu: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="157"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:157</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cambia la sección activa del dashboard.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>menu</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Identificador de la sección a mostrar</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="admin"></a>
+                    <span class="name">
+                        <span ><b>admin</b></span>
+                        <a href="#admin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>AdministradorModel | ConductorModel | ManipuladorModel | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:53</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Datos completos del usuario autenticado.
+Puede ser un Administrador, Conductor o Manipulador según el tipo de sesión.
+Se mantiene como null hasta que la carga desde el backend se complete.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="administradorService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>administradorService</b></span>
+                        <a href="#administradorService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(AdministradorService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:37</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para operaciones CRUD sobre administradores. Expuesto como público para uso en la plantilla.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargado"></a>
+                    <span class="name">
+                        <span ><b>cargado</b></span>
+                        <a href="#cargado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:74</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indica si los datos del usuario ya fueron cargados exitosamente desde el backend.
+Se usa para controlar loaders o la visibilidad de secciones en la plantilla.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cd"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cd</b></span>
+                        <a href="#cd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ChangeDetectorRef)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:34</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para forzar la detección de cambios manualmente en la vista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="conductorService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>conductorService</b></span>
+                        <a href="#conductorService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ConductorService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para operaciones CRUD sobre conductores. Expuesto como público para uso en la plantilla.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="id"></a>
+                    <span class="name">
+                        <span ><b>id</b></span>
+                        <a href="#id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:62</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ID del usuario autenticado.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="manipuladorService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>manipuladorService</b></span>
+                        <a href="#manipuladorService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ManipuladorService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:43</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para operaciones CRUD sobre manipuladores. Expuesto como público para uso en la plantilla.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menu"></a>
+                    <span class="name">
+                        <span ><b>menu</b></span>
+                        <a href="#menu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:80</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Controla qué subcomponente o sección se muestra dentro del dashboard.
+Se inicializa vacío y se asigna según el rol tras la carga de datos.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modelosTempService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>modelosTempService</b></span>
+                        <a href="#modelosTempService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ModelosTempService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:46</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio de modelo temporal de sesión.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nombre"></a>
+                    <span class="name">
+                        <span ><b>nombre</b></span>
+                        <a href="#nombre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:59</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre del usuario autenticado, cargado desde el backend.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tempModel"></a>
+                    <span class="name">
+                        <span ><b>tempModel</b></span>
+                        <a href="#tempModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ModeloTempModel.html" target="_self" >ModeloTempModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:56</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelo temporal que contiene los datos básicos de la sesión activa.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tipoAdministrativo"></a>
+                    <span class="name">
+                        <span ><b>tipoAdministrativo</b></span>
+                        <a href="#tipoAdministrativo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/admin-dashboard/admin-dashboard.ts:68</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Tipo de usuario administrativo activo.
+Valores posibles: &#39;Administrador&#39;, &#39;Conductor&#39;, &#39;Manipulador&#39;.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, inject, ChangeDetectorRef, Output, EventEmitter} from &#x27;@angular/core&#x27;;
+import {AdministradorModel} from &#x27;../models/administrador.model&#x27;;
+import {ConductorModel} from &#x27;../models/conductor.model&#x27;;
+import {ManipuladorModel} from &#x27;../models/manipulador.model&#x27;;
+import {AdministradorService} from &#x27;../services/administrador.service&#x27;;
+import {ConductorService} from &#x27;../services/conductor.service&#x27;;
+import {ManipuladorService} from &#x27;../services/manipulador.service&#x27;;
+import {Router} from &#x27;@angular/router&#x27;;
+import {ModelosTempService} from &#x27;../services/modelosTemp.service&#x27;;
+import {ModeloTempModel} from &#x27;../models/modeloTemp.model&#x27;;
+
+/**
+ * @component AdminDashboard
+ * @description Panel principal para roles administrativos del sistema.
+ * Determina el tipo de usuario autenticado (Administrador, Conductor o Manipulador)
+ * a partir del modelo temporal de sesión, carga sus datos desde el backend
+ * y configura el menú inicial correspondiente a su rol.
+ *
+ * @selector app-admin-dashboard
+ */
+@Component({
+  selector: &#x27;app-admin-dashboard&#x27;,
+  standalone: false,
+  templateUrl: &#x27;./admin-dashboard.html&#x27;,
+  styleUrl: &#x27;./admin-dashboard.css&#x27;,
+})
+export class AdminDashboard {
+
+  constructor(private router: Router) {
+  }
+
+
+  /** Servicio para forzar la detección de cambios manualmente en la vista. */
+  private cd &#x3D; inject(ChangeDetectorRef);
+
+  /** Servicio para operaciones CRUD sobre administradores. Expuesto como público para uso en la plantilla. */
+  public administradorService &#x3D; inject(AdministradorService);
+
+  /** Servicio para operaciones CRUD sobre conductores. Expuesto como público para uso en la plantilla. */
+  public conductorService &#x3D; inject(ConductorService);
+
+  /** Servicio para operaciones CRUD sobre manipuladores. Expuesto como público para uso en la plantilla. */
+  public manipuladorService &#x3D; inject(ManipuladorService);
+
+  /** Servicio de modelo temporal de sesión. */
+  public modelosTempService &#x3D; inject(ModelosTempService);
+
+  /**
+   * Datos completos del usuario autenticado.
+   * Puede ser un Administrador, Conductor o Manipulador según el tipo de sesión.
+   * Se mantiene como null hasta que la carga desde el backend se complete.
+   */
+  admin: AdministradorModel | ConductorModel | ManipuladorModel | null &#x3D; null;
+
+  /** Modelo temporal que contiene los datos básicos de la sesión activa. */
+  tempModel!: ModeloTempModel;
+
+  /** Nombre del usuario autenticado, cargado desde el backend. */
+  nombre: string &#x3D; &#x27;&#x27;;
+
+  /** ID del usuario autenticado. */
+  id: number &#x3D; 0;
+
+  /**
+   * Tipo de usuario administrativo activo.
+   * Valores posibles: &#x27;Administrador&#x27;, &#x27;Conductor&#x27;, &#x27;Manipulador&#x27;.
+   */
+  tipoAdministrativo: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Indica si los datos del usuario ya fueron cargados exitosamente desde el backend.
+   * Se usa para controlar loaders o la visibilidad de secciones en la plantilla.
+   */
+  cargado: boolean &#x3D; false;
+
+  /**
+   * Controla qué subcomponente o sección se muestra dentro del dashboard.
+   * Se inicializa vacío y se asigna según el rol tras la carga de datos.
+   */
+  menu: string &#x3D; &quot;&quot;;
+
+  /**
+   * @lifecycle ngOnInit
+   * @description Recupera el modelo de sesión temporal e identifica el tipo de usuario.
+   * Según el tipo, consulta el servicio correspondiente, busca el registro por ID
+   * y configura el menú inicial del dashboard.
+   */
+  ngOnInit() {
+
+    this.tempModel &#x3D; this.modelosTempService.getModelo();
+
+    this.tipoAdministrativo &#x3D; this.tempModel.tipo;
+
+    if (this.tempModel.tipo &#x3D;&#x3D;&#x3D; &#x27;Administrador&#x27;) {
+      this.administradorService.getAdministradores().subscribe({
+        next: (usu) &#x3D;&gt; {
+          const encontrado &#x3D; usu.body?.find(u &#x3D;&gt; u.id &#x3D;&#x3D;&#x3D; this.tempModel.id)
+
+          if (encontrado !&#x3D;&#x3D; undefined) {
+            this.id &#x3D; encontrado.id;
+            this.admin &#x3D; encontrado;
+            this.nombre &#x3D; encontrado.nombre;
+            this.cargado &#x3D; true;
+            this.tipoAdministrativo &#x3D; encontrado.rol;
+            this.menu &#x3D; &quot;administrador-principal&quot;;
+            this.cd.detectChanges();
+          }
+        },
+        error: (err) &#x3D;&gt; {
+          console.log(&quot;No hay usuarios&quot;, err);
+        }
+      });
+    } else if (this.tempModel.tipo &#x3D;&#x3D;&#x3D; &#x27;Conductor&#x27;) {
+      this.conductorService.getConductores().subscribe({
+        next: (usu) &#x3D;&gt; {
+          const encontrado &#x3D; usu.body?.find(u &#x3D;&gt; u.id &#x3D;&#x3D;&#x3D; this.tempModel.id);
+
+          if (encontrado !&#x3D;&#x3D; undefined) {
+            this.id &#x3D; encontrado.id;
+            this.admin &#x3D; encontrado;
+            this.nombre &#x3D; encontrado.nombre;
+            this.cargado &#x3D; true;
+            this.menu &#x3D; &quot;conductor-principal&quot;;
+            this.cd.detectChanges();
+          }
+        },
+        error: (err) &#x3D;&gt; {
+          console.log(&quot;No hay usuarios&quot;, err);
+        }
+      });
+    } else if (this.tempModel.tipo &#x3D;&#x3D;&#x3D; &#x27;Manipulador&#x27;) {
+      this.manipuladorService.getManipuladores().subscribe({
+        next: (usu) &#x3D;&gt; {
+          const encontrado &#x3D; usu.body?.find(u &#x3D;&gt; u.id &#x3D;&#x3D;&#x3D; this.tempModel.id);
+
+          if (encontrado !&#x3D;&#x3D; undefined) {
+            this.id &#x3D; encontrado.id;
+            this.admin &#x3D; encontrado;
+            this.nombre &#x3D; encontrado.nombre;
+            this.cargado &#x3D; true;
+            this.menu &#x3D; &quot;manipulador-principal&quot;;
+            this.cd.detectChanges();
+          }
+        },
+        error: (err) &#x3D;&gt; {
+          console.log(&quot;No hay usuarios&quot;, err);
+        }
+      });
+    }
+
+  }
+
+  /**
+   * Cambia la sección activa del dashboard.
+   * @param menu - Identificador de la sección a mostrar
+   */
+  seleccionarMenu(menu: string) {
+    this.menu &#x3D; menu;
+  }
+
+  /**
+   * Maneja la acción de retroceso o cierre de sesión según el estado actual del menú.
+   *
+   * Si el usuario que sea no esta en su menú acorde, vuelve al principal y si ya esta en su menú
+   * lo redirige al login administrativo.
+   */
+  salir() {
+    if (this.tipoAdministrativo !&#x3D;&#x3D; &quot;Conductor&quot; &amp;&amp; this.tipoAdministrativo !&#x3D;&#x3D; &quot;Manipulador&quot; &amp;&amp; this.menu !&#x3D;&#x3D; &quot;administrador-principal&quot;) {
+      this.menu &#x3D; &quot;administrador-principal&quot;;
+    } else if (this.tipoAdministrativo &#x3D;&#x3D;&#x3D; &quot;Conductor&quot; &amp;&amp; this.menu !&#x3D;&#x3D; &quot;conductor-principal&quot;) {
+      this.menu &#x3D; &quot;conductor-principal&quot;;
+    } else if (this.tipoAdministrativo &#x3D;&#x3D;&#x3D; &quot;Manipulador&quot; &amp;&amp; this.menu !&#x3D;&#x3D; &quot;manipulador-principal&quot;) {
+      this.menu &#x3D; &quot;manipulador-principal&quot;;
+    } else {
+      this.router.navigate([&#x27;/admin-login&#x27;]);
+    }
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;main&quot; *ngIf&#x3D;&quot;cargado&quot;&gt;
+  &lt;div class&#x3D;&quot;shape shape-1&quot;&gt;&lt;/div&gt;
+  &lt;div class&#x3D;&quot;shape shape-2&quot;&gt;&lt;/div&gt;
+  &lt;div class&#x3D;&quot;shape shape-3&quot;&gt;&lt;/div&gt;
+  &lt;div class&#x3D;&quot;shape shape-4&quot;&gt;&lt;/div&gt;
+  &lt;div class&#x3D;&quot;recuadro&quot;&gt;
+
+    &lt;div class&#x3D;&quot;encabezado&quot;&gt;
+      &lt;h1&gt;&lt;i class&#x3D;&quot;fa-regular fa-circle-user icono&quot;&gt;&lt;/i&gt;
+        &lt;p&gt;{{ nombre }}&lt;/p&gt; &lt;i class&#x3D;&quot;fa-regular fa-id-card icono&quot;&gt;&lt;/i&gt;
+        &lt;p&gt;id: {{ id }}&lt;/p&gt; &lt;i class&#x3D;&quot;fa-solid fa-at icono&quot;&gt;&lt;/i&gt;
+        &lt;p&gt;{{ tipoAdministrativo }}&lt;/p&gt;&lt;/h1&gt;
+      &lt;button (click)&#x3D;&quot;salir()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger boton-salir&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-arrow-right-from-bracket&quot;&gt;&lt;/i&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo !&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; tipoAdministrativo !&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;administrador-principal&#x27;&quot;&gt;
+      &lt;app-admin-menu-principal (menu)&#x3D;&quot;seleccionarMenu($event)&quot; &gt;&lt;/app-admin-menu-principal&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo !&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; tipoAdministrativo !&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;administrador-usuarioNormal&#x27;&quot;&gt;
+      &lt;app-admin-menu-usuario-normal&gt;&lt;/app-admin-menu-usuario-normal&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo !&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; tipoAdministrativo !&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;administrador-usuarioPremium&#x27;&quot;&gt;
+      &lt;app-admin-menu-usuario-premium&gt;&lt;/app-admin-menu-usuario-premium&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo !&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; tipoAdministrativo !&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;administrador-usuarioConcurrente&#x27;&quot;&gt;
+      &lt;app-admin-menu-usuario-concurrente&gt;&lt;/app-admin-menu-usuario-concurrente&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo !&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; tipoAdministrativo !&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;administrador-administrador&#x27;&quot;&gt;
+      &lt;app-admin-menu-administrador&gt;&lt;/app-admin-menu-administrador&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo !&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; tipoAdministrativo !&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;administrador-conductor&#x27;&quot;&gt;
+      &lt;app-admin-menu-conductor&gt;&lt;/app-admin-menu-conductor&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo !&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; tipoAdministrativo !&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;administrador-manipulador&#x27;&quot;&gt;
+      &lt;app-admin-menu-manipulador&gt;&lt;/app-admin-menu-manipulador&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo !&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; tipoAdministrativo !&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;administrador-paqueteCarta&#x27;&quot;&gt;
+      &lt;app-admin-menu-carta&gt;&lt;/app-admin-menu-carta&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo !&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; tipoAdministrativo !&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;administrador-paqueteAlimenticio&#x27;&quot;&gt;
+      &lt;app-admin-menu-paquete-alimenticio&gt;&lt;/app-admin-menu-paquete-alimenticio&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo !&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; tipoAdministrativo !&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;administrador-paqueteNoAlimenticio&#x27;&quot;&gt;
+      &lt;app-admin-menu-paquete-no-alimenticio&gt;&lt;/app-admin-menu-paquete-no-alimenticio&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo &#x3D;&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;conductor-principal&#x27;&quot;&gt;
+      &lt;app-conductor-menu-principal (menu)&#x3D;&quot;seleccionarMenu($event)&quot; )&gt;&lt;/app-conductor-menu-principal&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo &#x3D;&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;conductor-evidencia&#x27;&quot;&gt;
+      &lt;app-conductor-menu-evidencia&gt;&lt;/app-conductor-menu-evidencia&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo &#x3D;&#x3D;&#x3D; &#x27;Conductor&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;conductor-actualizar&#x27;&quot;&gt;
+      &lt;app-conductor-menu-actualizar [id]&#x3D;&quot;id&quot; ]&gt;&lt;/app-conductor-menu-actualizar&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo &#x3D;&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;manipulador-principal&#x27;&quot;&gt;
+      &lt;app-manipulador-menu-principal (menu)&#x3D;&quot;seleccionarMenu($event)&quot;&gt;&lt;/app-manipulador-menu-principal&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo &#x3D;&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;manipulador-evidencia&#x27;&quot;&gt;
+      &lt;app-manipulador-menu-evicencia [id]&#x3D;&quot;id&quot; &gt;&lt;/app-manipulador-menu-evicencia&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;tipoAdministrativo &#x3D;&#x3D;&#x3D; &#x27;Manipulador&#x27; &amp;&amp; menu &#x3D;&#x3D;&#x3D; &#x27;manipulador-actualizar&#x27;&quot;&gt;
+      &lt;app-manipulador-menu-actualizar [id]&#x3D;&quot;id&quot; &gt;&lt;/app-manipulador-menu-actualizar&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+
+&lt;div *ngIf&#x3D;&quot;!cargado&quot; class&#x3D;&quot;d-flex justify-content-center align-items-center&quot; style&#x3D;&quot;height: 100vh;&quot;&gt;
+  &lt;div class&#x3D;&quot;spinner-border text-info&quot; role&#x3D;&quot;status&quot;&gt;
+    &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;Cargando...&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis-network.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main class="main" *ngIf="cargado">  <div class="shape shape-1"></div>  <div class="shape shape-2"></div>  <div class="shape shape-3"></div>  <div class="shape shape-4"></div>  <div class="recuadro">    <div class="encabezado">      <h1><i class="fa-regular fa-circle-user icono"></i>        <p>{{ nombre }}</p> <i class="fa-regular fa-id-card icono"></i>        <p>id: {{ id }}</p> <i class="fa-solid fa-at icono"></i>        <p>{{ tipoAdministrativo }}</p></h1>      <button (click)="salir()" type="button" class="btn btn-danger boton-salir"><i class="fa-solid fa-arrow-right-from-bracket"></i>      </button>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo !== \'Conductor\' && tipoAdministrativo !== \'Manipulador\' && menu === \'administrador-principal\'">      <app-admin-menu-principal (menu)="seleccionarMenu($event)" ></app-admin-menu-principal>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo !== \'Conductor\' && tipoAdministrativo !== \'Manipulador\' && menu === \'administrador-usuarioNormal\'">      <app-admin-menu-usuario-normal></app-admin-menu-usuario-normal>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo !== \'Conductor\' && tipoAdministrativo !== \'Manipulador\' && menu === \'administrador-usuarioPremium\'">      <app-admin-menu-usuario-premium></app-admin-menu-usuario-premium>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo !== \'Conductor\' && tipoAdministrativo !== \'Manipulador\' && menu === \'administrador-usuarioConcurrente\'">      <app-admin-menu-usuario-concurrente></app-admin-menu-usuario-concurrente>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo !== \'Conductor\' && tipoAdministrativo !== \'Manipulador\' && menu === \'administrador-administrador\'">      <app-admin-menu-administrador></app-admin-menu-administrador>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo !== \'Conductor\' && tipoAdministrativo !== \'Manipulador\' && menu === \'administrador-conductor\'">      <app-admin-menu-conductor></app-admin-menu-conductor>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo !== \'Conductor\' && tipoAdministrativo !== \'Manipulador\' && menu === \'administrador-manipulador\'">      <app-admin-menu-manipulador></app-admin-menu-manipulador>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo !== \'Conductor\' && tipoAdministrativo !== \'Manipulador\' && menu === \'administrador-paqueteCarta\'">      <app-admin-menu-carta></app-admin-menu-carta>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo !== \'Conductor\' && tipoAdministrativo !== \'Manipulador\' && menu === \'administrador-paqueteAlimenticio\'">      <app-admin-menu-paquete-alimenticio></app-admin-menu-paquete-alimenticio>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo !== \'Conductor\' && tipoAdministrativo !== \'Manipulador\' && menu === \'administrador-paqueteNoAlimenticio\'">      <app-admin-menu-paquete-no-alimenticio></app-admin-menu-paquete-no-alimenticio>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo === \'Conductor\' && menu === \'conductor-principal\'">      <app-conductor-menu-principal (menu)="seleccionarMenu($event)" )></app-conductor-menu-principal>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo === \'Conductor\' && menu === \'conductor-evidencia\'">      <app-conductor-menu-evidencia></app-conductor-menu-evidencia>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo === \'Conductor\' && menu === \'conductor-actualizar\'">      <app-conductor-menu-actualizar [id]="id" ]></app-conductor-menu-actualizar>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo === \'Manipulador\' && menu === \'manipulador-principal\'">      <app-manipulador-menu-principal (menu)="seleccionarMenu($event)"></app-manipulador-menu-principal>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo === \'Manipulador\' && menu === \'manipulador-evidencia\'">      <app-manipulador-menu-evicencia [id]="id" ></app-manipulador-menu-evicencia>    </div>    <div class="administrador-botones" *ngIf="tipoAdministrativo === \'Manipulador\' && menu === \'manipulador-actualizar\'">      <app-manipulador-menu-actualizar [id]="id" ></app-manipulador-menu-actualizar>    </div>  </div></main><div *ngIf="!cargado" class="d-flex justify-content-center align-items-center" style="height: 100vh;">  <div class="spinner-border text-info" role="status">    <span class="visually-hidden">Cargando...</span>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminDashboard', 'selector': 'app-admin-dashboard'},{'name': 'AdminLogin', 'selector': 'app-admin-login'},{'name': 'AdminMenuAdministrador', 'selector': 'app-admin-menu-administrador'},{'name': 'AdminMenuCarta', 'selector': 'app-admin-menu-carta'},{'name': 'AdminMenuConductor', 'selector': 'app-admin-menu-conductor'},{'name': 'AdminMenuManipulador', 'selector': 'app-admin-menu-manipulador'},{'name': 'AdminMenuPaqueteAlimenticio', 'selector': 'app-admin-menu-paquete-alimenticio'},{'name': 'AdminMenuPaqueteNoAlimenticio', 'selector': 'app-admin-menu-paquete-no-alimenticio'},{'name': 'AdminMenuPrincipal', 'selector': 'app-admin-menu-principal'},{'name': 'AdminMenuUsuarioConcurrente', 'selector': 'app-admin-menu-usuario-concurrente'},{'name': 'AdminMenuUsuarioNormal', 'selector': 'app-admin-menu-usuario-normal'},{'name': 'AdminMenuUsuarioPremium', 'selector': 'app-admin-menu-usuario-premium'},{'name': 'App', 'selector': 'app-root'},{'name': 'ConductorMenuActualizar', 'selector': 'app-conductor-menu-actualizar'},{'name': 'ConductorMenuEvidencia', 'selector': 'app-conductor-menu-evidencia'},{'name': 'ConductorMenuPrincipal', 'selector': 'app-conductor-menu-principal'},{'name': 'Login', 'selector': 'app-login'},{'name': 'ManipuladorMenuActualizar', 'selector': 'app-manipulador-menu-actualizar'},{'name': 'ManipuladorMenuEvicencia', 'selector': 'app-manipulador-menu-evicencia'},{'name': 'ManipuladorMenuPrincipal', 'selector': 'app-manipulador-menu-principal'},{'name': 'Register', 'selector': 'app-register'},{'name': 'UsuariosDashboard', 'selector': 'app-usuarios-dashboard'},{'name': 'UsuariosMenuCartas', 'selector': 'app-usuarios-menu-cartas'},{'name': 'UsuariosMenuPaquetesAlimenticios', 'selector': 'app-usuarios-menu-paquetes-alimenticios'},{'name': 'UsuariosMenuPaquetesNoAlimenticios', 'selector': 'app-usuarios-menu-paquetes-no-alimenticios'},{'name': 'UsuariosMenuPrincipal', 'selector': 'app-usuarios-menu-principal'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AdminDashboard'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminDashboard.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

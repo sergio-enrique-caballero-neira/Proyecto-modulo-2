@@ -1,0 +1,1245 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mi-primer-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">mi-primer-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  UsuariosDashboard</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/usuarios-dashboard/usuarios-dashboard.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Determina el tipo de usuario (Normal, Concurrente o Premium) a partir del
+modelo temporal de sesión y carga sus datos desde el servicio correspondiente.
+También controla la navegación interna del dashboard mediante un sistema de menú.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-usuarios-dashboard</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./usuarios-dashboard.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./usuarios-dashboard.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cargado" >cargado</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cd" >cd</a>
+                            </li>
+                            <li>
+                                <a href="#id" >id</a>
+                            </li>
+                            <li>
+                                <a href="#menu" >menu</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#modelosTempService" >modelosTempService</a>
+                            </li>
+                            <li>
+                                <a href="#nombre" >nombre</a>
+                            </li>
+                            <li>
+                                <a href="#tempModel" >tempModel</a>
+                            </li>
+                            <li>
+                                <a href="#tipoUsuario" >tipoUsuario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#usuarioConcurrenteService" >usuarioConcurrenteService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#usuarioNormalService" >usuarioNormalService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#usuarioPremiumService" >usuarioPremiumService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#salir" >salir</a>
+                            </li>
+                            <li>
+                                <a href="#seleccionarMenu" >seleccionarMenu</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>y consultando al backend los datos del usuario según su tipo.
+Itera sobre la lista de usuarios retornada para encontrar el que coincide con el ID de sesión.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="salir"></a>
+                    <span class="name">
+                        <span ><b>salir</b></span>
+                        <a href="#salir"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>salir()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="157"
+                                    class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:157</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maneja la acción de salida o retroceso en el dashboard.</p>
+<ul>
+<li>Si el usuario está en una subsección de envíos, regresa al menú principal del dashboard.</li>
+<li>Si está en el menú principal, redirige a la pantalla de login.</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seleccionarMenu"></a>
+                    <span class="name">
+                        <span ><b>seleccionarMenu</b></span>
+                        <a href="#seleccionarMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>seleccionarMenu(menu: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="148"
+                                    class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:148</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cambia la sección activa del dashboard.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>menu</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Identificador de la sección a mostrar</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargado"></a>
+                    <span class="name">
+                        <span ><b>cargado</b></span>
+                        <a href="#cargado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:61</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indica si los datos del usuario ya fueron cargados exitosamente desde el backend.
+Se usa para controlar la visibilidad de elementos en la plantilla.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cd"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cd</b></span>
+                        <a href="#cd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ChangeDetectorRef)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:30</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para forzar la detección de cambios manualmente en la vista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="id"></a>
+                    <span class="name">
+                        <span ><b>id</b></span>
+                        <a href="#id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:52</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ID del usuario autenticado.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menu"></a>
+                    <span class="name">
+                        <span ><b>menu</b></span>
+                        <a href="#menu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;usuario-principal&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:67</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Controla qué subcomponente o sección se muestra dentro del dashboard.
+Valor por defecto: &#39;usuario-principal&#39;.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modelosTempService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>modelosTempService</b></span>
+                        <a href="#modelosTempService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ModelosTempService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:42</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio de modelo temporal de sesión.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nombre"></a>
+                    <span class="name">
+                        <span ><b>nombre</b></span>
+                        <a href="#nombre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:49</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre del usuario autenticado.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tempModel"></a>
+                    <span class="name">
+                        <span ><b>tempModel</b></span>
+                        <a href="#tempModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ModeloTempModel.html" target="_self" >ModeloTempModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:45</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelo temporal que contiene los datos básicos de la sesión activa.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tipoUsuario"></a>
+                    <span class="name">
+                        <span ><b>tipoUsuario</b></span>
+                        <a href="#tipoUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:55</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Tipo de usuario activo: &#39;UsuarioNormal&#39;, &#39;UsuarioConcurrente&#39; o &#39;UsuarioPremium&#39;</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuarioConcurrenteService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>usuarioConcurrenteService</b></span>
+                        <a href="#usuarioConcurrenteService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(UsuarioconcurrenteService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:33</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para operaciones con usuarios de tipo Concurrente.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuarioNormalService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>usuarioNormalService</b></span>
+                        <a href="#usuarioNormalService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(UsuarionormalService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:36</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para operaciones con usuarios de tipo Normal.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuarioPremiumService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>usuarioPremiumService</b></span>
+                        <a href="#usuarioPremiumService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(UsuariopremiumService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/usuarios-dashboard/usuarios-dashboard.ts:39</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para operaciones con usuarios de tipo Premium.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {ChangeDetectorRef, Component, inject, Input} from &#x27;@angular/core&#x27;;
+import {Router} from &#x27;@angular/router&#x27;;
+import {UsuarioconcurrenteService} from &#x27;../services/usuarioconcurrente.service&#x27;;
+import {UsuarionormalService} from &#x27;../services/usuarionormal.service&#x27;;
+import {UsuariopremiumService} from &#x27;../services/usuariopremium.service&#x27;;
+import {ModelosTempService} from &#x27;../services/modelosTemp.service&#x27;;
+import {ModeloTempModel} from &#x27;../models/modeloTemp.model&#x27;;
+
+/**
+ * @component UsuariosDashboard
+ * @description Panel principal del usuario autenticado.
+ * Determina el tipo de usuario (Normal, Concurrente o Premium) a partir del
+ * modelo temporal de sesión y carga sus datos desde el servicio correspondiente.
+ * También controla la navegación interna del dashboard mediante un sistema de menú.
+ *
+ * @selector app-usuarios-dashboard
+ */
+
+@Component({
+  selector: &#x27;app-usuarios-dashboard&#x27;,
+  standalone: false,
+  templateUrl: &#x27;./usuarios-dashboard.html&#x27;,
+  styleUrl: &#x27;./usuarios-dashboard.css&#x27;,
+})
+export class UsuariosDashboard {
+
+  constructor(private router: Router) {}
+
+  /** Servicio para forzar la detección de cambios manualmente en la vista. */
+  private cd &#x3D; inject(ChangeDetectorRef);
+
+  /** Servicio para operaciones con usuarios de tipo Concurrente. */
+  private usuarioConcurrenteService &#x3D; inject(UsuarioconcurrenteService);
+
+  /** Servicio para operaciones con usuarios de tipo Normal. */
+  private usuarioNormalService &#x3D; inject(UsuarionormalService);
+
+  /** Servicio para operaciones con usuarios de tipo Premium. */
+  private usuarioPremiumService &#x3D; inject(UsuariopremiumService);
+
+  /** Servicio de modelo temporal de sesión. */
+  public modelosTempService &#x3D; inject(ModelosTempService);
+
+  /** Modelo temporal que contiene los datos básicos de la sesión activa.  */
+  tempModel!: ModeloTempModel;
+
+
+  /** Nombre del usuario autenticado. */
+  nombre: string &#x3D; &#x27;&#x27;;
+
+  /** ID del usuario autenticado. */
+  id: number &#x3D; 0;
+
+  /** Tipo de usuario activo: &#x27;UsuarioNormal&#x27;, &#x27;UsuarioConcurrente&#x27; o &#x27;UsuarioPremium&#x27; */
+  tipoUsuario: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Indica si los datos del usuario ya fueron cargados exitosamente desde el backend.
+   * Se usa para controlar la visibilidad de elementos en la plantilla.
+   */
+  cargado: boolean &#x3D; false;
+
+  /**
+   * Controla qué subcomponente o sección se muestra dentro del dashboard.
+   * Valor por defecto: &#x27;usuario-principal&#x27;.
+   */
+  menu: string &#x3D; &quot;usuario-principal&quot;;
+
+  /**
+   * @lifecycle ngOnInit
+   * @description Inicializa el dashboard recuperando el modelo de sesión temporal
+   * y consultando al backend los datos del usuario según su tipo.
+   * Itera sobre la lista de usuarios retornada para encontrar el que coincide con el ID de sesión.
+   */
+  ngOnInit() {
+
+    this.tempModel &#x3D; this.modelosTempService.getModelo();
+    this.tipoUsuario &#x3D; this.tempModel.tipo;
+
+    if(this.tipoUsuario &#x3D;&#x3D;&#x3D; &#x27;UsuarioConcurrente&#x27;) {
+      this.usuarioConcurrenteService.getUsuarios().subscribe({
+        next: (usu) &#x3D;&gt; {
+          if (usu.body) {
+            for (let usuario of usu.body) {
+              if (usuario.id &#x3D;&#x3D;&#x3D; this.tempModel.id) {
+                this.id &#x3D; usuario.id;
+                this.nombre &#x3D; usuario.nombre;
+                this.cargado &#x3D; true;
+                this.cd.detectChanges();
+                break;
+              }
+            }
+          }
+        },
+        error: (err) &#x3D;&gt; {
+          console.log(&quot;No hay usuarios&quot;, err);
+        }
+      });
+    }
+
+    if(this.tipoUsuario &#x3D;&#x3D;&#x3D; &#x27;UsuarioNormal&#x27;) {
+      this.usuarioNormalService.getUsuarios().subscribe({
+        next: (usu) &#x3D;&gt; {
+          if (usu.body) {
+            for (let usuario of usu.body) {
+              if (usuario.id &#x3D;&#x3D;&#x3D; this.tempModel.id) {
+                this.id &#x3D; usuario.id;
+                this.nombre &#x3D; usuario.nombre;
+                this.cargado &#x3D; true;
+                this.cd.detectChanges();
+                break;
+              }
+            }
+          }
+        },
+        error: (err) &#x3D;&gt; {
+          console.log(&quot;No hay usuarios&quot;, err);
+        }
+      });
+    }
+
+    if(this.tipoUsuario &#x3D;&#x3D;&#x3D; &#x27;UsuarioPremium&#x27;) {
+      this.usuarioPremiumService.getUsuarios().subscribe({
+        next: (usu) &#x3D;&gt; {
+          if (usu.body) {
+            for (let usuario of usu.body) {
+              if (usuario.id &#x3D;&#x3D;&#x3D; this.tempModel.id) {
+                this.id &#x3D; usuario.id;
+                this.nombre &#x3D; usuario.nombre;
+                this.cargado &#x3D; true;
+                this.cd.detectChanges();
+              }
+            }
+          }
+        },
+        error: (err) &#x3D;&gt; {
+          console.log(&quot;No hay usuarios&quot;, err);
+        }
+      });
+    }
+
+  }
+
+  /**
+   * Cambia la sección activa del dashboard.
+   * @param menu - Identificador de la sección a mostrar
+   */
+  seleccionarMenu(menu: string) {
+    this.menu &#x3D; menu;
+  }
+
+  /**
+   * Maneja la acción de salida o retroceso en el dashboard.
+   * - Si el usuario está en una subsección de envíos, regresa al menú principal del dashboard.
+   * - Si está en el menú principal, redirige a la pantalla de login.
+   */
+  salir() {
+    if (this.menu &#x3D;&#x3D;&#x3D; &quot;usuario-paquetes-alimencicios&quot; || this.menu &#x3D;&#x3D;&#x3D; &quot;usuario-paquetes-no-alimencicios&quot; || this.menu &#x3D;&#x3D;&#x3D; &quot;usuario-paquetes-carta&quot;) {
+      this.menu &#x3D; &quot;usuario-principal&quot;;
+    } else {
+      this.router.navigate([&#x27;/login&#x27;]);
+    }
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;main&quot; *ngIf&#x3D;&quot;cargado&quot;&gt;
+  &lt;div class&#x3D;&quot;recuadro&quot;&gt;
+
+    &lt;div class&#x3D;&quot;encabezado&quot;&gt;
+      &lt;h1&gt;&lt;i class&#x3D;&quot;fa-regular fa-circle-user icono&quot;&gt;&lt;/i&gt;
+        &lt;p&gt;{{ nombre }}&lt;/p&gt; &lt;i class&#x3D;&quot;fa-regular fa-id-card icono&quot;&gt;&lt;/i&gt;
+        &lt;p&gt;id: {{ id }}&lt;/p&gt; &lt;i class&#x3D;&quot;fa-solid fa-at icono&quot;&gt;&lt;/i&gt;
+        &lt;p&gt;{{ tipoUsuario }}&lt;/p&gt;&lt;/h1&gt;
+      &lt;button (click)&#x3D;&quot;salir()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger boton-salir&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-arrow-right-from-bracket&quot;&gt;&lt;/i&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;usuario-principal&#x27;&quot;&gt;
+      &lt;app-usuarios-menu-principal (menu)&#x3D;&quot;seleccionarMenu($event)&quot; )&gt;&lt;/app-usuarios-menu-principal&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;usuario-paquetes-alimencicios&#x27;&quot;&gt;
+      &lt;app-usuarios-menu-paquetes-alimenticios&gt;&lt;/app-usuarios-menu-paquetes-alimenticios&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;usuario-paquetes-no-alimencicios&#x27;&quot;&gt;
+      &lt;app-usuarios-menu-paquetes-no-alimenticios&gt;&lt;/app-usuarios-menu-paquetes-no-alimenticios&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;administrador-botones&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;usuario-paquetes-carta&#x27;&quot;&gt;
+      &lt;app-usuarios-menu-cartas&gt;&lt;/app-usuarios-menu-cartas&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/main&gt;
+
+&lt;div *ngIf&#x3D;&quot;!cargado&quot; class&#x3D;&quot;d-flex justify-content-center align-items-center&quot; style&#x3D;&quot;height: 100vh;&quot;&gt;
+  &lt;div class&#x3D;&quot;spinner-border text-info&quot; role&#x3D;&quot;status&quot;&gt;
+    &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;Cargando...&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis-network.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main class="main" *ngIf="cargado">  <div class="recuadro">    <div class="encabezado">      <h1><i class="fa-regular fa-circle-user icono"></i>        <p>{{ nombre }}</p> <i class="fa-regular fa-id-card icono"></i>        <p>id: {{ id }}</p> <i class="fa-solid fa-at icono"></i>        <p>{{ tipoUsuario }}</p></h1>      <button (click)="salir()" type="button" class="btn btn-danger boton-salir"><i class="fa-solid fa-arrow-right-from-bracket"></i>      </button>    </div>    <div class="administrador-botones" *ngIf="menu === \'usuario-principal\'">      <app-usuarios-menu-principal (menu)="seleccionarMenu($event)" )></app-usuarios-menu-principal>    </div>    <div class="administrador-botones" *ngIf="menu === \'usuario-paquetes-alimencicios\'">      <app-usuarios-menu-paquetes-alimenticios></app-usuarios-menu-paquetes-alimenticios>    </div>    <div class="administrador-botones" *ngIf="menu === \'usuario-paquetes-no-alimencicios\'">      <app-usuarios-menu-paquetes-no-alimenticios></app-usuarios-menu-paquetes-no-alimenticios>    </div>    <div class="administrador-botones" *ngIf="menu === \'usuario-paquetes-carta\'">      <app-usuarios-menu-cartas></app-usuarios-menu-cartas>    </div>  </div></main><div *ngIf="!cargado" class="d-flex justify-content-center align-items-center" style="height: 100vh;">  <div class="spinner-border text-info" role="status">    <span class="visually-hidden">Cargando...</span>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminDashboard', 'selector': 'app-admin-dashboard'},{'name': 'AdminLogin', 'selector': 'app-admin-login'},{'name': 'AdminMenuAdministrador', 'selector': 'app-admin-menu-administrador'},{'name': 'AdminMenuCarta', 'selector': 'app-admin-menu-carta'},{'name': 'AdminMenuConductor', 'selector': 'app-admin-menu-conductor'},{'name': 'AdminMenuManipulador', 'selector': 'app-admin-menu-manipulador'},{'name': 'AdminMenuPaqueteAlimenticio', 'selector': 'app-admin-menu-paquete-alimenticio'},{'name': 'AdminMenuPaqueteNoAlimenticio', 'selector': 'app-admin-menu-paquete-no-alimenticio'},{'name': 'AdminMenuPrincipal', 'selector': 'app-admin-menu-principal'},{'name': 'AdminMenuUsuarioConcurrente', 'selector': 'app-admin-menu-usuario-concurrente'},{'name': 'AdminMenuUsuarioNormal', 'selector': 'app-admin-menu-usuario-normal'},{'name': 'AdminMenuUsuarioPremium', 'selector': 'app-admin-menu-usuario-premium'},{'name': 'App', 'selector': 'app-root'},{'name': 'ConductorMenuActualizar', 'selector': 'app-conductor-menu-actualizar'},{'name': 'ConductorMenuEvidencia', 'selector': 'app-conductor-menu-evidencia'},{'name': 'ConductorMenuPrincipal', 'selector': 'app-conductor-menu-principal'},{'name': 'Login', 'selector': 'app-login'},{'name': 'ManipuladorMenuActualizar', 'selector': 'app-manipulador-menu-actualizar'},{'name': 'ManipuladorMenuEvicencia', 'selector': 'app-manipulador-menu-evicencia'},{'name': 'ManipuladorMenuPrincipal', 'selector': 'app-manipulador-menu-principal'},{'name': 'Register', 'selector': 'app-register'},{'name': 'UsuariosDashboard', 'selector': 'app-usuarios-dashboard'},{'name': 'UsuariosMenuCartas', 'selector': 'app-usuarios-menu-cartas'},{'name': 'UsuariosMenuPaquetesAlimenticios', 'selector': 'app-usuarios-menu-paquetes-alimenticios'},{'name': 'UsuariosMenuPaquetesNoAlimenticios', 'selector': 'app-usuarios-menu-paquetes-no-alimenticios'},{'name': 'UsuariosMenuPrincipal', 'selector': 'app-usuarios-menu-principal'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'UsuariosDashboard'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'UsuariosDashboard.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -113,7 +113,7 @@ button{
 
 .input-error {
   border: 2px solid red !important;
-  background-color: #ffe6e6; /* Un fondo rojizo suave */
+  background-color: #ffe6e6;
 }
 
 .botones{

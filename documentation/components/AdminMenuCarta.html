@@ -1,0 +1,1830 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mi-primer-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">mi-primer-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AdminMenuCarta</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>accesible desde el panel del Administrador.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-admin-menu-carta</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./admin-menu-carta.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./admin-menu-carta.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizandoCarta" >actualizandoCarta</a>
+                            </li>
+                            <li>
+                                <a href="#cargandoCartas" >cargandoCartas</a>
+                            </li>
+                            <li>
+                                <a href="#cartas" >cartas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#cartaService" >cartaService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cd" >cd</a>
+                            </li>
+                            <li>
+                                <a href="#creandoCarta" >creandoCarta</a>
+                            </li>
+                            <li>
+                                <a href="#descripcion" >descripcion</a>
+                            </li>
+                            <li>
+                                <a href="#destino" >destino</a>
+                            </li>
+                            <li>
+                                <a href="#eliminandoCarta" >eliminandoCarta</a>
+                            </li>
+                            <li>
+                                <a href="#fechaEnvio" >fechaEnvio</a>
+                            </li>
+                            <li>
+                                <a href="#id" >id</a>
+                            </li>
+                            <li>
+                                <a href="#mensajeError" >mensajeError</a>
+                            </li>
+                            <li>
+                                <a href="#mensajeExito" >mensajeExito</a>
+                            </li>
+                            <li>
+                                <a href="#menu" >menu</a>
+                            </li>
+                            <li>
+                                <a href="#origen" >origen</a>
+                            </li>
+                            <li>
+                                <a href="#peso" >peso</a>
+                            </li>
+                            <li>
+                                <a href="#tamano" >tamano</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizarCarta" >actualizarCarta</a>
+                            </li>
+                            <li>
+                                <a href="#cargarCartas" >cargarCartas</a>
+                            </li>
+                            <li>
+                                <a href="#crearCarta" >crearCarta</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarCarta" >eliminarCarta</a>
+                            </li>
+                            <li>
+                                <a href="#limpiarFormulario" >limpiarFormulario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#limpiarMensajes" >limpiarMensajes</a>
+                            </li>
+                            <li>
+                                <a href="#seleccionarMenu" >seleccionarMenu</a>
+                            </li>
+                            <li>
+                                <a href="#volverAlMenuPrincipal" >volverAlMenuPrincipal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarCarta"></a>
+                    <span class="name">
+                        <span ><b>actualizarCarta</b></span>
+                        <a href="#actualizarCarta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarCarta()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="111"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía la solicitud de actualización de una carta existente.
+Requiere que <code>id</code> tenga un valor válido (distinto de -1).</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarCartas"></a>
+                    <span class="name">
+                        <span ><b>cargarCartas</b></span>
+                        <a href="#cargarCartas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarCartas()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="157"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:157</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Consulta el backend y carga la lista completa de cartas.
+Se invoca automáticamente al seleccionar la subvista &#39;mostrar&#39;.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="crearCarta"></a>
+                    <span class="name">
+                        <span ><b>crearCarta</b></span>
+                        <a href="#crearCarta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>crearCarta()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="89"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:89</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía la solicitud de creación de una nueva carta al backend.
+Limpia mensajes, activa el estado de carga y, según la respuesta,
+muestra mensaje de éxito o error y limpia el formulario.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarCarta"></a>
+                    <span class="name">
+                        <span ><b>eliminarCarta</b></span>
+                        <a href="#eliminarCarta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarCarta()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="135"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:135</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía la solicitud de eliminación de una carta por su ID.
+Tras el éxito, resetea el ID a -1.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiarFormulario"></a>
+                    <span class="name">
+                        <span ><b>limpiarFormulario</b></span>
+                        <a href="#limpiarFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>limpiarFormulario()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="179"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:179</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Restablece todos los campos del formulario a sus valores por defecto.
+Se invoca tras operaciones exitosas de creación o actualización.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiarMensajes"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>limpiarMensajes</b></span>
+                        <a href="#limpiarMensajes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>limpiarMensajes()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="203"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:203</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Limpia los mensajes de éxito y error de la vista.
+Se invoca antes de cada operación CRUD.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seleccionarMenu"></a>
+                    <span class="name">
+                        <span ><b>seleccionarMenu</b></span>
+                        <a href="#seleccionarMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>seleccionarMenu(menu: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="76"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cambia la subvista activa y limpia mensajes previos.
+Si se selecciona &#39;mostrar&#39;, dispara la carga automática del listado.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>menu</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Identificador de la subvista a activar</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="volverAlMenuPrincipal"></a>
+                    <span class="name">
+                        <span ><b>volverAlMenuPrincipal</b></span>
+                        <a href="#volverAlMenuPrincipal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>volverAlMenuPrincipal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="193"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:193</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Regresa a la subvista principal, limpiando mensajes y el formulario.
+Equivalente a cancelar la operación en curso.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizandoCarta"></a>
+                    <span class="name">
+                        <span ><b>actualizandoCarta</b></span>
+                        <a href="#actualizandoCarta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:38</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se procesa una solicitud de actualización.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargandoCartas"></a>
+                    <span class="name">
+                        <span ><b>cargandoCartas</b></span>
+                        <a href="#cargandoCartas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:44</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se carga la lista de cartas desde el backend.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cartas"></a>
+                    <span class="name">
+                        <span ><b>cartas</b></span>
+                        <a href="#cartas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/CartaModel.html" target="_self" >CartaModel[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:47</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de cartas cargada desde el backend para la vista de listado.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cartaService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>cartaService</b></span>
+                        <a href="#cartaService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(CartaService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:20</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para operaciones CRUD sobre cartas en el backend.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cd"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cd</b></span>
+                        <a href="#cd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ChangeDetectorRef)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:23</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para forzar la detección de cambios en la vista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="creandoCarta"></a>
+                    <span class="name">
+                        <span ><b>creandoCarta</b></span>
+                        <a href="#creandoCarta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:35</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se procesa una solicitud de creación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="descripcion"></a>
+                    <span class="name">
+                        <span ><b>descripcion</b></span>
+                        <a href="#descripcion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:54</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Descripción del contenido de la carta.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destino"></a>
+                    <span class="name">
+                        <span ><b>destino</b></span>
+                        <a href="#destino"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:63</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Ciudad o dirección de destino del envío.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminandoCarta"></a>
+                    <span class="name">
+                        <span ><b>eliminandoCarta</b></span>
+                        <a href="#eliminandoCarta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:41</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se procesa una solicitud de eliminación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fechaEnvio"></a>
+                    <span class="name">
+                        <span ><b>fechaEnvio</b></span>
+                        <a href="#fechaEnvio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:66</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fecha programada de envío en formato string.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="id"></a>
+                    <span class="name">
+                        <span ><b>id</b></span>
+                        <a href="#id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>-1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:51</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ID de la carta (se inicializa en -1 como valor nulo).</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mensajeError"></a>
+                    <span class="name">
+                        <span ><b>mensajeError</b></span>
+                        <a href="#mensajeError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:32</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje mostrado al usuario cuando ocurre un error en la operación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mensajeExito"></a>
+                    <span class="name">
+                        <span ><b>mensajeExito</b></span>
+                        <a href="#mensajeExito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:29</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje mostrado al usuario cuando la operación fue exitosa.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menu"></a>
+                    <span class="name">
+                        <span ><b>menu</b></span>
+                        <a href="#menu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;principal&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:26</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Controla la subvista activa dentro del componente. Valor por defecto: &#39;principal&#39;.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="origen"></a>
+                    <span class="name">
+                        <span ><b>origen</b></span>
+                        <a href="#origen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:60</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Ciudad o dirección de origen del envío.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="peso"></a>
+                    <span class="name">
+                        <span ><b>peso</b></span>
+                        <a href="#peso"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:57</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Peso de la carta en la unidad definida por el backend.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tamano"></a>
+                    <span class="name">
+                        <span ><b>tamano</b></span>
+                        <a href="#tamano"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/admin-dashboard/admin-menu-paquetes/admin-menu-carta/admin-menu-carta.ts:69</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Tamaño de la carta.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {ChangeDetectorRef, Component, inject} from &#x27;@angular/core&#x27;;
+import {CartaService} from &#x27;../../../services/carta.service&#x27;;
+import {CartaModel} from &#x27;../../../models/carta.model&#x27;;
+
+/**
+ * @component AdminMenuCarta
+ * @description Componente de gestión CRUD completa sobre cartas del sistema,
+ * accesible desde el panel del Administrador.
+ *
+ * @selector app-admin-menu-carta
+ */
+@Component({
+  selector: &#x27;app-admin-menu-carta&#x27;,
+  standalone: false,
+  templateUrl: &#x27;./admin-menu-carta.html&#x27;,
+  styleUrl: &#x27;./admin-menu-carta.css&#x27;,
+})
+export class AdminMenuCarta {
+  /** Servicio para operaciones CRUD sobre cartas en el backend. */
+  private readonly cartaService &#x3D; inject(CartaService);
+
+  /** Servicio para forzar la detección de cambios en la vista. */
+  private cd &#x3D; inject(ChangeDetectorRef);
+
+  /** Controla la subvista activa dentro del componente. Valor por defecto: &#x27;principal&#x27;. */
+  menu: string &#x3D; &#x27;principal&#x27;;
+
+  /** Mensaje mostrado al usuario cuando la operación fue exitosa. */
+  mensajeExito: string &#x3D; &#x27;&#x27;;
+
+  /** Mensaje mostrado al usuario cuando ocurre un error en la operación. */
+  mensajeError: string &#x3D; &#x27;&#x27;;
+
+  /** Booleano activo mientras se procesa una solicitud de creación. */
+  creandoCarta: boolean &#x3D; false;
+
+  /** Booleano activo mientras se procesa una solicitud de actualización. */
+  actualizandoCarta: boolean &#x3D; false;
+
+  /** Booleano activo mientras se procesa una solicitud de eliminación. */
+  eliminandoCarta: boolean &#x3D; false;
+
+  /** Booleano activo mientras se carga la lista de cartas desde el backend. */
+  cargandoCartas: boolean &#x3D; false;
+
+  /** Lista de cartas cargada desde el backend para la vista de listado. */
+  cartas: CartaModel[] &#x3D; [];
+
+
+  /** ID de la carta (se inicializa en -1 como valor nulo). */
+  id: number &#x3D; -1;
+
+  /** Descripción del contenido de la carta. */
+  descripcion: string &#x3D; &#x27;&#x27;;
+
+  /** Peso de la carta en la unidad definida por el backend. */
+  peso: number &#x3D; 0;
+
+  /** Ciudad o dirección de origen del envío. */
+  origen: string &#x3D; &#x27;&#x27;;
+
+  /** Ciudad o dirección de destino del envío. */
+  destino: string &#x3D; &#x27;&#x27;;
+
+  /** Fecha programada de envío en formato string. */
+  fechaEnvio: string &#x3D; &#x27;&#x27;;
+
+  /** Tamaño de la carta. */
+  tamano: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Cambia la subvista activa y limpia mensajes previos.
+   * Si se selecciona &#x27;mostrar&#x27;, dispara la carga automática del listado.
+   * @param menu - Identificador de la subvista a activar
+   */
+  seleccionarMenu(menu: string): void {
+    this.menu &#x3D; menu;
+    this.limpiarMensajes();
+    if (menu &#x3D;&#x3D;&#x3D; &#x27;mostrar&#x27;) {
+      this.cargarCartas();
+    }
+  }
+
+  /**
+   * Envía la solicitud de creación de una nueva carta al backend.
+   * Limpia mensajes, activa el estado de carga y, según la respuesta,
+   * muestra mensaje de éxito o error y limpia el formulario.
+   */
+  crearCarta(): void {
+    this.limpiarMensajes();
+    this.creandoCarta &#x3D; true;
+    this.cartaService.postCarta(this.descripcion, this.peso, this.origen, this.destino, this.fechaEnvio, this.tamano).subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        this.mensajeExito &#x3D; respuesta || &#x27;Carta creada correctamente.&#x27;;
+        this.creandoCarta &#x3D; false;
+        this.limpiarFormulario();
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.creandoCarta &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27; ? error.error : &#x27;No se pudo crear la carta.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Envía la solicitud de actualización de una carta existente.
+   * Requiere que &#x60;id&#x60; tenga un valor válido (distinto de -1).
+   */
+  actualizarCarta(): void {
+    this.limpiarMensajes();
+    this.actualizandoCarta &#x3D; true;
+    this.cartaService.putCarta(
+      this.id, this.descripcion, this.peso, this.origen, this.destino, this.fechaEnvio, this.tamano
+    ).subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        this.mensajeExito &#x3D; respuesta || &#x27;Carta actualizada correctamente.&#x27;;
+        this.actualizandoCarta &#x3D; false;
+        this.limpiarFormulario();
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.actualizandoCarta &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27; ? error.error : &#x27;No se pudo actualizar la carta.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Envía la solicitud de eliminación de una carta por su ID.
+   * Tras el éxito, resetea el ID a -1.
+   */
+  eliminarCarta(): void {
+    this.limpiarMensajes();
+    this.eliminandoCarta &#x3D; true;
+    this.cartaService.deleteCarta(this.id).subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        this.mensajeExito &#x3D; respuesta || &#x27;Carta eliminada correctamente.&#x27;;
+        this.eliminandoCarta &#x3D; false;
+        this.id &#x3D; -1;
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.eliminandoCarta &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27; ? error.error : &#x27;No se pudo eliminar la carta.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Consulta el backend y carga la lista completa de cartas.
+   * Se invoca automáticamente al seleccionar la subvista &#x27;mostrar&#x27;.
+   */
+  cargarCartas(): void {
+    this.cargandoCartas &#x3D; true;
+    this.cartaService.getCartas().subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        if (respuesta.body) {
+          this.cartas &#x3D; respuesta.body;
+        }
+        this.cargandoCartas &#x3D; false;
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.cargandoCartas &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27; ? error.error : &#x27;No se pudo obtener la lista de cartas.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Restablece todos los campos del formulario a sus valores por defecto.
+   * Se invoca tras operaciones exitosas de creación o actualización.
+   */
+  limpiarFormulario(): void {
+    this.id &#x3D; -1;
+    this.descripcion &#x3D; &#x27;&#x27;;
+    this.peso &#x3D; 0;
+    this.origen &#x3D; &#x27;&#x27;;
+    this.destino &#x3D; &#x27;&#x27;;
+    this.fechaEnvio &#x3D; &#x27;&#x27;;
+    this.tamano &#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Regresa a la subvista principal, limpiando mensajes y el formulario.
+   * Equivalente a cancelar la operación en curso.
+   */
+  volverAlMenuPrincipal(): void {
+    this.menu &#x3D; &#x27;principal&#x27;;
+    this.limpiarMensajes();
+    this.limpiarFormulario();
+  }
+
+  /**
+   * Limpia los mensajes de éxito y error de la vista.
+   * Se invoca antes de cada operación CRUD.
+   */
+  private limpiarMensajes(): void {
+    this.mensajeExito &#x3D; &#x27;&#x27;;
+    this.mensajeError &#x3D; &#x27;&#x27;;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;principal&#x27;&quot;&gt;
+  &lt;h1&gt;Administrar Cartas&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;botones&quot;&gt;
+    &lt;h2&gt;Seleccione una opción&lt;/h2&gt;
+    &lt;div class&#x3D;&quot;grupo-botones&quot;&gt;
+      &lt;span&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;crear&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success&quot;&gt;Crear&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;mostrar&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info&quot;&gt;Mostrar Todo&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;eliminar&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger&quot;&gt;Eliminar&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;actualizar&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-warning&quot;&gt;Actualizar&lt;/button&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+
+&lt;div class&#x3D;&quot;menu-crear&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;crear&#x27;&quot;&gt;
+  &lt;h1&gt;Crear Carta&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;contenedor-formulario&quot;&gt;
+    &lt;form class&#x3D;&quot;formulario-crear&quot;&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Descripción&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;descripcion&quot; name&#x3D;&quot;descripcion&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Carta&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Peso&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;peso&quot; name&#x3D;&quot;peso&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;0.2&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Origen&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;origen&quot; name&#x3D;&quot;origen&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Bogotá&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Destino&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;destino&quot; name&#x3D;&quot;destino&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Cartagena&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Fecha Envío&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;fechaEnvio&quot; name&#x3D;&quot;datetime-local&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;2007-12-03&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Tamaño&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;tamano&quot; name&#x3D;&quot;tamano&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;pequeño&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+        &lt;button (click)&#x3D;&quot;crearCarta()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success&quot; [disabled]&#x3D;&quot;creandoCarta&quot;&gt;{{ creandoCarta ? &#x27;Creando...&#x27; : &#x27;Crear carta&#x27; }}&lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;limpiarFormulario()&quot;&gt;Limpiar&lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;volverAlMenuPrincipal()&quot;&gt;Volver&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+
+    &lt;p class&#x3D;&quot;mensaje-exito&quot; *ngIf&#x3D;&quot;mensajeExito&quot;&gt;{{ mensajeExito }}&lt;/p&gt;
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;menu-mostrar&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;mostrar&#x27;&quot;&gt;
+  &lt;h1&gt;Cartas&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;contenedor-tabla&quot;&gt;
+    &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+      &lt;button (click)&#x3D;&quot;cargarCartas()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info&quot; [disabled]&#x3D;&quot;cargandoCartas&quot;&gt;{{ cargandoCartas ? &#x27;Cargando...&#x27; : &#x27;Recargar&#x27; }}&lt;/button&gt;
+      &lt;button (click)&#x3D;&quot;volverAlMenuPrincipal()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot;&gt;Volver&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;p *ngIf&#x3D;&quot;cargandoCartas&quot; class&#x3D;&quot;estado-tabla&quot;&gt;Cargando cartas...&lt;/p&gt;
+    &lt;p *ngIf&#x3D;&quot;!cargandoCartas &amp;&amp; cartas.length &#x3D;&#x3D;&#x3D; 0&quot; class&#x3D;&quot;estado-tabla&quot;&gt;No hay cartas registradas.&lt;/p&gt;
+
+    &lt;div class&#x3D;&quot;tabla-scroll&quot; *ngIf&#x3D;&quot;!cargandoCartas &amp;&amp; cartas.length &gt; 0&quot;&gt;
+      &lt;table class&#x3D;&quot;tabla-usuarios&quot;&gt;
+        &lt;tr&gt;
+          &lt;th&gt;ID&lt;/th&gt;
+          &lt;th&gt;Descripcion&lt;/th&gt;
+          &lt;th&gt;Peso&lt;/th&gt;
+          &lt;th&gt;Origen&lt;/th&gt;
+          &lt;th&gt;Destino&lt;/th&gt;
+          &lt;th&gt;Fecha Envio&lt;/th&gt;
+          &lt;th&gt;Tamano&lt;/th&gt;
+        &lt;/tr&gt;
+
+        &lt;tr *ngFor&#x3D;&quot;let carta of cartas&quot;&gt;
+          &lt;td&gt;{{ carta.id }}&lt;/td&gt;
+          &lt;td&gt;{{ carta.descripcion }}&lt;/td&gt;
+          &lt;td&gt;{{ carta.peso }}&lt;/td&gt;
+          &lt;td&gt;{{ carta.origen }}&lt;/td&gt;
+          &lt;td&gt;{{ carta.destino }}&lt;/td&gt;
+          &lt;td&gt;{{ carta.fechaEnvio }}&lt;/td&gt;
+          &lt;td&gt;{{ carta.tamano }}&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;menu-actualizar&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;actualizar&#x27;&quot;&gt;
+  &lt;h1&gt;Actualizar Carta&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;contenedor-formulario&quot;&gt;
+    &lt;form class&#x3D;&quot;formulario-crear&quot;&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;ID&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;id&quot; name&#x3D;&quot;actualizarId&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Descripcion&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;descripcion&quot; name&#x3D;&quot;actualizarDescripcion&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Peso&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;peso&quot; name&#x3D;&quot;actualizarPeso&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Origen&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;origen&quot; name&#x3D;&quot;actualizarOrigen&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Destino&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;destino&quot; name&#x3D;&quot;actualizarDestino&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Fecha Envio&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;fechaEnvio&quot; name&#x3D;&quot;actualizarFechaEnvio&quot; type&#x3D;&quot;datetime-local&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Tamano&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;tamano&quot; name&#x3D;&quot;actualizarTamano&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+        &lt;button (click)&#x3D;&quot;actualizarCarta()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-warning&quot; [disabled]&#x3D;&quot;actualizandoCarta&quot;&gt;{{ actualizandoCarta ? &#x27;Actualizando...&#x27; : &#x27;Actualizar carta&#x27; }}&lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;limpiarFormulario()&quot;&gt;Limpiar&lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;volverAlMenuPrincipal()&quot;&gt;Volver&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+
+    &lt;p class&#x3D;&quot;mensaje-exito&quot; *ngIf&#x3D;&quot;mensajeExito&quot;&gt;{{ mensajeExito }}&lt;/p&gt;
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;menu-eliminar&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;eliminar&#x27;&quot;&gt;
+  &lt;h1&gt;Eliminar Carta&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;contenedor-formulario contenedor-eliminar&quot;&gt;
+    &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+      &lt;h3&gt;ID de la carta&lt;/h3&gt;
+      &lt;input [(ngModel)]&#x3D;&quot;id&quot; name&#x3D;&quot;eliminarId&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+      &lt;button (click)&#x3D;&quot;eliminarCarta()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger&quot; [disabled]&#x3D;&quot;eliminandoCarta&quot;&gt;{{ eliminandoCarta ? &#x27;Eliminando...&#x27; : &#x27;Eliminar carta&#x27; }}&lt;/button&gt;
+      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;volverAlMenuPrincipal()&quot;&gt;Volver&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;p class&#x3D;&quot;mensaje-exito&quot; *ngIf&#x3D;&quot;mensajeExito&quot;&gt;{{ mensajeExito }}&lt;/p&gt;
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis-network.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main *ngIf="menu === \'principal\'">  <h1>Administrar Cartas</h1>  <div class="botones">    <h2>Seleccione una opción</h2>    <div class="grupo-botones">      <span>        <button (click)="seleccionarMenu(\'crear\')" type="button" class="btn btn-success">Crear</button>        <button (click)="seleccionarMenu(\'mostrar\')" type="button" class="btn btn-info">Mostrar Todo</button>        <button (click)="seleccionarMenu(\'eliminar\')" type="button" class="btn btn-danger">Eliminar</button>        <button (click)="seleccionarMenu(\'actualizar\')" type="button" class="btn btn-warning">Actualizar</button>      </span>    </div>  </div></main><div class="menu-crear" *ngIf="menu === \'crear\'">  <h1>Crear Carta</h1>  <div class="contenedor-formulario">    <form class="formulario-crear">      <div class="fila-formulario">        <h3>Descripción</h3>        <input [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control" placeholder="Carta"/>      </div>      <div class="fila-formulario">        <h3>Peso</h3>        <input [(ngModel)]="peso" name="peso" type="number" min="0" class="form-control" placeholder="0.2"/>      </div>      <div class="fila-formulario">        <h3>Origen</h3>        <input [(ngModel)]="origen" name="origen" type="text" class="form-control" placeholder="Bogotá"/>      </div>      <div class="fila-formulario">        <h3>Destino</h3>        <input [(ngModel)]="destino" name="destino" type="text" class="form-control" placeholder="Cartagena"/>      </div>      <div class="fila-formulario">        <h3>Fecha Envío</h3>        <input [(ngModel)]="fechaEnvio" name="datetime-local" type="text" class="form-control" placeholder="2007-12-03"/>      </div>      <div class="fila-formulario">        <h3>Tamaño</h3>        <input [(ngModel)]="tamano" name="tamano" type="text" class="form-control" placeholder="pequeño"/>      </div>      <div class="acciones-formulario">        <button (click)="crearCarta()" type="button" class="btn btn-success" [disabled]="creandoCarta">{{ creandoCarta ? \'Creando...\' : \'Crear carta\' }}</button>        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>      </div>    </form>    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div><div class="menu-mostrar" *ngIf="menu === \'mostrar\'">  <h1>Cartas</h1>  <div class="contenedor-tabla">    <div class="acciones-formulario">      <button (click)="cargarCartas()" type="button" class="btn btn-info" [disabled]="cargandoCartas">{{ cargandoCartas ? \'Cargando...\' : \'Recargar\' }}</button>      <button (click)="volverAlMenuPrincipal()" type="button" class="btn btn-secondary">Volver</button>    </div>    <p *ngIf="cargandoCartas" class="estado-tabla">Cargando cartas...</p>    <p *ngIf="!cargandoCartas && cartas.length === 0" class="estado-tabla">No hay cartas registradas.</p>    <div class="tabla-scroll" *ngIf="!cargandoCartas && cartas.length > 0">      <table class="tabla-usuarios">        <tr>          <th>ID</th>          <th>Descripcion</th>          <th>Peso</th>          <th>Origen</th>          <th>Destino</th>          <th>Fecha Envio</th>          <th>Tamano</th>        </tr>        <tr *ngFor="let carta of cartas">          <td>{{ carta.id }}</td>          <td>{{ carta.descripcion }}</td>          <td>{{ carta.peso }}</td>          <td>{{ carta.origen }}</td>          <td>{{ carta.destino }}</td>          <td>{{ carta.fechaEnvio }}</td>          <td>{{ carta.tamano }}</td>        </tr>      </table>    </div>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div><div class="menu-actualizar" *ngIf="menu === \'actualizar\'">  <h1>Actualizar Carta</h1>  <div class="contenedor-formulario">    <form class="formulario-crear">      <div class="fila-formulario">        <h3>ID</h3>        <input [(ngModel)]="id" name="actualizarId" type="number" min="0" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Descripcion</h3>        <input [(ngModel)]="descripcion" name="actualizarDescripcion" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Peso</h3>        <input [(ngModel)]="peso" name="actualizarPeso" type="number" min="0" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Origen</h3>        <input [(ngModel)]="origen" name="actualizarOrigen" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Destino</h3>        <input [(ngModel)]="destino" name="actualizarDestino" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Fecha Envio</h3>        <input [(ngModel)]="fechaEnvio" name="actualizarFechaEnvio" type="datetime-local" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Tamano</h3>        <input [(ngModel)]="tamano" name="actualizarTamano" type="text" class="form-control" />      </div>      <div class="acciones-formulario">        <button (click)="actualizarCarta()" type="button" class="btn btn-warning" [disabled]="actualizandoCarta">{{ actualizandoCarta ? \'Actualizando...\' : \'Actualizar carta\' }}</button>        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>      </div>    </form>    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div><div class="menu-eliminar" *ngIf="menu === \'eliminar\'">  <h1>Eliminar Carta</h1>  <div class="contenedor-formulario contenedor-eliminar">    <div class="fila-formulario">      <h3>ID de la carta</h3>      <input [(ngModel)]="id" name="eliminarId" type="number" min="0" class="form-control" />    </div>    <div class="acciones-formulario">      <button (click)="eliminarCarta()" type="button" class="btn btn-danger" [disabled]="eliminandoCarta">{{ eliminandoCarta ? \'Eliminando...\' : \'Eliminar carta\' }}</button>      <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>    </div>    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminDashboard', 'selector': 'app-admin-dashboard'},{'name': 'AdminLogin', 'selector': 'app-admin-login'},{'name': 'AdminMenuAdministrador', 'selector': 'app-admin-menu-administrador'},{'name': 'AdminMenuCarta', 'selector': 'app-admin-menu-carta'},{'name': 'AdminMenuConductor', 'selector': 'app-admin-menu-conductor'},{'name': 'AdminMenuManipulador', 'selector': 'app-admin-menu-manipulador'},{'name': 'AdminMenuPaqueteAlimenticio', 'selector': 'app-admin-menu-paquete-alimenticio'},{'name': 'AdminMenuPaqueteNoAlimenticio', 'selector': 'app-admin-menu-paquete-no-alimenticio'},{'name': 'AdminMenuPrincipal', 'selector': 'app-admin-menu-principal'},{'name': 'AdminMenuUsuarioConcurrente', 'selector': 'app-admin-menu-usuario-concurrente'},{'name': 'AdminMenuUsuarioNormal', 'selector': 'app-admin-menu-usuario-normal'},{'name': 'AdminMenuUsuarioPremium', 'selector': 'app-admin-menu-usuario-premium'},{'name': 'App', 'selector': 'app-root'},{'name': 'ConductorMenuActualizar', 'selector': 'app-conductor-menu-actualizar'},{'name': 'ConductorMenuEvidencia', 'selector': 'app-conductor-menu-evidencia'},{'name': 'ConductorMenuPrincipal', 'selector': 'app-conductor-menu-principal'},{'name': 'Login', 'selector': 'app-login'},{'name': 'ManipuladorMenuActualizar', 'selector': 'app-manipulador-menu-actualizar'},{'name': 'ManipuladorMenuEvicencia', 'selector': 'app-manipulador-menu-evicencia'},{'name': 'ManipuladorMenuPrincipal', 'selector': 'app-manipulador-menu-principal'},{'name': 'Register', 'selector': 'app-register'},{'name': 'UsuariosDashboard', 'selector': 'app-usuarios-dashboard'},{'name': 'UsuariosMenuCartas', 'selector': 'app-usuarios-menu-cartas'},{'name': 'UsuariosMenuPaquetesAlimenticios', 'selector': 'app-usuarios-menu-paquetes-alimenticios'},{'name': 'UsuariosMenuPaquetesNoAlimenticios', 'selector': 'app-usuarios-menu-paquetes-no-alimenticios'},{'name': 'UsuariosMenuPrincipal', 'selector': 'app-usuarios-menu-principal'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AdminMenuCarta'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminMenuCarta.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

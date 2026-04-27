@@ -1,0 +1,1591 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mi-primer-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">mi-primer-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ConductorMenuActualizar</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Al inicializarse, carga automáticamente los datos actuales del conductor desde el backend
+usando el ID recibido como input del componente padre, pre-llenando el formulario
+para que el conductor solo modifique los campos que desee cambiar.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-conductor-menu-actualizar</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./conductor-menu-actualizar.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./conductor-menu-actualizar.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizandoConductor" >actualizandoConductor</a>
+                            </li>
+                            <li>
+                                <a href="#cargado" >cargado</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cd" >cd</a>
+                            </li>
+                            <li>
+                                <a href="#cedula" >cedula</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#conductorService" >conductorService</a>
+                            </li>
+                            <li>
+                                <a href="#contrasena" >contrasena</a>
+                            </li>
+                            <li>
+                                <a href="#edad" >edad</a>
+                            </li>
+                            <li>
+                                <a href="#email" >email</a>
+                            </li>
+                            <li>
+                                <a href="#experienciaAnios" >experienciaAnios</a>
+                            </li>
+                            <li>
+                                <a href="#finalTurno" >finalTurno</a>
+                            </li>
+                            <li>
+                                <a href="#inicioTurno" >inicioTurno</a>
+                            </li>
+                            <li>
+                                <a href="#licencia" >licencia</a>
+                            </li>
+                            <li>
+                                <a href="#mensajeError" >mensajeError</a>
+                            </li>
+                            <li>
+                                <a href="#mensajeExito" >mensajeExito</a>
+                            </li>
+                            <li>
+                                <a href="#nombre" >nombre</a>
+                            </li>
+                            <li>
+                                <a href="#salario" >salario</a>
+                            </li>
+                            <li>
+                                <a href="#telefono" >telefono</a>
+                            </li>
+                            <li>
+                                <a href="#tipoVehiculo" >tipoVehiculo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizarConductor" >actualizarConductor</a>
+                            </li>
+                            <li>
+                                <a href="#limpiarFormulario" >limpiarFormulario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#limpiarMensajes" >limpiarMensajes</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#id" >id</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="id"></a>
+                        <b>id</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>-1</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:47</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>ID del conductor a actualizar.
+Recibido desde el componente padre.
+Se usa para buscar el registro correcto en el backend y para el PUT.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarConductor"></a>
+                    <span class="name">
+                        <span ><b>actualizarConductor</b></span>
+                        <a href="#actualizarConductor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarConductor()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="125"
+                                    class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:125</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía la solicitud de actualización del conductor al backend con los datos del formulario.
+Usa el ID recibido como @Input para identificar el registro a modificar.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiarFormulario"></a>
+                    <span class="name">
+                        <span ><b>limpiarFormulario</b></span>
+                        <a href="#limpiarFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>limpiarFormulario()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="149"
+                                    class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:149</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Limpia únicamente los campos editables sensibles del formulario.
+No limpia todos los campos porque el conductor solo actualiza datos específicos
+(correo, teléfono, licencia, tipo de vehículo y contraseña).</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiarMensajes"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>limpiarMensajes</b></span>
+                        <a href="#limpiarMensajes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>limpiarMensajes()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="161"
+                                    class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:161</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Limpia los mensajes de éxito y error de la vista.
+Se invoca antes de cada intento de actualización.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>y pre-carga los datos del conductor cuyo ID coincide con el input recibido.
+Esto permite mostrar el formulario con los valores actuales antes de editar.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizandoConductor"></a>
+                    <span class="name">
+                        <span ><b>actualizandoConductor</b></span>
+                        <a href="#actualizandoConductor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:34</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano que indica si hay una solicitud de actualización en curso.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargado"></a>
+                    <span class="name">
+                        <span ><b>cargado</b></span>
+                        <a href="#cargado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indica si los datos del conductor ya fueron cargados desde el backend.
+Controla la visibilidad del formulario en la plantilla.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cd"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cd</b></span>
+                        <a href="#cd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ChangeDetectorRef)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:25</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para forzar la detección de cambios en la vista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cedula"></a>
+                    <span class="name">
+                        <span ><b>cedula</b></span>
+                        <a href="#cedula"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:51</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Número de cédula del conductor.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="conductorService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>conductorService</b></span>
+                        <a href="#conductorService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ConductorService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:22</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para operaciones CRUD sobre conductores en el backend.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contrasena"></a>
+                    <span class="name">
+                        <span ><b>contrasena</b></span>
+                        <a href="#contrasena"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:84</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Contraseña del conductor.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edad"></a>
+                    <span class="name">
+                        <span ><b>edad</b></span>
+                        <a href="#edad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:63</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Edad del conductor.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="email"></a>
+                    <span class="name">
+                        <span ><b>email</b></span>
+                        <a href="#email"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:57</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Correo electrónico del conductor.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="experienciaAnios"></a>
+                    <span class="name">
+                        <span ><b>experienciaAnios</b></span>
+                        <a href="#experienciaAnios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:81</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Años de experiencia como conductor.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="finalTurno"></a>
+                    <span class="name">
+                        <span ><b>finalTurno</b></span>
+                        <a href="#finalTurno"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:69</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Hora de fin de turno.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inicioTurno"></a>
+                    <span class="name">
+                        <span ><b>inicioTurno</b></span>
+                        <a href="#inicioTurno"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:66</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Hora de inicio de turno.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="licencia"></a>
+                    <span class="name">
+                        <span ><b>licencia</b></span>
+                        <a href="#licencia"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:75</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Número o categoría de licencia de conducción.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mensajeError"></a>
+                    <span class="name">
+                        <span ><b>mensajeError</b></span>
+                        <a href="#mensajeError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:31</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje mostrado al usuario cuando ocurre un error en la actualización.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mensajeExito"></a>
+                    <span class="name">
+                        <span ><b>mensajeExito</b></span>
+                        <a href="#mensajeExito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:28</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje mostrado al usuario cuando la actualización fue exitosa.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nombre"></a>
+                    <span class="name">
+                        <span ><b>nombre</b></span>
+                        <a href="#nombre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:54</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre completo del conductor.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="salario"></a>
+                    <span class="name">
+                        <span ><b>salario</b></span>
+                        <a href="#salario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:72</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Salario del conductor.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="telefono"></a>
+                    <span class="name">
+                        <span ><b>telefono</b></span>
+                        <a href="#telefono"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:60</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Número de teléfono del conductor.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tipoVehiculo"></a>
+                    <span class="name">
+                        <span ><b>tipoVehiculo</b></span>
+                        <a href="#tipoVehiculo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/admin-dashboard/conductor-menu-actualizar/conductor-menu-actualizar.ts:78</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Tipo de vehículo asignado al conductor.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {ChangeDetectorRef, Component, inject, Input} from &#x27;@angular/core&#x27;;
+import {ConductorService} from &#x27;../../services/conductor.service&#x27;;
+
+/**
+ * @component ConductorMenuActualizar
+ * @description Componente que permite a un Conductor actualizar su propia información de perfil.
+ * Al inicializarse, carga automáticamente los datos actuales del conductor desde el backend
+ * usando el ID recibido como input del componente padre, pre-llenando el formulario
+ * para que el conductor solo modifique los campos que desee cambiar.
+ *
+ * @selector app-conductor-menu-actualizar
+ */
+@Component({
+  selector: &#x27;app-conductor-menu-actualizar&#x27;,
+  standalone: false,
+  templateUrl: &#x27;./conductor-menu-actualizar.html&#x27;,
+  styleUrl: &#x27;./conductor-menu-actualizar.css&#x27;,
+})
+export class ConductorMenuActualizar {
+
+  /** Servicio para operaciones CRUD sobre conductores en el backend. */
+  private readonly conductorService &#x3D; inject(ConductorService);
+
+  /** Servicio para forzar la detección de cambios en la vista. */
+  private cd &#x3D; inject(ChangeDetectorRef);
+
+  /** Mensaje mostrado al usuario cuando la actualización fue exitosa. */
+  mensajeExito: string &#x3D; &#x27;&#x27;;
+
+  /** Mensaje mostrado al usuario cuando ocurre un error en la actualización. */
+  mensajeError: string &#x3D; &#x27;&#x27;;
+
+  /** Booleano que indica si hay una solicitud de actualización en curso. */
+  actualizandoConductor: boolean &#x3D; false;
+
+  /**
+   * Indica si los datos del conductor ya fueron cargados desde el backend.
+   * Controla la visibilidad del formulario en la plantilla.
+   */
+  cargado: boolean &#x3D; false;
+
+  /**
+   * ID del conductor a actualizar.
+   * Recibido desde el componente padre.
+   * Se usa para buscar el registro correcto en el backend y para el PUT.
+   */
+  @Input() id: number &#x3D; -1;
+
+
+  /** Número de cédula del conductor. */
+  cedula: number &#x3D; 0;
+
+  /** Nombre completo del conductor. */
+  nombre: string &#x3D; &#x27;&#x27;;
+
+  /** Correo electrónico del conductor. */
+  email: string &#x3D; &#x27;&#x27;;
+
+  /** Número de teléfono del conductor. */
+  telefono: number &#x3D; 0;
+
+  /** Edad del conductor. */
+  edad: number &#x3D; 0;
+
+  /** Hora de inicio de turno. */
+  inicioTurno: string &#x3D; &#x27;&#x27;;
+
+  /** Hora de fin de turno. */
+  finalTurno: string &#x3D; &#x27;&#x27;;
+
+  /** Salario del conductor. */
+  salario: number &#x3D; 0;
+
+  /** Número o categoría de licencia de conducción. */
+  licencia: string &#x3D; &#x27;&#x27;;
+
+  /** Tipo de vehículo asignado al conductor. */
+  tipoVehiculo: string &#x3D; &#x27;&#x27;;
+
+  /** Años de experiencia como conductor. */
+  experienciaAnios: number &#x3D; 0;
+
+  /** Contraseña del conductor. */
+  contrasena: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * @lifecycle ngOnInit
+   * @description Al inicializar el componente, consulta la lista de conductores
+   * y pre-carga los datos del conductor cuyo ID coincide con el input recibido.
+   * Esto permite mostrar el formulario con los valores actuales antes de editar.
+   */
+
+  ngOnInit() {
+    this.conductorService.getConductores().subscribe({
+      next: (usu) &#x3D;&gt; {
+        const encontrado &#x3D; usu.body?.find(u &#x3D;&gt; u.id &#x3D;&#x3D;&#x3D; this.id);
+
+        if (encontrado !&#x3D;&#x3D; undefined) {
+          this.cedula &#x3D; encontrado.cedula;
+          this.nombre &#x3D; encontrado.nombre;
+          this.email &#x3D; encontrado.email;
+          this.telefono &#x3D; encontrado.telefono;
+          this.edad &#x3D; encontrado.edad;
+          this.inicioTurno &#x3D; encontrado.inicioTurno;
+          this.finalTurno &#x3D; encontrado.finalTurno;
+          this.salario &#x3D; encontrado.salario;
+          this.licencia &#x3D; encontrado.licencia;
+          this.tipoVehiculo &#x3D; encontrado.tipoVehiculo;
+          this.experienciaAnios &#x3D; encontrado.experienciaAnios;
+          this.contrasena &#x3D; encontrado.contrasena;
+          this.cargado &#x3D; true;
+          this.cd.detectChanges();
+        }
+      },
+      error: (err) &#x3D;&gt; {
+        console.log(&quot;No hay usuarios&quot;, err);
+      }
+    });
+  }
+
+  /**
+   * Envía la solicitud de actualización del conductor al backend con los datos del formulario.
+   * Usa el ID recibido como @Input para identificar el registro a modificar.
+   */
+  actualizarConductor(): void {
+    this.limpiarMensajes();
+    this.actualizandoConductor &#x3D; true;
+    this.conductorService.putConductor(
+      this.id, this.cedula, this.nombre, this.email, this.telefono, this.edad, this.inicioTurno, this.finalTurno, this.salario, this.licencia, this.tipoVehiculo, this.experienciaAnios, this.contrasena
+    ).subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        this.mensajeExito &#x3D; respuesta || &#x27;Conductor actualizado correctamente.&#x27;;
+        this.actualizandoConductor &#x3D; false;
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.actualizandoConductor &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27; ? error.error : &#x27;No se pudo actualizar el conductor.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Limpia únicamente los campos editables sensibles del formulario.
+   * No limpia todos los campos porque el conductor solo actualiza datos específicos
+   * (correo, teléfono, licencia, tipo de vehículo y contraseña).
+   */
+  limpiarFormulario(): void {
+    this.email &#x3D; &#x27;&#x27;;
+    this.telefono &#x3D; 0;
+    this.licencia &#x3D; &#x27;&#x27;;
+    this.tipoVehiculo &#x3D; &#x27;&#x27;;
+    this.contrasena &#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Limpia los mensajes de éxito y error de la vista.
+   * Se invoca antes de cada intento de actualización.
+   */
+  private limpiarMensajes(): void {
+    this.mensajeExito &#x3D; &#x27;&#x27;;
+    this.mensajeError &#x3D; &#x27;&#x27;;
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;menu-actualizar&quot; *ngIf&#x3D;&quot;cargado&quot;&gt;
+  &lt;h1&gt;Actualizar Conductor&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;contenedor-formulario&quot;&gt;
+    &lt;form class&#x3D;&quot;formulario-actualizar&quot;&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;ID&lt;/h3&gt;
+        &lt;input [disabled]&#x3D;&quot;true&quot; [(ngModel)]&#x3D;&quot;id&quot; name&#x3D;&quot;actualizarId&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Cedula&lt;/h3&gt;
+        &lt;input [disabled]&#x3D;&quot;true&quot; [(ngModel)]&#x3D;&quot;cedula&quot; name&#x3D;&quot;actualizarCedula&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Nombre&lt;/h3&gt;
+        &lt;input [disabled]&#x3D;&quot;true&quot; [(ngModel)]&#x3D;&quot;nombre&quot; name&#x3D;&quot;actualizarNombre&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Email&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;email&quot; name&#x3D;&quot;actualizarEmail&quot; type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Telefono&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;telefono&quot; name&#x3D;&quot;actualizarTelefono&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Edad&lt;/h3&gt;
+        &lt;input [disabled]&#x3D;&quot;true&quot; [(ngModel)]&#x3D;&quot;edad&quot; name&#x3D;&quot;actualizarEdad&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Inicio Turno&lt;/h3&gt;
+        &lt;input [disabled]&#x3D;&quot;true&quot; [(ngModel)]&#x3D;&quot;inicioTurno&quot; name&#x3D;&quot;actualizarInicioTurno&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Final Turno&lt;/h3&gt;
+        &lt;input [disabled]&#x3D;&quot;true&quot; [(ngModel)]&#x3D;&quot;finalTurno&quot; name&#x3D;&quot;actualizarFinalTurno&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Salario&lt;/h3&gt;
+        &lt;input [disabled]&#x3D;&quot;true&quot; [(ngModel)]&#x3D;&quot;salario&quot; name&#x3D;&quot;actualizarSalario&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Licencia&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;licencia&quot; name&#x3D;&quot;actualizarLicencia&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Tipo Vehiculo&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;tipoVehiculo&quot; name&#x3D;&quot;actualizarTipoVehiculo&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Experiencia En Años&lt;/h3&gt;
+        &lt;input [disabled]&#x3D;&quot;true&quot; [(ngModel)]&#x3D;&quot;experienciaAnios&quot; name&#x3D;&quot;actualizarExperienciaAnios&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Contraseña&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;contrasena&quot; name&#x3D;&quot;actualizarContrasena&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+        &lt;button (click)&#x3D;&quot;actualizarConductor()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-warning&quot; [disabled]&#x3D;&quot;actualizandoConductor&quot;&gt;
+          {{ actualizandoConductor ? &#x27;Actualizando...&#x27; : &#x27;Actualizar conductor&#x27; }}
+        &lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;limpiarFormulario()&quot;&gt;Limpiar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+
+    &lt;p class&#x3D;&quot;mensaje-exito&quot; *ngIf&#x3D;&quot;mensajeExito&quot;&gt;{{ mensajeExito }}&lt;/p&gt;
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div *ngIf&#x3D;&quot;!cargado&quot; class&#x3D;&quot;d-flex justify-content-center align-items-center&quot; style&#x3D;&quot;height: 100vh;&quot;&gt;
+  &lt;div class&#x3D;&quot;spinner-border text-info&quot; role&#x3D;&quot;status&quot;&gt;
+    &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;Cargando...&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis-network.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="menu-actualizar" *ngIf="cargado">  <h1>Actualizar Conductor</h1>  <div class="contenedor-formulario">    <form class="formulario-actualizar">      <div class="fila-formulario">        <h3>ID</h3>        <input [disabled]="true" [(ngModel)]="id" name="actualizarId" type="number" min="0" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Cedula</h3>        <input [disabled]="true" [(ngModel)]="cedula" name="actualizarCedula" type="number" min="1" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Nombre</h3>        <input [disabled]="true" [(ngModel)]="nombre" name="actualizarNombre" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Email</h3>        <input [(ngModel)]="email" name="actualizarEmail" type="email" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Telefono</h3>        <input [(ngModel)]="telefono" name="actualizarTelefono" type="number" min="1" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Edad</h3>        <input [disabled]="true" [(ngModel)]="edad" name="actualizarEdad" type="number" min="1" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Inicio Turno</h3>        <input [disabled]="true" [(ngModel)]="inicioTurno" name="actualizarInicioTurno" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Final Turno</h3>        <input [disabled]="true" [(ngModel)]="finalTurno" name="actualizarFinalTurno" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Salario</h3>        <input [disabled]="true" [(ngModel)]="salario" name="actualizarSalario" type="number" min="0" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Licencia</h3>        <input [(ngModel)]="licencia" name="actualizarLicencia" type="text" class="form-control"/>      </div>      <div class="fila-formulario">        <h3>Tipo Vehiculo</h3>        <input [(ngModel)]="tipoVehiculo" name="actualizarTipoVehiculo" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Experiencia En Años</h3>        <input [disabled]="true" [(ngModel)]="experienciaAnios" name="actualizarExperienciaAnios" type="number" min="0" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Contraseña</h3>        <input [(ngModel)]="contrasena" name="actualizarContrasena" type="text" class="form-control" />      </div>      <div class="acciones-formulario">        <button (click)="actualizarConductor()" type="button" class="btn btn-warning" [disabled]="actualizandoConductor">          {{ actualizandoConductor ? \'Actualizando...\' : \'Actualizar conductor\' }}        </button>        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>      </div>    </form>    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div><div *ngIf="!cargado" class="d-flex justify-content-center align-items-center" style="height: 100vh;">  <div class="spinner-border text-info" role="status">    <span class="visually-hidden">Cargando...</span>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminDashboard', 'selector': 'app-admin-dashboard'},{'name': 'AdminLogin', 'selector': 'app-admin-login'},{'name': 'AdminMenuAdministrador', 'selector': 'app-admin-menu-administrador'},{'name': 'AdminMenuCarta', 'selector': 'app-admin-menu-carta'},{'name': 'AdminMenuConductor', 'selector': 'app-admin-menu-conductor'},{'name': 'AdminMenuManipulador', 'selector': 'app-admin-menu-manipulador'},{'name': 'AdminMenuPaqueteAlimenticio', 'selector': 'app-admin-menu-paquete-alimenticio'},{'name': 'AdminMenuPaqueteNoAlimenticio', 'selector': 'app-admin-menu-paquete-no-alimenticio'},{'name': 'AdminMenuPrincipal', 'selector': 'app-admin-menu-principal'},{'name': 'AdminMenuUsuarioConcurrente', 'selector': 'app-admin-menu-usuario-concurrente'},{'name': 'AdminMenuUsuarioNormal', 'selector': 'app-admin-menu-usuario-normal'},{'name': 'AdminMenuUsuarioPremium', 'selector': 'app-admin-menu-usuario-premium'},{'name': 'App', 'selector': 'app-root'},{'name': 'ConductorMenuActualizar', 'selector': 'app-conductor-menu-actualizar'},{'name': 'ConductorMenuEvidencia', 'selector': 'app-conductor-menu-evidencia'},{'name': 'ConductorMenuPrincipal', 'selector': 'app-conductor-menu-principal'},{'name': 'Login', 'selector': 'app-login'},{'name': 'ManipuladorMenuActualizar', 'selector': 'app-manipulador-menu-actualizar'},{'name': 'ManipuladorMenuEvicencia', 'selector': 'app-manipulador-menu-evicencia'},{'name': 'ManipuladorMenuPrincipal', 'selector': 'app-manipulador-menu-principal'},{'name': 'Register', 'selector': 'app-register'},{'name': 'UsuariosDashboard', 'selector': 'app-usuarios-dashboard'},{'name': 'UsuariosMenuCartas', 'selector': 'app-usuarios-menu-cartas'},{'name': 'UsuariosMenuPaquetesAlimenticios', 'selector': 'app-usuarios-menu-paquetes-alimenticios'},{'name': 'UsuariosMenuPaquetesNoAlimenticios', 'selector': 'app-usuarios-menu-paquetes-no-alimenticios'},{'name': 'UsuariosMenuPrincipal', 'selector': 'app-usuarios-menu-principal'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ConductorMenuActualizar'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ConductorMenuActualizar.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

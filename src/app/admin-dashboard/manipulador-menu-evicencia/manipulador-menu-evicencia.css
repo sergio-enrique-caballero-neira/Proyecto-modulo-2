@@ -30,7 +30,7 @@
   height: 100%;
   max-width: 300px;
   max-height: 200px;
-  object-fit: cover; /* Ajusta la imagen al recuadro */
+  object-fit: cover;
 }
 
 .mensaje-exito{

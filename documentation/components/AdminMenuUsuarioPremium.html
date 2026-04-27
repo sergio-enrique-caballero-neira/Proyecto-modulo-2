@@ -1,0 +1,2044 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mi-primer-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">mi-primer-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AdminMenuUsuarioPremium</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>accesible desde el panel del Administrador.
+El usuario Premium es aquel con membresía de alto nivel que goza de un descuento
+fijo independiente del volumen mensual de pedidos. Su único campo exclusivo
+respecto al usuario Normal es <code>descuento</code>, que en este caso es estático
+y asignado manualmente por el administrador.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-admin-menu-usuario-premium</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./admin-menu-usuario-premium.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./admin-menu-usuario-premium.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizandoUsuario" >actualizandoUsuario</a>
+                            </li>
+                            <li>
+                                <a href="#cargandoUsuarios" >cargandoUsuarios</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cd" >cd</a>
+                            </li>
+                            <li>
+                                <a href="#cedula" >cedula</a>
+                            </li>
+                            <li>
+                                <a href="#contrasena" >contrasena</a>
+                            </li>
+                            <li>
+                                <a href="#creandoUsuario" >creandoUsuario</a>
+                            </li>
+                            <li>
+                                <a href="#descuento" >descuento</a>
+                            </li>
+                            <li>
+                                <a href="#direccion" >direccion</a>
+                            </li>
+                            <li>
+                                <a href="#edad" >edad</a>
+                            </li>
+                            <li>
+                                <a href="#eliminandoUsuario" >eliminandoUsuario</a>
+                            </li>
+                            <li>
+                                <a href="#email" >email</a>
+                            </li>
+                            <li>
+                                <a href="#id" >id</a>
+                            </li>
+                            <li>
+                                <a href="#mensajeError" >mensajeError</a>
+                            </li>
+                            <li>
+                                <a href="#mensajeExito" >mensajeExito</a>
+                            </li>
+                            <li>
+                                <a href="#menu" >menu</a>
+                            </li>
+                            <li>
+                                <a href="#nombre" >nombre</a>
+                            </li>
+                            <li>
+                                <a href="#telefono" >telefono</a>
+                            </li>
+                            <li>
+                                <a href="#tipoUsuario" >tipoUsuario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#usuarioPremiumService" >usuarioPremiumService</a>
+                            </li>
+                            <li>
+                                <a href="#usuariosPremium" >usuariosPremium</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizarUsuarioPremium" >actualizarUsuarioPremium</a>
+                            </li>
+                            <li>
+                                <a href="#cargarUsuariosPremium" >cargarUsuariosPremium</a>
+                            </li>
+                            <li>
+                                <a href="#crearUsuarioPremium" >crearUsuarioPremium</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarUsuarioPremium" >eliminarUsuarioPremium</a>
+                            </li>
+                            <li>
+                                <a href="#limpiarFormulario" >limpiarFormulario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#limpiarMensajes" >limpiarMensajes</a>
+                            </li>
+                            <li>
+                                <a href="#seleccionarMenu" >seleccionarMenu</a>
+                            </li>
+                            <li>
+                                <a href="#volverAlMenuPrincipal" >volverAlMenuPrincipal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarUsuarioPremium"></a>
+                    <span class="name">
+                        <span ><b>actualizarUsuarioPremium</b></span>
+                        <a href="#actualizarUsuarioPremium"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarUsuarioPremium()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="145"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía la solicitud de actualización de un usuario premium existente.
+Requiere que <code>id</code> tenga un valor válido (distinto de -1).</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarUsuariosPremium"></a>
+                    <span class="name">
+                        <span ><b>cargarUsuariosPremium</b></span>
+                        <a href="#cargarUsuariosPremium"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarUsuariosPremium()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="206"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:206</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Consulta el backend y carga la lista completa de usuarios premium.
+Se invoca automáticamente al seleccionar la subvista &#39;mostrar&#39;.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="crearUsuarioPremium"></a>
+                    <span class="name">
+                        <span ><b>crearUsuarioPremium</b></span>
+                        <a href="#crearUsuarioPremium"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>crearUsuarioPremium()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="111"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía la solicitud de creación de un nuevo usuario premium al backend.
+Limpia mensajes, activa el estado de carga y, según la respuesta,
+muestra mensaje de éxito o error y limpia el formulario.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarUsuarioPremium"></a>
+                    <span class="name">
+                        <span ><b>eliminarUsuarioPremium</b></span>
+                        <a href="#eliminarUsuarioPremium"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarUsuarioPremium()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="181"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:181</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía la solicitud de eliminación de un usuario premium por su ID.
+Tras el éxito, resetea el ID a -1.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiarFormulario"></a>
+                    <span class="name">
+                        <span ><b>limpiarFormulario</b></span>
+                        <a href="#limpiarFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>limpiarFormulario()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="229"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:229</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Restablece todos los campos del formulario a sus valores por defecto.
+Se invoca tras operaciones exitosas de creación o actualización.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiarMensajes"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>limpiarMensajes</b></span>
+                        <a href="#limpiarMensajes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>limpiarMensajes()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="256"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:256</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Limpia los mensajes de éxito y error de la vista.
+Se invoca antes de cada operación CRUD.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seleccionarMenu"></a>
+                    <span class="name">
+                        <span ><b>seleccionarMenu</b></span>
+                        <a href="#seleccionarMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>seleccionarMenu(menu: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="97"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cambia la subvista activa y limpia mensajes previos.
+Si se selecciona &#39;mostrar&#39;, dispara la carga automática del listado.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>menu</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Identificador de la subvista a activar</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="volverAlMenuPrincipal"></a>
+                    <span class="name">
+                        <span ><b>volverAlMenuPrincipal</b></span>
+                        <a href="#volverAlMenuPrincipal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>volverAlMenuPrincipal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="246"
+                                    class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:246</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Regresa a la subvista principal, limpiando mensajes y el formulario.
+Equivalente a cancelar la operación en curso.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizandoUsuario"></a>
+                    <span class="name">
+                        <span ><b>actualizandoUsuario</b></span>
+                        <a href="#actualizandoUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:43</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se procesa una solicitud de actualización.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargandoUsuarios"></a>
+                    <span class="name">
+                        <span ><b>cargandoUsuarios</b></span>
+                        <a href="#cargandoUsuarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:49</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se carga la lista de usuarios desde el backend.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cd"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cd</b></span>
+                        <a href="#cd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ChangeDetectorRef)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:28</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para forzar la detección de cambios en la vista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cedula"></a>
+                    <span class="name">
+                        <span ><b>cedula</b></span>
+                        <a href="#cedula"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:59</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Número de cédula de identidad del usuario.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contrasena"></a>
+                    <span class="name">
+                        <span ><b>contrasena</b></span>
+                        <a href="#contrasena"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:90</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Contraseña del usuario para acceso al sistema.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="creandoUsuario"></a>
+                    <span class="name">
+                        <span ><b>creandoUsuario</b></span>
+                        <a href="#creandoUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se procesa una solicitud de creación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="descuento"></a>
+                    <span class="name">
+                        <span ><b>descuento</b></span>
+                        <a href="#descuento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:87</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Porcentaje de descuento fijo asignado al usuario Premium.
+A diferencia del usuario Concurrente, este descuento no varía con el
+volumen mensual de pedidos sino que es definido directamente por el administrador.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="direccion"></a>
+                    <span class="name">
+                        <span ><b>direccion</b></span>
+                        <a href="#direccion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:74</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Dirección de residencia del usuario.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edad"></a>
+                    <span class="name">
+                        <span ><b>edad</b></span>
+                        <a href="#edad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:71</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Edad del usuario.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminandoUsuario"></a>
+                    <span class="name">
+                        <span ><b>eliminandoUsuario</b></span>
+                        <a href="#eliminandoUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:46</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Booleano activo mientras se procesa una solicitud de eliminación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="email"></a>
+                    <span class="name">
+                        <span ><b>email</b></span>
+                        <a href="#email"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:65</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Correo electrónico del usuario (usado también como identificador de login).</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="id"></a>
+                    <span class="name">
+                        <span ><b>id</b></span>
+                        <a href="#id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>-1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:56</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ID del usuario (se inicializa en -1 como valor nulo).</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mensajeError"></a>
+                    <span class="name">
+                        <span ><b>mensajeError</b></span>
+                        <a href="#mensajeError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:37</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje mostrado al usuario cuando ocurre un error en la operación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mensajeExito"></a>
+                    <span class="name">
+                        <span ><b>mensajeExito</b></span>
+                        <a href="#mensajeExito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:34</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje mostrado al usuario cuando la operación fue exitosa.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menu"></a>
+                    <span class="name">
+                        <span ><b>menu</b></span>
+                        <a href="#menu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;principal&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:31</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Controla la subvista activa dentro del componente. Valor por defecto: &#39;principal&#39;.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nombre"></a>
+                    <span class="name">
+                        <span ><b>nombre</b></span>
+                        <a href="#nombre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:62</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre completo del usuario.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="telefono"></a>
+                    <span class="name">
+                        <span ><b>telefono</b></span>
+                        <a href="#telefono"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:68</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Número de teléfono de contacto del usuario.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tipoUsuario"></a>
+                    <span class="name">
+                        <span ><b>tipoUsuario</b></span>
+                        <a href="#tipoUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;PREMIUM&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:80</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Tipo de usuario. Se fija como &#39;PREMIUM&#39; por defecto.
+El administrador puede modificarlo si se requiere cambiar la categoría.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuarioPremiumService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>usuarioPremiumService</b></span>
+                        <a href="#usuarioPremiumService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(UsuariopremiumService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:25</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para operaciones CRUD sobre usuarios premium en el backend.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuariosPremium"></a>
+                    <span class="name">
+                        <span ><b>usuariosPremium</b></span>
+                        <a href="#usuariosPremium"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/UsuarioPremiumModel.html" target="_self" >UsuarioPremiumModel[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/admin-dashboard/admin-menu-usuarios/admin-menu-usuario-premium/admin-menu-usuario-premium.ts:52</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de usuarios premium cargada desde el backend para la vista de listado.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {ChangeDetectorRef, Component, inject} from &#x27;@angular/core&#x27;;
+import {UsuariopremiumService} from &#x27;../../../services/usuariopremium.service&#x27;;
+import {UsuarioPremiumModel} from &#x27;../../../models/usuarioPremium.model&#x27;;
+
+/**
+ * @component AdminMenuUsuarioPremium
+ * @description Componente de gestión CRUD completa sobre usuarios de tipo Premium,
+ * accesible desde el panel del Administrador.
+ * El usuario Premium es aquel con membresía de alto nivel que goza de un descuento
+ * fijo independiente del volumen mensual de pedidos. Su único campo exclusivo
+ * respecto al usuario Normal es &#x60;descuento&#x60;, que en este caso es estático
+ * y asignado manualmente por el administrador.
+ *
+ * @selector app-admin-menu-usuario-premium
+ */
+@Component({
+  selector: &#x27;app-admin-menu-usuario-premium&#x27;,
+  standalone: false,
+  templateUrl: &#x27;./admin-menu-usuario-premium.html&#x27;,
+  styleUrl: &#x27;./admin-menu-usuario-premium.css&#x27;,
+})
+export class AdminMenuUsuarioPremium {
+
+  /** Servicio para operaciones CRUD sobre usuarios premium en el backend. */
+  private readonly usuarioPremiumService &#x3D; inject(UsuariopremiumService);
+
+  /** Servicio para forzar la detección de cambios en la vista. */
+  private cd &#x3D; inject(ChangeDetectorRef);
+
+  /** Controla la subvista activa dentro del componente. Valor por defecto: &#x27;principal&#x27;. */
+  menu: string &#x3D; &#x27;principal&#x27;;
+
+  /** Mensaje mostrado al usuario cuando la operación fue exitosa. */
+  mensajeExito: string &#x3D; &#x27;&#x27;;
+
+  /** Mensaje mostrado al usuario cuando ocurre un error en la operación. */
+  mensajeError: string &#x3D; &#x27;&#x27;;
+
+  /** Booleano activo mientras se procesa una solicitud de creación. */
+  creandoUsuario: boolean &#x3D; false;
+
+  /** Booleano activo mientras se procesa una solicitud de actualización. */
+  actualizandoUsuario: boolean &#x3D; false;
+
+  /** Booleano activo mientras se procesa una solicitud de eliminación. */
+  eliminandoUsuario: boolean &#x3D; false;
+
+  /** Booleano activo mientras se carga la lista de usuarios desde el backend. */
+  cargandoUsuarios: boolean &#x3D; false;
+
+  /** Lista de usuarios premium cargada desde el backend para la vista de listado. */
+  usuariosPremium: UsuarioPremiumModel[] &#x3D; [];
+
+
+  /** ID del usuario (se inicializa en -1 como valor nulo). */
+  id: number &#x3D; -1;
+
+  /** Número de cédula de identidad del usuario. */
+  cedula: number &#x3D; 0;
+
+  /** Nombre completo del usuario. */
+  nombre: string &#x3D; &#x27;&#x27;;
+
+  /** Correo electrónico del usuario (usado también como identificador de login). */
+  email: string &#x3D; &#x27;&#x27;;
+
+  /** Número de teléfono de contacto del usuario. */
+  telefono: number &#x3D; 0;
+
+  /** Edad del usuario. */
+  edad: number &#x3D; 0;
+
+  /** Dirección de residencia del usuario. */
+  direccion: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Tipo de usuario. Se fija como &#x27;PREMIUM&#x27; por defecto.
+   * El administrador puede modificarlo si se requiere cambiar la categoría.
+   */
+  tipoUsuario: string &#x3D; &#x27;PREMIUM&#x27;;
+
+  /**
+   * Porcentaje de descuento fijo asignado al usuario Premium.
+   * A diferencia del usuario Concurrente, este descuento no varía con el
+   * volumen mensual de pedidos sino que es definido directamente por el administrador.
+   */
+  descuento: number &#x3D; 0;
+
+  /** Contraseña del usuario para acceso al sistema. */
+  contrasena: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Cambia la subvista activa y limpia mensajes previos.
+   * Si se selecciona &#x27;mostrar&#x27;, dispara la carga automática del listado.
+   * @param menu - Identificador de la subvista a activar
+   */
+  seleccionarMenu(menu: string): void {
+    this.menu &#x3D; menu;
+    this.limpiarMensajes();
+
+    if (menu &#x3D;&#x3D;&#x3D; &#x27;mostrar&#x27;) {
+      this.cargarUsuariosPremium();
+    }
+  }
+
+  /**
+   * Envía la solicitud de creación de un nuevo usuario premium al backend.
+   * Limpia mensajes, activa el estado de carga y, según la respuesta,
+   * muestra mensaje de éxito o error y limpia el formulario.
+   */
+  crearUsuarioPremium(): void {
+    this.limpiarMensajes();
+    this.creandoUsuario &#x3D; true;
+
+    this.usuarioPremiumService.postUsuarioPremium(
+      this.cedula,
+      this.nombre,
+      this.email,
+      this.telefono,
+      this.edad,
+      this.direccion,
+      this.tipoUsuario,
+      this.descuento,
+      this.contrasena
+    ).subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        this.mensajeExito &#x3D; respuesta || &#x27;Usuario premium creado correctamente.&#x27;;
+        this.creandoUsuario &#x3D; false;
+        this.limpiarFormulario();
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.creandoUsuario &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27; ? error.error
+          : &#x27;No se pudo crear el usuario premium.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Envía la solicitud de actualización de un usuario premium existente.
+   * Requiere que &#x60;id&#x60; tenga un valor válido (distinto de -1).
+   */
+  actualizarUsuarioPremium(): void {
+    this.limpiarMensajes();
+    this.actualizandoUsuario &#x3D; true;
+
+    this.usuarioPremiumService.putUsuarioPremium(
+      this.id,
+      this.cedula,
+      this.nombre,
+      this.email,
+      this.telefono,
+      this.edad,
+      this.direccion,
+      this.tipoUsuario,
+      this.descuento,
+      this.contrasena
+    ).subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        this.mensajeExito &#x3D; respuesta || &#x27;Usuario premium actualizado correctamente.&#x27;;
+        this.actualizandoUsuario &#x3D; false;
+        this.limpiarFormulario();
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.actualizandoUsuario &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27;
+          ? error.error
+          : &#x27;No se pudo actualizar el usuario premium.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Envía la solicitud de eliminación de un usuario premium por su ID.
+   * Tras el éxito, resetea el ID a -1.
+   */
+  eliminarUsuarioPremium(): void {
+    this.limpiarMensajes();
+    this.eliminandoUsuario &#x3D; true;
+
+    this.usuarioPremiumService.deleteUsuarioPremium(this.id).subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        this.mensajeExito &#x3D; respuesta || &#x27;Usuario premium eliminado correctamente.&#x27;;
+        this.eliminandoUsuario &#x3D; false;
+        this.id &#x3D; -1;
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.eliminandoUsuario &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27;
+          ? error.error
+          : &#x27;No se pudo eliminar el usuario premium.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Consulta el backend y carga la lista completa de usuarios premium.
+   * Se invoca automáticamente al seleccionar la subvista &#x27;mostrar&#x27;.
+   */
+  cargarUsuariosPremium(): void {
+    this.cargandoUsuarios &#x3D; true;
+
+    this.usuarioPremiumService.getUsuarios().subscribe({
+      next: (respuesta) &#x3D;&gt; {
+        this.usuariosPremium &#x3D; respuesta.body ?? [];
+        this.cargandoUsuarios &#x3D; false;
+        this.cd.detectChanges();
+      },
+      error: (error) &#x3D;&gt; {
+        this.cargandoUsuarios &#x3D; false;
+        this.mensajeError &#x3D; typeof error?.error &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; error.error.trim() !&#x3D;&#x3D; &#x27;&#x27;
+          ? error.error
+          : &#x27;No se pudo obtener la lista de usuarios premium.&#x27;;
+        this.cd.detectChanges();
+      }
+    });
+  }
+
+  /**
+   * Restablece todos los campos del formulario a sus valores por defecto.
+   * Se invoca tras operaciones exitosas de creación o actualización.
+   */
+  limpiarFormulario(): void {
+    this.id &#x3D; -1;
+    this.cedula &#x3D; 0;
+    this.nombre &#x3D; &#x27;&#x27;;
+    this.email &#x3D; &#x27;&#x27;;
+    this.telefono &#x3D; 0;
+    this.edad &#x3D; 0;
+    this.direccion &#x3D; &#x27;&#x27;;
+    this.tipoUsuario &#x3D; &#x27;PREMIUM&#x27;;
+    this.descuento &#x3D; 0;
+    this.contrasena &#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Regresa a la subvista principal, limpiando mensajes y el formulario.
+   * Equivalente a cancelar la operación en curso.
+   */
+  volverAlMenuPrincipal(): void {
+    this.menu &#x3D; &#x27;principal&#x27;;
+    this.limpiarMensajes();
+    this.limpiarFormulario();
+  }
+
+  /**
+   * Limpia los mensajes de éxito y error de la vista.
+   * Se invoca antes de cada operación CRUD.
+   */
+  private limpiarMensajes(): void {
+    this.mensajeExito &#x3D; &#x27;&#x27;;
+    this.mensajeError &#x3D; &#x27;&#x27;;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;principal&#x27;&quot;&gt;
+  &lt;h1&gt;Administrar Usuario Premium&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;botones&quot;&gt;
+    &lt;h2&gt;Seleccione una opcion&lt;/h2&gt;
+    &lt;div class&#x3D;&quot;grupo-botones&quot;&gt;
+      &lt;span&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;crear&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success&quot;&gt;Crear&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;mostrar&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info&quot;&gt;Mostrar Todo&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;eliminar&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger&quot;&gt;Eliminar&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;seleccionarMenu(&#x27;actualizar&#x27;)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-warning&quot;&gt;Actualizar&lt;/button&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+
+&lt;div class&#x3D;&quot;menu-crear&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;crear&#x27;&quot;&gt;
+  &lt;h1&gt;Crear Usuario Premium&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;contenedor-formulario&quot;&gt;
+    &lt;form class&#x3D;&quot;formulario-crear&quot;&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Cédula&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;cedula&quot; name&#x3D;&quot;cedula&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;5678901212&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Nombre&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;nombre&quot; name&#x3D;&quot;nombre&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;pepito&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Email&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;papito@gmail.com&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Teléfono&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;telefono&quot; name&#x3D;&quot;telefono&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;3125679878&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Edad&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;edad&quot; name&#x3D;&quot;edad&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;33&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Dirección&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;direccion&quot; name&#x3D;&quot;direccion&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;diagonal5&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Tipo Usuario&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;tipoUsuario&quot; name&#x3D;&quot;tipoUsuario&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Descuento&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;descuento&quot; name&#x3D;&quot;descuento&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;16&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Contraseña&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;contrasena&quot; name&#x3D;&quot;contrasena&quot; type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+        &lt;button (click)&#x3D;&quot;crearUsuarioPremium()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success&quot; [disabled]&#x3D;&quot;creandoUsuario&quot;&gt;{{ creandoUsuario ? &#x27;Creando...&#x27; : &#x27;Crear usuario&#x27; }}&lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;limpiarFormulario()&quot;&gt;Limpiar&lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;volverAlMenuPrincipal()&quot;&gt;Volver&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;p class&#x3D;&quot;mensaje-exito&quot; *ngIf&#x3D;&quot;mensajeExito&quot;&gt;{{ mensajeExito }}&lt;/p&gt;
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;menu-mostrar&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;mostrar&#x27;&quot;&gt;
+  &lt;h1&gt;Usuarios Premium&lt;/h1&gt;
+
+  &lt;div class&#x3D;&quot;contenedor-tabla&quot;&gt;
+    &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+      &lt;button (click)&#x3D;&quot;cargarUsuariosPremium()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info&quot; [disabled]&#x3D;&quot;cargandoUsuarios&quot;&gt; {{ cargandoUsuarios ? &#x27;Cargando...&#x27; : &#x27;Recargar&#x27; }} &lt;/button&gt;
+      &lt;button (click)&#x3D;&quot;volverAlMenuPrincipal()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; &gt;Volver&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;p *ngIf&#x3D;&quot;cargandoUsuarios&quot; class&#x3D;&quot;estado-tabla&quot;&gt;Cargando usuarios...&lt;/p&gt;
+    &lt;p *ngIf&#x3D;&quot;!cargandoUsuarios  &amp;&amp; usuariosPremium.length &#x3D;&#x3D;&#x3D; 0&quot; class&#x3D;&quot;estado-tabla&quot;&gt;
+      No hay usuarios registrados.
+    &lt;/p&gt;
+
+    &lt;div class&#x3D;&quot;tabla-scroll&quot; *ngIf&#x3D;&quot;!cargandoUsuarios &amp;&amp; usuariosPremium.length &gt; 0&quot;&gt;
+      &lt;table class&#x3D;&quot;tabla-usuarios&quot;&gt;
+        &lt;tr&gt;
+          &lt;th&gt;ID&lt;/th&gt;
+          &lt;th&gt;Cedula&lt;/th&gt;
+          &lt;th&gt;Nombre&lt;/th&gt;
+          &lt;th&gt;Email&lt;/th&gt;
+          &lt;th&gt;Telefono&lt;/th&gt;
+          &lt;th&gt;Edad&lt;/th&gt;
+          &lt;th&gt;Direccion&lt;/th&gt;
+          &lt;th&gt;Tipo Usuario&lt;/th&gt;
+          &lt;th&gt;Descuento&lt;/th&gt;
+          &lt;th&gt;Contrasena&lt;/th&gt;
+        &lt;/tr&gt;
+
+        &lt;tr *ngFor&#x3D;&quot;let usuario of usuariosPremium&quot;&gt;
+          &lt;td&gt;{{ usuario.id }}&lt;/td&gt;
+          &lt;td&gt;{{ usuario.cedula }}&lt;/td&gt;
+          &lt;td&gt;{{ usuario.nombre }}&lt;/td&gt;
+          &lt;td&gt;{{ usuario.email }}&lt;/td&gt;
+          &lt;td&gt;{{ usuario.telefono }}&lt;/td&gt;
+          &lt;td&gt;{{ usuario.edad }}&lt;/td&gt;
+          &lt;td&gt;{{ usuario.direccion }}&lt;/td&gt;
+          &lt;td&gt;{{ usuario.tipoUsuario }}&lt;/td&gt;
+          &lt;td&gt;{{ usuario.descuento }}&lt;/td&gt;
+          &lt;td&gt;{{ usuario.contrasena }}&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;menu-actualizar&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;actualizar&#x27;&quot;&gt;
+  &lt;h1&gt;Actualizar Usuario Premium&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;contenedor-formulario&quot;&gt;
+    &lt;form class&#x3D;&quot;formulario-crear&quot;&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;ID&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;id&quot; name&#x3D;&quot;id&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Cedula&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;cedula&quot; name&#x3D;&quot;cedula&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Nombre&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;nombre&quot; name&#x3D;&quot;nombre&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Email&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Telefono&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;telefono&quot; name&#x3D;&quot;telefono&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Edad&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;edad&quot; name&#x3D;&quot;edad&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; class&#x3D;&quot;form-control&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Direccion&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;direccion&quot; name&#x3D;&quot;direccion&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Tipo Usuario&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;tipoUsuario&quot; name&#x3D;&quot;tipoUsuario&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Descuento&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;descuento&quot; name&#x3D;&quot;descuento&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+        &lt;h3&gt;Contrasena&lt;/h3&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;contrasena&quot; name&#x3D;&quot;contrasena&quot; type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+        &lt;button (click)&#x3D;&quot;actualizarUsuarioPremium()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-warning&quot; [disabled]&#x3D;&quot;actualizandoUsuario&quot;&gt;{{ actualizandoUsuario ? &#x27;Actualizando...&#x27; : &#x27;Actualizar usuario&#x27; }}&lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;limpiarFormulario()&quot;&gt;Limpiar&lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;volverAlMenuPrincipal()&quot;&gt;Volver&lt;/button&gt;
+      &lt;/div&gt;
+
+    &lt;/form&gt;
+    &lt;p class&#x3D;&quot;mensaje-exito&quot; *ngIf&#x3D;&quot;mensajeExito&quot;&gt;{{ mensajeExito }}&lt;/p&gt;
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;menu-eliminar&quot; *ngIf&#x3D;&quot;menu &#x3D;&#x3D;&#x3D; &#x27;eliminar&#x27;&quot;&gt;
+  &lt;h1&gt;Eliminar Usuario Premium&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;contenedor-formulario contenedor-eliminar&quot;&gt;
+    &lt;div class&#x3D;&quot;fila-formulario&quot;&gt;
+      &lt;h3&gt;ID del usuario&lt;/h3&gt;
+      &lt;input [(ngModel)]&#x3D;&quot;id&quot; name&#x3D;&quot;eliminarId&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; class&#x3D;&quot;form-control&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;acciones-formulario&quot;&gt;
+      &lt;button (click)&#x3D;&quot;eliminarUsuarioPremium()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger&quot; [disabled]&#x3D;&quot;eliminandoUsuario&quot;&gt;{{ eliminandoUsuario ? &#x27;Eliminando...&#x27; : &#x27;Eliminar usuario&#x27; }}&lt;/button&gt;
+      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;volverAlMenuPrincipal()&quot;&gt;Volver&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;p class&#x3D;&quot;mensaje-exito&quot; *ngIf&#x3D;&quot;mensajeExito&quot;&gt;{{ mensajeExito }}&lt;/p&gt;
+    &lt;p class&#x3D;&quot;mensaje-error&quot; *ngIf&#x3D;&quot;mensajeError&quot;&gt;{{ mensajeError }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis-network.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main *ngIf="menu === \'principal\'">  <h1>Administrar Usuario Premium</h1>  <div class="botones">    <h2>Seleccione una opcion</h2>    <div class="grupo-botones">      <span>        <button (click)="seleccionarMenu(\'crear\')" type="button" class="btn btn-success">Crear</button>        <button (click)="seleccionarMenu(\'mostrar\')" type="button" class="btn btn-info">Mostrar Todo</button>        <button (click)="seleccionarMenu(\'eliminar\')" type="button" class="btn btn-danger">Eliminar</button>        <button (click)="seleccionarMenu(\'actualizar\')" type="button" class="btn btn-warning">Actualizar</button>      </span>    </div>  </div></main><div class="menu-crear" *ngIf="menu === \'crear\'">  <h1>Crear Usuario Premium</h1>  <div class="contenedor-formulario">    <form class="formulario-crear">      <div class="fila-formulario">        <h3>Cédula</h3>        <input [(ngModel)]="cedula" name="cedula" type="number" min="1" class="form-control" placeholder="5678901212" />      </div>      <div class="fila-formulario">        <h3>Nombre</h3>        <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control" placeholder="pepito"/>      </div>      <div class="fila-formulario">        <h3>Email</h3>        <input [(ngModel)]="email" name="email" type="email" class="form-control" placeholder="papito@gmail.com"/>      </div>      <div class="fila-formulario">        <h3>Teléfono</h3>        <input [(ngModel)]="telefono" name="telefono" type="number" min="1" class="form-control" placeholder="3125679878"/>      </div>      <div class="fila-formulario">        <h3>Edad</h3>        <input [(ngModel)]="edad" name="edad" type="number" min="1" class="form-control" placeholder="33"/>      </div>      <div class="fila-formulario">        <h3>Dirección</h3>        <input [(ngModel)]="direccion" name="direccion" type="text" class="form-control" placeholder="diagonal5"/>      </div>      <div class="fila-formulario">        <h3>Tipo Usuario</h3>        <input [(ngModel)]="tipoUsuario" name="tipoUsuario" type="text" class="form-control" />      </div>      <div class="fila-formulario">        <h3>Descuento</h3>        <input [(ngModel)]="descuento" name="descuento" type="number" min="0" class="form-control" placeholder="16"/>      </div>      <div class="fila-formulario">        <h3>Contraseña</h3>        <input [(ngModel)]="contrasena" name="contrasena" type="password" class="form-control" />      </div>      <div class="acciones-formulario">        <button (click)="crearUsuarioPremium()" type="button" class="btn btn-success" [disabled]="creandoUsuario">{{ creandoUsuario ? \'Creando...\' : \'Crear usuario\' }}</button>        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>      </div>    </form>    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div><div class="menu-mostrar" *ngIf="menu === \'mostrar\'">  <h1>Usuarios Premium</h1>  <div class="contenedor-tabla">    <div class="acciones-formulario">      <button (click)="cargarUsuariosPremium()" type="button" class="btn btn-info" [disabled]="cargandoUsuarios"> {{ cargandoUsuarios ? \'Cargando...\' : \'Recargar\' }} </button>      <button (click)="volverAlMenuPrincipal()" type="button" class="btn btn-secondary" >Volver</button>    </div>    <p *ngIf="cargandoUsuarios" class="estado-tabla">Cargando usuarios...</p>    <p *ngIf="!cargandoUsuarios  && usuariosPremium.length === 0" class="estado-tabla">      No hay usuarios registrados.    </p>    <div class="tabla-scroll" *ngIf="!cargandoUsuarios && usuariosPremium.length > 0">      <table class="tabla-usuarios">        <tr>          <th>ID</th>          <th>Cedula</th>          <th>Nombre</th>          <th>Email</th>          <th>Telefono</th>          <th>Edad</th>          <th>Direccion</th>          <th>Tipo Usuario</th>          <th>Descuento</th>          <th>Contrasena</th>        </tr>        <tr *ngFor="let usuario of usuariosPremium">          <td>{{ usuario.id }}</td>          <td>{{ usuario.cedula }}</td>          <td>{{ usuario.nombre }}</td>          <td>{{ usuario.email }}</td>          <td>{{ usuario.telefono }}</td>          <td>{{ usuario.edad }}</td>          <td>{{ usuario.direccion }}</td>          <td>{{ usuario.tipoUsuario }}</td>          <td>{{ usuario.descuento }}</td>          <td>{{ usuario.contrasena }}</td>        </tr>      </table>    </div>  </div></div><div class="menu-actualizar" *ngIf="menu === \'actualizar\'">  <h1>Actualizar Usuario Premium</h1>  <div class="contenedor-formulario">    <form class="formulario-crear">      <div class="fila-formulario">        <h3>ID</h3>        <input [(ngModel)]="id" name="id" type="number" min="0" class="form-control"/>      </div>      <div class="fila-formulario">        <h3>Cedula</h3>        <input [(ngModel)]="cedula" name="cedula" type="number" min="1" class="form-control"/>      </div>      <div class="fila-formulario">        <h3>Nombre</h3>        <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control"/>      </div>      <div class="fila-formulario">        <h3>Email</h3>        <input [(ngModel)]="email" name="email" type="email" class="form-control"/>      </div>      <div class="fila-formulario">        <h3>Telefono</h3>        <input [(ngModel)]="telefono" name="telefono" type="number" min="1" class="form-control"/>      </div>      <div class="fila-formulario">        <h3>Edad</h3>        <input [(ngModel)]="edad" name="edad" type="number" min="1" class="form-control"/>      </div>      <div class="fila-formulario">        <h3>Direccion</h3>        <input [(ngModel)]="direccion" name="direccion" type="text" class="form-control"/>      </div>      <div class="fila-formulario">        <h3>Tipo Usuario</h3>        <input [(ngModel)]="tipoUsuario" name="tipoUsuario" type="text" class="form-control"/>      </div>      <div class="fila-formulario">        <h3>Descuento</h3>        <input [(ngModel)]="descuento" name="descuento" type="number" min="0" class="form-control"/>      </div>      <div class="fila-formulario">        <h3>Contrasena</h3>        <input [(ngModel)]="contrasena" name="contrasena" type="password" class="form-control"/>      </div>      <div class="acciones-formulario">        <button (click)="actualizarUsuarioPremium()" type="button" class="btn btn-warning" [disabled]="actualizandoUsuario">{{ actualizandoUsuario ? \'Actualizando...\' : \'Actualizar usuario\' }}</button>        <button type="button" class="btn btn-outline-secondary" (click)="limpiarFormulario()">Limpiar</button>        <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>      </div>    </form>    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div><div class="menu-eliminar" *ngIf="menu === \'eliminar\'">  <h1>Eliminar Usuario Premium</h1>  <div class="contenedor-formulario contenedor-eliminar">    <div class="fila-formulario">      <h3>ID del usuario</h3>      <input [(ngModel)]="id" name="eliminarId" type="number" min="0" class="form-control" />    </div>    <div class="acciones-formulario">      <button (click)="eliminarUsuarioPremium()" type="button" class="btn btn-danger" [disabled]="eliminandoUsuario">{{ eliminandoUsuario ? \'Eliminando...\' : \'Eliminar usuario\' }}</button>      <button type="button" class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Volver</button>    </div>    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>    <p class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</p>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminDashboard', 'selector': 'app-admin-dashboard'},{'name': 'AdminLogin', 'selector': 'app-admin-login'},{'name': 'AdminMenuAdministrador', 'selector': 'app-admin-menu-administrador'},{'name': 'AdminMenuCarta', 'selector': 'app-admin-menu-carta'},{'name': 'AdminMenuConductor', 'selector': 'app-admin-menu-conductor'},{'name': 'AdminMenuManipulador', 'selector': 'app-admin-menu-manipulador'},{'name': 'AdminMenuPaqueteAlimenticio', 'selector': 'app-admin-menu-paquete-alimenticio'},{'name': 'AdminMenuPaqueteNoAlimenticio', 'selector': 'app-admin-menu-paquete-no-alimenticio'},{'name': 'AdminMenuPrincipal', 'selector': 'app-admin-menu-principal'},{'name': 'AdminMenuUsuarioConcurrente', 'selector': 'app-admin-menu-usuario-concurrente'},{'name': 'AdminMenuUsuarioNormal', 'selector': 'app-admin-menu-usuario-normal'},{'name': 'AdminMenuUsuarioPremium', 'selector': 'app-admin-menu-usuario-premium'},{'name': 'App', 'selector': 'app-root'},{'name': 'ConductorMenuActualizar', 'selector': 'app-conductor-menu-actualizar'},{'name': 'ConductorMenuEvidencia', 'selector': 'app-conductor-menu-evidencia'},{'name': 'ConductorMenuPrincipal', 'selector': 'app-conductor-menu-principal'},{'name': 'Login', 'selector': 'app-login'},{'name': 'ManipuladorMenuActualizar', 'selector': 'app-manipulador-menu-actualizar'},{'name': 'ManipuladorMenuEvicencia', 'selector': 'app-manipulador-menu-evicencia'},{'name': 'ManipuladorMenuPrincipal', 'selector': 'app-manipulador-menu-principal'},{'name': 'Register', 'selector': 'app-register'},{'name': 'UsuariosDashboard', 'selector': 'app-usuarios-dashboard'},{'name': 'UsuariosMenuCartas', 'selector': 'app-usuarios-menu-cartas'},{'name': 'UsuariosMenuPaquetesAlimenticios', 'selector': 'app-usuarios-menu-paquetes-alimenticios'},{'name': 'UsuariosMenuPaquetesNoAlimenticios', 'selector': 'app-usuarios-menu-paquetes-no-alimenticios'},{'name': 'UsuariosMenuPrincipal', 'selector': 'app-usuarios-menu-principal'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AdminMenuUsuarioPremium'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminMenuUsuarioPremium.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
