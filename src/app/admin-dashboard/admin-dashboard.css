@@ -27,6 +27,45 @@ p{
   padding: 20px;
 }
 
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 5s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 140px;
+  height: 140px;
+  top: 8%;
+  left: 6%;
+  background: rgb(0, 92, 255, 0.8);
+  animation-delay: 1.5s;
+}
+
+.shape-2 {
+  width: 190px;
+  height: 190px;
+  bottom: 14%;
+  right: 8%;
+  background: rgb(255, 64, 180, 0.8);
+  animation-delay: 1.5s;
+}
+
+.shape-3 {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: 1%;
+  background: rgb(109, 0, 201, 0.8);
+}
+
+.shape-4 {
+  width: 200px;
+  height: 200px;
+  bottom: 2%;
+  right: 2%;
+  background: rgb(189, 236, 182, 0.8);
+}
 
 .recuadro {
   position: relative;
@@ -45,13 +84,10 @@ p{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: rgb(25, 29, 48, 0.3);
-  margin-top: 40px;
 }
 
 .icono{
-  color: rgb(255, 136, 0);
+  color: rgb(255 117 117);
   align-content: center;
   justify-content: center;
   display: flex;

@@ -52,7 +52,6 @@ p{
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
-  backdrop-filter: blur(5px);
   box-shadow: 0 0 50px rgb(25, 29, 48, 0.3);
   top: 50%;
   margin-top: 180px;
@@ -73,18 +72,18 @@ p{
   padding: 20px;
 }
 
-.boton-login{
+.boton-login {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
-
+  align-content: center;
 }
 
 button{
-  width: 30%;
-  background-color: #510088;
-  color: white;
+  margin: 3px;
+  border-color: #510088;
+  color: #510088;
 }
 
 .input-error {
